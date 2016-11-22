@@ -11,14 +11,16 @@ namespace CarouselPageNavigation
 			ItemsSource = ProductsDataModel.All;
 		}
 
-		async void OnBuyClicked(object sender, EventArgs args)
-		{
-			
 
-			
+
+
+		public void OnBuyClicked(object sender, EventArgs args)
+		{
+			//bool notify = DependencyService.Get<INotify>().CreateNotify();
+
 			Button button = (Button)sender;
 
-			await DisplayAlert("Clicked!",
+			DisplayAlert("Clicked!",
 			                   "The button labeled '" + button.Text + "' has been clicked",
 				"OK");
 		}
@@ -27,5 +29,7 @@ namespace CarouselPageNavigation
 		{
 			
 		}
+
+
 	}
 }
