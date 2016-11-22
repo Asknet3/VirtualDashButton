@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CarouselPage 
+		xmlns:local="clr-namespace:CarouselPageNavigation.MainPage"
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="CarouselPageNavigation.MainPage">
@@ -12,7 +13,6 @@
 				</ContentPage.Padding>
 				<StackLayout>
 					<Label x:Name="lblName" Text="{Binding Name}" FontSize="Medium" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="30"  BackgroundColor="Black" TextColor="White"  />
-					<!--<BoxView  Color="{Binding Color}" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />-->
 					<Button 
 						BackgroundColor="{Binding Color}" 
 						BorderRadius="20" 
@@ -20,11 +20,37 @@
 						WidthRequest="200" 
 						HeightRequest="200" 
 						HorizontalOptions="Center" 
-						Clicked="OnBuyClicked"
 						VerticalOptions="CenterAndExpand"/>
 					<Label Text="{Binding Description}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
 					<Label Text="{Binding Price}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  />
+
+					<StackLayout BackgroundColor="Black" Orientation="Horizontal" Grid.Row="1">
+						<Button 
+							TextColor="White"
+							x:Name="btnAdd"	
+							Text="Add" 
+							WidthRequest="100" 
+							HeightRequest="50" 
+							HorizontalOptions="Start"
+							VerticalOptions="CenterAndExpand"/>
+						
+						<Button 
+							TextColor="White"	
+							Text="Edit" 
+							WidthRequest="100" 
+							HeightRequest="50" 
+							HorizontalOptions="Center"
+							VerticalOptions="CenterAndExpand"/>
+						<Button 
+							TextColor="White"	
+							Text="Delete" 
+							WidthRequest="100" 
+							HeightRequest="50" 
+							HorizontalOptions="End"
+							VerticalOptions="CenterAndExpand"/>
+					</StackLayout>
 				</StackLayout>
+
 			</ContentPage>
 		</DataTemplate>
 	</CarouselPage.ItemTemplate>
