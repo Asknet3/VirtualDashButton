@@ -2,9 +2,9 @@
 # [first argument, ignore] # /Library/Frameworks/Xamarin.iOS.framework/Versions/10.4.0.20/lib/mtouch/mtouch.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/10.4.0.20/lib/mtouch/mtouch.exe \
 	--cache \
-	/Users/gcristau8/Projects/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache \
 	--sim \
-	/Users/gcristau8/Projects/CarouselPageTemplate/iOS/bin/iPhoneSimulator/Release/CarouselPageNavigationiOS.app \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhoneSimulator/Release/CarouselPageNavigationiOS.app \
 	--executable \
 	CarouselPageNavigationiOS \
 	--nolink \
@@ -18,7 +18,7 @@
 	--tls-provider=default \
 	--abi=i386 \
 	--symbollist \
-	/Users/gcristau8/Projects/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-symbols.list \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-symbols.list \
 	--dsym=no \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
@@ -27,17 +27,17 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \
@@ -303,15 +303,15 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.2.127/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
-	/Users/gcristau8/Projects/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
-	/Users/gcristau8/Projects/CarouselPageTemplate/iOS/bin/iPhoneSimulator/Release//CarouselPageNavigationiOS.exe \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhoneSimulator/Release//CarouselPageNavigationiOS.exe \

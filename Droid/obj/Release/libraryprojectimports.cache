@@ -2,8 +2,8 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>/Users/gcristau8/Projects/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform/library_project_imports/res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>/Users/gcristau8/Projects/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform.Android/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform.Android/library_project_imports/res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj/Release/__library_projects__/Xamarin.Forms.Platform/library_project_imports/assets</ResolvedAssetDirectory>
@@ -11,7 +11,7 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>/Users/gcristau8/Projects/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>/Users/gcristau8/Projects/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/__library_projects__/Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>
