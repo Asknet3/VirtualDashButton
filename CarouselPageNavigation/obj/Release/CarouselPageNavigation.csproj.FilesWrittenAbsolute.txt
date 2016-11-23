@@ -11,3 +11,4 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/Newtonsoft.Json.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.AddOrderPage.xaml
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.AddOrderPage.xaml.g.cs
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.Images.espresso_magia.png

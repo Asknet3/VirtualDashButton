@@ -1,12 +1,9 @@
 ﻿<Properties StartupConfiguration="{CF93242C-C182-47EF-866F-60CC374D1A5E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/ProductsDataModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/AddOrderPage.xaml">
     <Files>
-      <File FileName="CarouselPageNavigation/MainPage.xaml" Line="25" Column="122" />
-      <File FileName="CarouselPageNavigation/MainPage.xaml.cs" Line="12" Column="15" />
-      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="11" Column="4" />
-      <File FileName="CarouselPageNavigation/MasterPage.cs" Line="10" Column="6" />
-      <File FileName="CarouselPageNavigation/MainPageCS.cs" Line="1" Column="1" />
-      <File FileName="CarouselPageNavigation/ProductsDataModel.cs" Line="35" Column="11" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="13" Column="31" />
+      <File FileName="CarouselPageNavigation/ProductsDataModel.cs" Line="28" Column="44" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
@@ -14,7 +11,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.Droid PreferredExecutionTarget="Android.8b89b80a" />
   <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.31FCD726-BB3D-403B-A1D8-87C9A695FAE3" />
   <MultiItemStartupConfigurations />
 </Properties>
