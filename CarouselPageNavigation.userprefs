@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{CF93242C-C182-47EF-866F-60CC374D1A5E}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/AddOrderPage.xaml.cs">
     <Files>
       <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="48" Column="6" />
       <File FileName="CarouselPageNavigation/DeleteOrderPage.xaml.cs" Line="12" Column="3" />
       <File FileName="CarouselPageNavigation/OrderDataModel.cs" Line="58" Column="9" />
       <File FileName="CarouselPageNavigation/ProductsDataModel.cs" Line="64" Column="37" />
-      <File FileName="CarouselPageNavigation/MainPage.xaml" Line="1" Column="1" />
       <File FileName="CarouselPageNavigation/MainPage.xaml.cs" Line="12" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
