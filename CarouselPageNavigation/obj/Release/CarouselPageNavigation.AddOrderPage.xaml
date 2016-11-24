@@ -9,8 +9,6 @@
 					TextColor="#aaa" >
 				</Label>
 
-			
-
 				<Label 
 					Text="list below by swiping right" 
 					FontSize="15" 
@@ -25,7 +23,6 @@
 				</ContentView>
 			</StackLayout>
 		
-		
 			<ListView x:Name="ProductsList">
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
@@ -36,7 +33,7 @@
 			         </ViewCell.ContextActions>
 			         <StackLayout Orientation="Vertical"  Padding="10,5,0,5" VerticalOptions="CenterAndExpand">
 						<ContentView HorizontalOptions="Start">
-									<Image Source="{Binding Img}" /> 
+							<Image Source="{Binding Img}" /> 
 						</ContentView>
 						<Label Text="{Binding Name}" />
 						<Label Text="{Binding Description}" />
