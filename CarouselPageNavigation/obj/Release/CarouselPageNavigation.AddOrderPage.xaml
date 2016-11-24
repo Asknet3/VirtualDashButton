@@ -1,27 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CarouselPageNavigation.AddOrderPage">
 	<ContentPage.Content>
+		<StackLayout Padding="0,0,0,0" Orientation="Vertical">
+			<StackLayout BackgroundColor="#3f3f3f" Padding="10">
+				<Label 
+					Text="Select or deselect products from" 
+					FontSize="15" 
+					TextColor="#aaa" >
+				</Label>
+
+			
+
+				<Label 
+					Text="list below by swiping right" 
+					FontSize="15" 
+					TextColor="#aaa" >
+				</Label>
+	
+				<ContentView Padding="0,20,0,0">
+					<Label 
+						Text="PRODUCTS" 
+						FontSize="20" 
+						TextColor="#aaa" />
+				</ContentView>
+			</StackLayout>
 		
 		
-		<ListView x:Name="ProductsList">
-		  <ListView.ItemTemplate>
-		    <DataTemplate>
-		      <ViewCell Height="150">
-		         <ViewCell.ContextActions>
-		            <MenuItem Clicked="OnMore" CommandParameter="{Binding .}"
-		               Text="ADD" />
-		            <!--<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
-		               Text="Delete" IsDestructive="True" />-->
-		         </ViewCell.ContextActions>
-		         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Start">
-					<Image Source="{Binding Img}" />
-					<Label Text="{Binding Name}" />
-					<Label Text="{Binding Description}" />
-					<Label Text="{Binding Price}" />
-		         </StackLayout>
-		      </ViewCell>
-		    </DataTemplate>
-		  </ListView.ItemTemplate>
-		</ListView>
+			<ListView x:Name="ProductsList">
+			  <ListView.ItemTemplate>
+			    <DataTemplate>
+			      <ViewCell Height="150">
+			         <ViewCell.ContextActions>
+			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
+			               Text="ADD" />
+			         </ViewCell.ContextActions>
+			         <StackLayout Orientation="Vertical"  Padding="10,5,0,5" VerticalOptions="CenterAndExpand">
+						<ContentView HorizontalOptions="Start">
+									<Image Source="{Binding Img}" /> 
+						</ContentView>
+						<Label Text="{Binding Name}" />
+						<Label Text="{Binding Description}" />
+						<Label Text="{Binding Price}" />
+			         </StackLayout>
+			      </ViewCell>
+			    </DataTemplate>
+			  </ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
