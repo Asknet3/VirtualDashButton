@@ -7,23 +7,24 @@ namespace CarouselPageNavigation
 	{
 		public MainPage()
 		{
-			BindingContext = new ProductsDataModel();
+			BindingContext = new OrderDataModel();
 			InitializeComponent();
-			ItemsSource = ProductsDataModel.All;
+			ItemsSource = OrderDataModel.All;
 			//lblName.Text = "test";
 		}
 
 
 
 
-		public void OnBuyClicked(object sender, EventArgs args)
+		public async void OnBuyClicked(object sender, EventArgs args)
 		{
 			//bool notify = DependencyService.Get<INotify>().CreateNotify();
 
 			Button button = (Button)sender;
 
+			await App.Sleep(3000);
 
-			DisplayAlert("Clicked!",
+			await DisplayAlert("Clicked!",
 			                   "The button labeled '" + button.Text + "' has been clicked",
 				"OK");
 		}

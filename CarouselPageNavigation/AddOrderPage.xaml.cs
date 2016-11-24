@@ -19,14 +19,14 @@ namespace CarouselPageNavigation
 
 		public void OnMore(object sender, EventArgs e)
 		{
-			var mi = ((MenuItem)sender);
-			DisplayAlert("Prodotto Aggiunto Correttamente", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
+			//var mi = ((MenuItem)sender);
+			DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
 		}
 
-		public void OnDelete(object sender, EventArgs e)
-		{
-			var mi = ((MenuItem)sender);
-			DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
-		}
+		//public void OnDelete(object sender, EventArgs e)
+		//{
+		//	var mi = ((MenuItem)sender);
+		//	DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
+		//}
 	}
 }

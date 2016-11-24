@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace CarouselPageNavigation
 {
@@ -7,6 +8,11 @@ namespace CarouselPageNavigation
 		public App ()
 		{
 			MainPage = new CarouselPageNavigation.MainPage ();
+		}
+
+		public static async Task Sleep(int ms)
+		{
+			await Task.Delay(ms);
 		}
 
 		protected override void OnStart ()
@@ -23,5 +29,7 @@ namespace CarouselPageNavigation
 		{
 			// Handle when your app resumes
 		}
+
+
 	}
 }

@@ -20,23 +20,46 @@ namespace CarouselPageNavigation
 				new ProductsDataModel {
 					Img = ImageSource.FromFile("espresso_magia.png"),
 					Name = "Product 1",
-					Description = "Prodotto 1 con button di colore rosso",
-					Color = Color.Red,
+					Description = "Descrizione del Prodotto 1",
+					//Color = Color.Red,
 					Price = "Prezzo: € 5,00"
 				},
 				new ProductsDataModel {
 					Img = ImageSource.FromFile("dek.png"),
-					Name = "Produc 2",
-					Description = "Prodotto 2 con button di colore verde",
-					Color = Color.Green,
+					Name = "Product 2",
+					Description = "Descrizione del Prodotto 2",
+					//Color = Color.Green,
 					Price = "Prezzo: € 3,00"
 				},
 				new ProductsDataModel {
+					Img = ImageSource.FromFile("dek.png"),
 					Name = "Product 3",
-					Description = "Prodotto 3 con button di colore blue",
-					Color = Color.Blue,
+					Description = "Descrizione del Prodotto 3",
+					//Color = Color.Blue,
 					Price = "Prezzo: € 4,00"
+				},
+				new ProductsDataModel {
+					Img = ImageSource.FromFile("dek.png"),
+					Name = "Product 4",
+					Description = "Descrizione del Prodotto 4 ",
+					//Color = Color.Green,
+					Price = "Prezzo: € 7,00"
+				},
+				new ProductsDataModel {
+					Img = ImageSource.FromFile("espresso_magia.png"),
+					Name = "Product 5",
+					Description = "Descrizione del Prodotto 5",
+					//Color = Color.Green,
+					Price = "Prezzo: € 6,00"
+				},
+				new ProductsDataModel {
+					Img = ImageSource.FromFile("dek.png"),
+					Name = "Product 6",
+					Description = "Descrizione del Prodotto 6",
+					//Color = Color.Green,
+					Price = "Prezzo: € 3,00"
 				}
+
 			};
 		}
 	}
