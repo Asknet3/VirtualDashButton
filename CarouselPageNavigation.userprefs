@@ -1,9 +1,14 @@
 ﻿<Properties StartupConfiguration="{CF93242C-C182-47EF-866F-60CC374D1A5E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/AddOrderPage.xaml">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="13" Column="31" />
-      <File FileName="CarouselPageNavigation/ProductsDataModel.cs" Line="28" Column="44" />
-      <File FileName="CarouselPageNavigation/AddOrderPage.xaml" Line="1" Column="1" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="CarouselPageNavigation/ProductsDataModel.cs" Line="37" Column="8" />
+      <File FileName="CarouselPageNavigation/OrderDataModel.cs" Line="39" Column="8" />
+      <File FileName="CarouselPageNavigation/MainPage.xaml.cs" Line="23" Column="24" />
+      <File FileName="CarouselPageNavigation/MainPage.xaml" Line="25" Column="28" />
+      <File FileName="CarouselPageNavigation/App.cs" Line="3" Column="1" />
+      <File FileName="CarouselPageNavigation/DeleteOrderPage.xaml.cs" Line="8" Column="55" />
+      <File FileName="CarouselPageNavigation/DeleteOrderPage.xaml" Line="6" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
