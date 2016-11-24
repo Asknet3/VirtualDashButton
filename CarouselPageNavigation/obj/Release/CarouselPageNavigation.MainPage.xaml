@@ -50,7 +50,8 @@
 							WidthRequest="100" 
 							HeightRequest="50" 
 							HorizontalOptions="End"
-							VerticalOptions="CenterAndExpand"/>
+							VerticalOptions="CenterAndExpand"
+							Clicked="DeleteOrder"/>
 					</StackLayout>
 				</StackLayout>
 

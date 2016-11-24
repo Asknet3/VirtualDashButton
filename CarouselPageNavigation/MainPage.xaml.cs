@@ -10,6 +10,7 @@ namespace CarouselPageNavigation
 			BindingContext = new OrderDataModel();
 			InitializeComponent();
 			ItemsSource = OrderDataModel.All;
+
 			//lblName.Text = "test";
 		}
 
@@ -33,6 +34,13 @@ namespace CarouselPageNavigation
 		{
 			AddOrderPage aop = new AddOrderPage();
 			Navigation.PushModalAsync(aop);
+			//App.Current.MainPage = aop;
+		}
+
+		public void DeleteOrder(object sender, EventArgs args)
+		{
+			DeleteOrderPage dop = new DeleteOrderPage();
+			Navigation.PushModalAsync(dop);
 			//App.Current.MainPage = aop;
 
 		}

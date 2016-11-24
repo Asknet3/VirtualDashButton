@@ -13,7 +13,7 @@ namespace CarouselPageNavigation
 		public Color Color { get; set; }
 		public string Price { get; set; }
 
-		public static IList<OrderDataModel> All { get; set; }
+		public static ObservableCollection<OrderDataModel> All { get; set; }
 
 		static OrderDataModel()
 		{
@@ -37,6 +37,12 @@ namespace CarouselPageNavigation
 					Description = " Prodotto 3 con button di colore blue",
 					Color = Color.Blue,
 					//Price = "Prezzo: € 4,00"
+				},
+				new OrderDataModel {
+					Name = "Order 4",
+					Description = " Prodotto 4 con button di colore Pink",
+					Color = Color.Pink,
+					//Price = "Prezzo: € 4,50"
 				}
 			};
 		}
