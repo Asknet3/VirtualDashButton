@@ -32,6 +32,8 @@ namespace CarouselPageNavigation
 			ProductsList.ItemsSource = products;
 			ProductsList.HasUnevenRows = true;
 			//ProductsList.IsPullToRefreshEnabled = true;
+
+			//ProductsList.ItemTapped += this.OnAdd;
 		}
 
 
@@ -40,22 +42,29 @@ namespace CarouselPageNavigation
 
 		public void OnAdd(object sender, EventArgs e)
 		{
-			ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
+			if (ProductsList.SelectedItem != null)
+			{
+				ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
 
-			OrderDataModel new_order =
-				new OrderDataModel
-				{
-					Img=p.Img,
-					Product_id = p.Id,
-					Name = p.Name,
-					Description = p.Description,
-					Color = p.Color
-				             
-				};
+				OrderDataModel new_order =
+					new OrderDataModel
+					{
+						Img = p.Img,
+						Product_id = p.Id,
+						Name = p.Name,
+						Description = p.Description,
+						Color = p.Color
+
+					};
 
 				orders.Add(new_order);
 
-			DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
+				DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
+			}
+			else
+			{
+				DisplayAlert("ATTENZIONE!", "Devi prima selezionare un prodotto!", "OK");
+			}
 		}
 	}
 }
