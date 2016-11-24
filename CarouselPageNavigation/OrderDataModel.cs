@@ -7,6 +7,7 @@ namespace CarouselPageNavigation
 {
 	public class OrderDataModel
 	{
+		public string Product_id { get; set; }
 		public ImageSource Img { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }
@@ -17,33 +18,44 @@ namespace CarouselPageNavigation
 
 		static OrderDataModel()
 		{
-			All = new ObservableCollection<OrderDataModel> {
-				new OrderDataModel {
-					Img = ImageSource.FromFile("espresso_magia.png"),
-					Name = "Order 1",
-					Description = " Prodotto 1 con button di colore rosso",
-					Color = Color.Red,
-					//Price = "Prezzo: € 5,00"
-				},
-				new OrderDataModel {
-					Img = ImageSource.FromFile("dek.png"),
-					Name = "Order 2",
-					Description = " Prodotto 2 con button di colore verde",
-					Color = Color.Green,
-					//Price = "Prezzo: € 3,00"
-				},
-				new OrderDataModel {
-					Name = "Order 3",
-					Description = " Prodotto 3 con button di colore blue",
-					Color = Color.Blue,
-					//Price = "Prezzo: € 4,00"
-				},
-				new OrderDataModel {
-					Name = "Order 4",
-					Description = " Prodotto 4 con button di colore Pink",
-					Color = Color.Pink,
-					//Price = "Prezzo: € 4,50"
-				}
+			All = new ObservableCollection<OrderDataModel>
+			{
+					new OrderDataModel {
+						Img = ImageSource.FromFile("espresso_magia.png"),
+						Name = "Order 1",
+						Description = " Prodotto 1 con button di colore rosso",
+						Color = Color.Red
+						//Price = "Prezzo: € 5,00"
+					}
+
+
+				//All = new ObservableCollection<OrderDataModel> {
+				//	new OrderDataModel {
+				//		Img = ImageSource.FromFile("espresso_magia.png"),
+				//		Name = "Order 1",
+				//		Description = " Prodotto 1 con button di colore rosso",
+				//		Color = Color.Red,
+				//		//Price = "Prezzo: € 5,00"
+				//	},
+				//	new OrderDataModel {
+				//		Img = ImageSource.FromFile("dek.png"),
+				//		Name = "Order 2",
+				//		Description = " Prodotto 2 con button di colore verde",
+				//		Color = Color.Green,
+				//		//Price = "Prezzo: € 3,00"
+				//	},
+				//	new OrderDataModel {
+				//		Name = "Order 3",
+				//		Description = " Prodotto 3 con button di colore blue",
+				//		Color = Color.Blue,
+				//		//Price = "Prezzo: € 4,00"
+				//	},
+				//	new OrderDataModel {
+				//		Name = "Order 4",
+				//		Description = " Prodotto 4 con button di colore Pink",
+				//		Color = Color.Pink,
+				//		//Price = "Prezzo: € 4,50"
+				//	}
 			};
 		}
 	}

@@ -99,7 +99,7 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "CarouselPageNavigation.Droid.dll" comes first in this list. */
 		"CarouselPageNavigation.Droid.dll",
-		"FormsViewGroup.dll",
+		"Java.Interop.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",
@@ -108,14 +108,14 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.MediaRouter.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
-		"Xamarin.Forms.Core.dll",
-		"Xamarin.Forms.Platform.dll",
-		"Xamarin.Forms.Platform.Android.dll",
-		"Xamarin.Forms.Xaml.dll",
 		"Xamarin.GooglePlayServices.AppIndexing.dll",
 		"Xamarin.GooglePlayServices.Base.dll",
 		"Xamarin.GooglePlayServices.Basement.dll",
-		"Java.Interop.dll",
+		"FormsViewGroup.dll",
+		"Xamarin.Forms.Core.dll",
+		"Xamarin.Forms.Platform.Android.dll",
+		"Xamarin.Forms.Platform.dll",
+		"Xamarin.Forms.Xaml.dll",
 		"CarouselPageNavigation.dll",
 	};
 	public static final String[] Dependencies = new String[]{
