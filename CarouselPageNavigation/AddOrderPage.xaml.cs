@@ -8,7 +8,7 @@ namespace CarouselPageNavigation
 	public partial class AddOrderPage : ContentPage
 	{
 		ObservableCollection<ProductsDataModel> all_products = ProductsDataModel.All;
-		//ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
+		ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
 		//ObservableCollection<ProductsDataModel> products = new ObservableCollection<ProductsDataModel>();
 
 
@@ -52,17 +52,17 @@ namespace CarouselPageNavigation
 		{
 			if (ProductsList.SelectedItem != null)
 			{
-				//Product p = (Product)ProductsList.SelectedItem;
-				ObservableCollection<Product> prodListToAdd = new ObservableCollection<Product>();
-				//prodListToAdd.Add(p);
+				ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
+				ObservableCollection<ProductsDataModel> prodListToAdd = new ObservableCollection<ProductsDataModel>();
+				prodListToAdd.Add(p);
 
-				//OrderDataModel new_order =
-				//	new OrderDataModel
-				//	{
-				//		Id = Guid.NewGuid().ToString(),
-				//		orderName = "Other prod",
-				//		products = prodListToAdd
-				//	};
+				OrderDataModel new_order =
+					new OrderDataModel
+					{
+						Id = Guid.NewGuid().ToString(),
+						orderName =entOrderName.Text,
+						products = prodListToAdd
+					};
 
 
 				//OrderDataModel new_order =
@@ -75,7 +75,7 @@ namespace CarouselPageNavigation
 				//		Color = p.Color
 				//	};
 
-				//orders.Add(new_order);
+				orders.Add(new_order);
 
 				DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
 			}

@@ -10,15 +10,15 @@ namespace CarouselPageNavigation
 	{
 		public string Id { get; set; }
 		public string orderName { get; set; }
-		public IList<Product> products { get; set; }
+		public IList<ProductsDataModel> products { get; set; }
 
 
 
 
 
 		// Creo una Lista di prodotti come esempio da caricare all'avvio dell'App
-		public static ObservableCollection<Product> exampleProductsList = new ObservableCollection<Product>();
-		public static Product prod1 = new Product
+		public static ObservableCollection<ProductsDataModel> exampleProductsList = new ObservableCollection<ProductsDataModel>();
+		public static ProductsDataModel prod1 = new ProductsDataModel
 		{
 			Name = "Product 1",
 			Description = "Questo è il prodotto 1",

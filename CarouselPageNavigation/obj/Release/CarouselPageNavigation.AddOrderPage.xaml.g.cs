@@ -17,11 +17,15 @@ namespace CarouselPageNavigation {
     public partial class AddOrderPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry entOrderName;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ListView ProductsList;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(AddOrderPage));
+            entOrderName = this.FindByName <global::Xamarin.Forms.Entry>("entOrderName");
             ProductsList = this.FindByName <global::Xamarin.Forms.ListView>("ProductsList");
         }
     }
