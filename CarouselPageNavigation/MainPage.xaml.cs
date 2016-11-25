@@ -7,7 +7,7 @@ namespace CarouselPageNavigation
 	{
 		public MainPage()
 		{
-			BindingContext = new OrderDataModel();
+			//BindingContext = new OrderDataModel();
 			InitializeComponent();
 			ItemsSource = OrderDataModel.All;
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -7,26 +8,64 @@ namespace CarouselPageNavigation
 {
 	public class OrderDataModel
 	{
-		public string Product_id { get; set; }
-		public ImageSource Img { get; set; }
-		public string Name { get; set; }
-		public string Description { get; set; }
-		public Color Color { get; set; }
-		public string Price { get; set; }
+		public string Id { get; set; }
+		public string orderName { get; set; }
+		public IList<ProductsDataModel> products { get; set; }
+
+
+
+
+
+		// Creo una Lista di prodotti come esempio da caricare all'avvio dell'App
+		public static ObservableCollection<ProductsDataModel> exampleProductsList = new ObservableCollection<ProductsDataModel>();
+		public static ProductsDataModel prod1 = new ProductsDataModel
+		{
+			Name = "Product 1",
+			Description = "Questo è il prodotto 1",
+			Price = "€5,00",
+			Img = ImageSource.FromFile("espresso_magia.png")
+		};
+		//public static Product prod2= new Product
+		//{
+		//	Name = "Product 2",
+		//	Description = "Questo è il prodotto 2",
+		//	Price = "€4,00",
+		//	Img = ImageSource.FromFile("dek.png")
+		//};
+		//public static Product prod3 = new Product
+		//{
+		//	Name = "Product 3",
+		//	Description = "Questo è il prodotto 3",
+		//	Price = "€7,00",
+		//	Img = ImageSource.FromFile("espresso_magia.png")
+		//};
+
+
+
+
 
 		public static ObservableCollection<OrderDataModel> All { get; set; }
 
 		static OrderDataModel()
 		{
+			exampleProductsList.Add(prod1); // Aggiungo un prodotto di esempio alla lista
+
 			All = new ObservableCollection<OrderDataModel>
 			{
-					new OrderDataModel {
-						Img = ImageSource.FromFile("espresso_magia.png"),
-						Name = "Order 1",
-						Description = " Prodotto 1 con button di colore rosso",
-						Color = Color.Red
-						//Price = "Prezzo: € 5,00"
+				new OrderDataModel{
+						Id=  Guid.NewGuid().ToString(),
+						orderName="House",
+						products=exampleProductsList
 					}
+
+				
+					//new OrderDataModel {
+					//	Img = ImageSource.FromFile("espresso_magia.png"),
+					//	Name = "Order 1",
+					//	Description = " Prodotto 1 con button di colore rosso",
+					//	Color = Color.Red
+					//	//Price = "Prezzo: € 5,00"
+					//}
 
 
 				//All = new ObservableCollection<OrderDataModel> {

@@ -12,19 +12,21 @@
 				<ContentPage.Padding>
 					<OnPlatform x:TypeArguments="Thickness" iOS="0,40,0,0" Android="0,0,0,0" />
 				</ContentPage.Padding>
+
+				
 				<StackLayout>
-					<Label x:Name="lblName" Text="{Binding Name}" FontSize="Medium" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="30"  BackgroundColor="Black" TextColor="White"  />
+					<Label x:Name="lblName" Text="{Binding orderName}" FontSize="Medium" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="30"  BackgroundColor="Black" TextColor="White"  />
 					<Button 
-						BackgroundColor="{Binding Color}" 
-						BorderRadius="20" 
+						BackgroundColor="Red"
+						BorderRadius="10" 
 						Text="Acquista" 
-						WidthRequest="200" 
-						HeightRequest="200" 
+						WidthRequest="120" 
+						HeightRequest="60" 
 						HorizontalOptions="Center" 
 						VerticalOptions="CenterAndExpand"
 						Clicked="OnBuyClicked"/>
-					<Label Text="{Binding Description}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
-					<Label Text="{Binding Price}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  />
+					<!--<Label Text="{Binding Description}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
+					<Label Text="{Binding Price}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  />-->
 
 					<StackLayout BackgroundColor="Black" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
 						<Button 

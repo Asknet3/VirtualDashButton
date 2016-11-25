@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CarouselPageNavigation.AddOrderPage">
 	<ContentPage.Content>
 		<StackLayout Padding="0,0,0,0" Orientation="Vertical">
-			<StackLayout BackgroundColor="#3f3f3f" Padding="10">
+			<Entry x:Name="entOrderName" Text="Type Order Name_" />
+			<StackLayout BackgroundColor="#3f3f3f" Padding="10,0,10,0">
+				<Label 
+					Text="{Binding Name}" 
+					FontSize="15" 
+					TextColor="#aaa" >
+				</Label>
 				<Label 
 					Text="Select or deselect products from" 
 					FontSize="15" 
