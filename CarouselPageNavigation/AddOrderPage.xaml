@@ -4,6 +4,11 @@
 		<StackLayout Padding="0,0,0,0" Orientation="Vertical">
 			<StackLayout BackgroundColor="#3f3f3f" Padding="10">
 				<Label 
+					Text="{Binding Name}" 
+					FontSize="15" 
+					TextColor="#aaa" >
+				</Label>
+				<Label 
 					Text="Select or deselect products from" 
 					FontSize="15" 
 					TextColor="#aaa" >
