@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace CarouselPageNavigation
@@ -41,7 +42,21 @@ namespace CarouselPageNavigation
 		{
 			DeleteOrderPage dop = new DeleteOrderPage();
 			Navigation.PushModalAsync(dop);
-			//App.Current.MainPage = aop;
+		}
+
+
+		async void OnActionSheetSimpleClicked(object sender, EventArgs e)
+		{
+			ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
+			string[] orderItems = new string[orders.Count];
+			for (int i = 0; i < orders.Count; i++)
+			{
+				orderItems[i] = orders[i].orderName;
+			}
+
+			var action = await DisplayActionSheet("Choose Order to edit", "Cancel", null, orderItems);
+			EditOrderPage eop = new EditOrderPage(action);
+			await Navigation.PushModalAsync(eop);
 
 		}
 

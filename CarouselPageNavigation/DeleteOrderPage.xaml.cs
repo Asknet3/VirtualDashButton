@@ -16,7 +16,6 @@ namespace CarouselPageNavigation
 			OrderList.ItemsSource = orders;
 			OrderList.HasUnevenRows = true;
 
-
 			//ProductsList.IsPullToRefreshEnabled = true;
 		}
 

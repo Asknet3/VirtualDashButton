@@ -10,7 +10,7 @@ namespace CarouselPageNavigation
 	{
 		public string Id { get; set; }
 		public string orderName { get; set; }
-		public IList<ProductsDataModel> products { get; set; }
+		public ObservableCollection<ProductsDataModel> products { get; set; }
 
 
 
@@ -18,13 +18,15 @@ namespace CarouselPageNavigation
 
 		// Creo una Lista di prodotti come esempio da caricare all'avvio dell'App
 		public static ObservableCollection<ProductsDataModel> exampleProductsList = new ObservableCollection<ProductsDataModel>();
-		public static ProductsDataModel prod1 = new ProductsDataModel
-		{
-			Name = "Product 1",
-			Description = "Questo è il prodotto 1",
-			Price = "€5,00",
-			Img = ImageSource.FromFile("espresso_magia.png")
-		};
+		static ProductsDataModel prod1 = ProductsDataModel.All[0];
+
+		//public static ProductsDataModel prod1 =  new ProductsDataModel
+		//{
+		//	Name = "Product 1",
+		//	Description = "Questo è il prodotto 1",
+		//	Price = "€5,00",
+		//	Img = ImageSource.FromFile("espresso_magia.png")
+		//};
 		//public static Product prod2= new Product
 		//{
 		//	Name = "Product 2",
