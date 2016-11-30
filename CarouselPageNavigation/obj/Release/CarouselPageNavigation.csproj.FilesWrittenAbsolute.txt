@@ -2,9 +2,11 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.MainPage.xaml
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.AddOrderPage.xaml
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.DeleteOrderPage.xaml
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.EditOrderPage.xaml
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.MainPage.xaml.g.cs
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.AddOrderPage.xaml.g.cs
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.DeleteOrderPage.xaml.g.cs
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.EditOrderPage.xaml.g.cs
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll.mdb
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/obj/Release/CarouselPageNavigation.dll

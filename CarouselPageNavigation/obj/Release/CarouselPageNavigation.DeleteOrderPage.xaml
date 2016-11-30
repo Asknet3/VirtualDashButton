@@ -46,16 +46,13 @@
 		<ListView x:Name="OrderList">
 		  <ListView.ItemTemplate>
 		    <DataTemplate>
-		      <ViewCell Height="150" x:Name="vc">
+		      <ViewCell Height="50" x:Name="vc">
 		         <ViewCell.ContextActions>
 		            <MenuItem Clicked="OnDelete"
 		               Text="Delete" IsDestructive="True" CommandParameter="{Binding RecordIdentifier}" />
 		         </ViewCell.ContextActions>
-		         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Start">
-					<Image Source="{Binding Img}" />
-					<Label Text="{Binding Name}" />
-					<Label Text="{Binding Description}" />
-					<Label Text="{Binding Price}" />
+		         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
+					<Label Text="{Binding orderName}" />
 		         </StackLayout>
 		      </ViewCell>
 		    </DataTemplate>

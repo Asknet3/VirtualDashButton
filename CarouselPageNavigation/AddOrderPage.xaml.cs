@@ -46,42 +46,60 @@ namespace CarouselPageNavigation
 			//};
 		}
 
-
+		public bool OrderExists(string orderName) {
+			bool exists = false;
+			foreach (OrderDataModel order in orders)
+			{
+				if (order.orderName.ToLowerInvariant().Equals(orderName))
+				{
+					exists = true;
+					break;
+				}
+			}
+			return exists;
+		}
 
 		public void OnAdd(object sender, EventArgs e)
 		{
 			if (ProductsList.SelectedItem != null)
 			{
-				ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
-				ObservableCollection<ProductsDataModel> prodListToAdd = new ObservableCollection<ProductsDataModel>();
-				prodListToAdd.Add(p);
+				if (OrderExists(entOrderName.Text))
+				{
+					DisplayAlert("ATTENZIONE!", "Esiste già un ordine con lo stesso nome.", "OK");
+				}
+				else
+				{
+					ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
+					ObservableCollection<ProductsDataModel> prodListToAdd = new ObservableCollection<ProductsDataModel>();
+					prodListToAdd.Add(p);
 
-				OrderDataModel new_order =
-					new OrderDataModel
-					{
-						Id = Guid.NewGuid().ToString(),
-						orderName =entOrderName.Text,
-						products = prodListToAdd
-					};
+					OrderDataModel new_order =
+						new OrderDataModel
+						{
+							Id = Guid.NewGuid().ToString(),
+							orderName = entOrderName.Text,
+							products = prodListToAdd
+						};
 
 
-				//OrderDataModel new_order =
-				//	new OrderDataModel
-				//	{
-				//		Img = p.Img,
-				//		Product_id = p.Id,
-				//		Name = p.Name,
-				//		Description = p.Description,
-				//		Color = p.Color
-				//	};
+					//OrderDataModel new_order =
+					//	new OrderDataModel
+					//	{
+					//		Img = p.Img,
+					//		Product_id = p.Id,
+					//		Name = p.Name,
+					//		Description = p.Description,
+					//		Color = p.Color
+					//	};
 
-				orders.Add(new_order);
+					orders.Add(new_order);
 
-				DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
+					DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
+				}
 			}
 			else
 			{
-				DisplayAlert("ATTENZIONE!", "Devi prima selezionare un prodotto!", "OK");
+					DisplayAlert("ATTENZIONE!", "Devi prima selezionare un prodotto!", "OK");
 			}
 		}
 	}
