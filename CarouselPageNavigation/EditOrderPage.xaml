@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CarouselPageNavigation.EditOrderPage">
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="StartAndExpand" Orientation="Vertical">
+		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
+
 			<Label x:Name="oName" Text="" />
 			<Label x:Name="countProducts" Text="" />
-
-       <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
 			<ListView x:Name="ProductList" >
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
-			      <ViewCell Height="150">
-			         <!--<ViewCell.ContextActions>
-			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
-			               Text="ADD" />
-			         </ViewCell.ContextActions>-->
+			      <ViewCell BindingContextChanged="OnBindingContextChanged">
+			         <ViewCell.ContextActions>
+			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" 
+			               	Text="ADD" />
+			         </ViewCell.ContextActions>
 
-						<Grid BackgroundColor="Gray">
-							<StackLayout Orientation="Vertical"  Padding="10,5,0,5" VerticalOptions="CenterAndExpand">
-							<ContentView HorizontalOptions="Start">
-								<Image Source="{Binding Img}" />
-							</ContentView>
-							<Label Text="{Binding Name}" />
-							<Label Text="{Binding Description}" />
-							<Label Text="{Binding Price}" />
+						<Grid>
+							<StackLayout Orientation="Horizontal" Padding="10,5,0,5" >
+							<StackLayout Orientation="Horizontal">
+							<!--<ContentView HorizontalOptions="Start">-->
+								<Image Source="{Binding product.Img}" />
+							<!--</ContentView>-->
+							</StackLayout>
+							<StackLayout Orientation="Vertical">
+							<Label Text="{Binding product.Name}" />
+							<Label Text="{Binding product.Description}" />
+							<Label Text="{Binding product.Price}" />
+							<Label Text="{Binding TextContainsInList}"/>
 				         	</StackLayout>
-						</Grid>		
+							</StackLayout>		
+						</Grid>
 			      </ViewCell>
 			    </DataTemplate>
 			  </ListView.ItemTemplate>
 			</ListView>
 			
-			<ListView x:Name="ProductList2" >
+			<!--<ListView x:Name="ProductList2" >
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
 					<ViewCell Height="150">
-						<!--<ViewCell.ContextActions>
-			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
-			               Text="ADD" />
-			         	</ViewCell.ContextActions>-->
 						<StackLayout Orientation="Vertical">
 						<ContentView HorizontalOptions="Start">
 							<Image Source="{Binding Img}" />
@@ -48,9 +48,9 @@
 			         	</StackLayout>	
 			      </ViewCell>
 			    </DataTemplate>
+
 			  </ListView.ItemTemplate>
-			</ListView>
-			</StackLayout>
+			</ListView>-->
 
 		</StackLayout>
 	</ContentPage.Content>
