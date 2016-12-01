@@ -26,15 +26,11 @@ namespace CarouselPageNavigation {
         private global::Xamarin.Forms.ListView ProductList;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView ProductList2;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(EditOrderPage));
             oName = this.FindByName <global::Xamarin.Forms.Label>("oName");
             countProducts = this.FindByName <global::Xamarin.Forms.Label>("countProducts");
             ProductList = this.FindByName <global::Xamarin.Forms.ListView>("ProductList");
-            ProductList2 = this.FindByName <global::Xamarin.Forms.ListView>("ProductList2");
         }
     }
 }
