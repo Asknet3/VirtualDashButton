@@ -35,7 +35,7 @@
 							Text="Add" 
 							WidthRequest="100" 
 							HeightRequest="50" 
-							HorizontalOptions="Start"
+							HorizontalOptions="FillAndExpand"
 							VerticalOptions="CenterAndExpand"
 							Clicked="AddOrder"/>
 						
@@ -44,7 +44,7 @@
 							Text="Edit" 
 							WidthRequest="100" 
 							HeightRequest="50" 
-							HorizontalOptions="Center"
+							HorizontalOptions="FillAndExpand"
 							VerticalOptions="CenterAndExpand"
 							Clicked="OnActionSheetSimpleClicked"/>
 						<Button 
@@ -52,7 +52,7 @@
 							Text="Delete" 
 							WidthRequest="100" 
 							HeightRequest="50" 
-							HorizontalOptions="End"
+							HorizontalOptions="FillAndExpand"
 							VerticalOptions="CenterAndExpand"
 							Clicked="DeleteOrder"/>
 					</StackLayout>

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
@@ -10,7 +11,8 @@ namespace CarouselPageNavigation
 	public partial class EditOrderPage : ContentPage
 	{
 		ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
-
+		EditOrderDataModel item;
+		double product_quantity;
 
 		public EditOrderPage(string name)
 		{
@@ -30,7 +32,7 @@ namespace CarouselPageNavigation
 			List<EditOrderDataModel> newList =  new List<EditOrderDataModel>();
 
 
-			EditOrderDataModel item;
+
 			foreach (ProductsDataModel p in all_products)
 			{
 				foreach (ProductsDataModel p_in_order in ProductsInList)
@@ -38,11 +40,11 @@ namespace CarouselPageNavigation
 					if (p_in_order.Id != p.Id)
 					{
 						//productsNotInOrder.Add(p);
-						item = new EditOrderDataModel { product = p, TextContainsInList = "", isInOrder=false };
+						item = new EditOrderDataModel { product = p, TextContainsInList = "", isInOrder=false};
 					}
 					else
 					{
-						item = new EditOrderDataModel { product = p, TextContainsInList = "** GIA' IN ORDINE **", isInOrder = true };
+						item = new EditOrderDataModel { product = p, TextContainsInList = "** GIA' IN ORDINE **", isInOrder = true};
 					}
 					newList.Add(item);
 				}
@@ -120,14 +122,14 @@ namespace CarouselPageNavigation
 			//	return;
 
 			ViewCell theViewCell = ((ViewCell)sender);
-			var item = theViewCell.BindingContext as EditOrderDataModel;
+			var itemCell = theViewCell.BindingContext as EditOrderDataModel;
 			theViewCell.ContextActions.Clear();
 
 			//DisplayAlert("ATTENZIONE!", "binding changed su " + item.product.Name, "OK");
 
-			if (item != null)
+			if (itemCell != null)
 			{
-				if (!item.isInOrder)
+				if (!itemCell.isInOrder)
 				{
 					theViewCell.ContextActions.Add(new MenuItem()
 					{
@@ -139,6 +141,10 @@ namespace CarouselPageNavigation
 
 
 
+		public void OnCancel(object sender, EventArgs args)
+		{
+			Navigation.PopModalAsync();
+		}
 
 	}
 }
