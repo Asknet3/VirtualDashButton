@@ -12,7 +12,6 @@ namespace CarouselPageNavigation
 	{
 		ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
 		EditOrderDataModel item;
-		double product_quantity;
 
 		public EditOrderPage(string name)
 		{
@@ -37,7 +36,7 @@ namespace CarouselPageNavigation
 			{
 				foreach (ProductsDataModel p_in_order in ProductsInList)
 				{
-					if (p_in_order.Id != p.Id)
+					if (p_in_order.Id != p.Id )
 					{
 						//productsNotInOrder.Add(p);
 						item = new EditOrderDataModel { product = p, TextContainsInList = "", isInOrder=false};
@@ -46,7 +45,17 @@ namespace CarouselPageNavigation
 					{
 						item = new EditOrderDataModel { product = p, TextContainsInList = "** GIA' IN ORDINE **", isInOrder = true};
 					}
-					newList.Add(item);
+
+					// Se il prodotto esiste già in lista ma non è segnato come IN ORDINE, 
+					// lo cancello e lo sostituisco con il nuovo che è IN ORDINE
+					if (AlreadyInList(p, newList) && item.isInOrder)
+					{
+						ChangeElem(p, item, newList);
+					}
+					else if(!AlreadyInList(p, newList))
+					{ 
+						newList.Add(item);
+					}
 				}
 			}
 
@@ -144,6 +153,31 @@ namespace CarouselPageNavigation
 		public void OnCancel(object sender, EventArgs args)
 		{
 			Navigation.PopModalAsync();
+		}
+
+
+		public bool AlreadyInList(ProductsDataModel p, List<EditOrderDataModel>list)
+		{
+			foreach (EditOrderDataModel item in list) {
+				if (item.product == p)
+					return true;
+			}
+			return false;
+		}
+
+
+		public void ChangeElem(ProductsDataModel p, EditOrderDataModel item, List<EditOrderDataModel> list)
+		{
+			for (int i = 0; i < list.Count; i++)
+			{
+				if (list[i].product == p) 
+				{
+					// Elimino il vecchio item e lo sostituisco con il nuovo
+					list.RemoveAt(i);
+					list.Insert(i,item);
+					//list.Add(item);
+				}
+			}
 		}
 
 	}

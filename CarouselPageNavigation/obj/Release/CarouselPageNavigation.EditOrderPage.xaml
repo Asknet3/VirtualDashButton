@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xreference="clr-namespace:Xamarin.Forms.Xaml" x:Class="CarouselPageNavigation.EditOrderPage">
+
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
+	</ContentPage.Padding>
+	
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
 
@@ -39,9 +44,10 @@
 			  </ListView.ItemTemplate>
 			</ListView>
 
-			<StackLayout BackgroundColor="Black" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
+			<StackLayout BackgroundColor="#333333" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
 				<Button 
-					TextColor="White"
+					TextColor="#f0efed"
+					BackgroundColor="#333333"
 					x:Name="btnSave"	
 					Text="Save" 
 					WidthRequest="100" 
@@ -51,7 +57,8 @@
 					/>
 				
 				<Button 
-					TextColor="White"
+					TextColor="#f0efed"
+					BackgroundColor="#333333"
 					x:Name="btnCancel"		
 					Text="Cancel" 
 					WidthRequest="100" 
