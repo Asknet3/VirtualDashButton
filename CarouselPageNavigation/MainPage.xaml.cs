@@ -10,6 +10,9 @@ namespace CarouselPageNavigation
 		{
 			//BindingContext = new OrderDataModel();
 			InitializeComponent();
+			//ImageSource backgroundImage = ImageSource.FromFile("tazzina.png");
+			//BackgroundImage = "tazzina.png";
+			BackgroundColor = Color.FromHex("f0efed");
 			ItemsSource = OrderDataModel.All;
 
 			//lblName.Text = "test";

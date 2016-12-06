@@ -9,6 +9,7 @@ namespace CarouselPageNavigation
 	{
 		ObservableCollection<ProductsDataModel> all_products = ProductsDataModel.All;
 		ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
+		ObservableCollection<ProductsDataModel> prodListToAdd = new ObservableCollection<ProductsDataModel>();
 		//ObservableCollection<ProductsDataModel> products = new ObservableCollection<ProductsDataModel>();
 
 
@@ -59,6 +60,9 @@ namespace CarouselPageNavigation
 			return exists;
 		}
 
+
+
+
 		public void OnAdd(object sender, EventArgs e)
 		{
 			if (ProductsList.SelectedItem != null)
@@ -70,29 +74,10 @@ namespace CarouselPageNavigation
 				else
 				{
 					ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
-					ObservableCollection<ProductsDataModel> prodListToAdd = new ObservableCollection<ProductsDataModel>();
+
 					prodListToAdd.Add(p);
 
-					OrderDataModel new_order =
-						new OrderDataModel
-						{
-							Id = Guid.NewGuid().ToString(),
-							orderName = entOrderName.Text,
-							products = prodListToAdd
-						};
 
-
-					//OrderDataModel new_order =
-					//	new OrderDataModel
-					//	{
-					//		Img = p.Img,
-					//		Product_id = p.Id,
-					//		Name = p.Name,
-					//		Description = p.Description,
-					//		Color = p.Color
-					//	};
-
-					orders.Add(new_order);
 
 					DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
 				}
@@ -102,5 +87,37 @@ namespace CarouselPageNavigation
 					DisplayAlert("ATTENZIONE!", "Devi prima selezionare un prodotto!", "OK");
 			}
 		}
+
+
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			entOrderName.Focus(); // Setto il focus sul campo Nome Ordine
+		}
+
+
+
+		public void OnCancel(object sender, EventArgs args)
+		{
+			Navigation.PopModalAsync();
+		}
+
+
+		public void OnSave(object sender, EventArgs args)
+		{
+			OrderDataModel new_order =
+						new OrderDataModel
+						{
+							Id = Guid.NewGuid().ToString(),
+							orderName = entOrderName.Text,
+							products = prodListToAdd
+						};
+
+			orders.Add(new_order);
+
+			Navigation.PopModalAsync();
+		}
+
 	}
 }
