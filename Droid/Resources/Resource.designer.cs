@@ -2413,8 +2413,11 @@ namespace CarouselPageNavigation.Droid
 			// aapt resource value: 0x7f0200cc
 			public const int mr_ic_play_light = 2130837708;
 			
+			// aapt resource value: 0x7f0200ce
+			public const int notification_template_icon_bg = 2130837710;
+			
 			// aapt resource value: 0x7f0200cd
-			public const int notification_template_icon_bg = 2130837709;
+			public const int tazzina = 2130837709;
 			
 			static Drawable()
 			{

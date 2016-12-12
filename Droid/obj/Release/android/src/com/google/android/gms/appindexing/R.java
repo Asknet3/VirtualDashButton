@@ -2699,7 +2699,8 @@ containing a value of this type.
         public static int mr_ic_pause_light=0x7f0200ca;
         public static int mr_ic_play_dark=0x7f0200cb;
         public static int mr_ic_play_light=0x7f0200cc;
-        public static int notification_template_icon_bg=0x7f0200cd;
+        public static int notification_template_icon_bg=0x7f0200ce;
+        public static int tazzina=0x7f0200cd;
     }
     public static final class id {
         public static int action0=0x7f0a0093;
