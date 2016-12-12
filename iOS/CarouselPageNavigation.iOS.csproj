@@ -105,6 +105,7 @@
     <BundleResource Include="Resources\Icon-Small-40%403x.png" />
     <BundleResource Include="Resources\dek.png" />
     <BundleResource Include="Resources\espresso_magia.png" />
+    <BundleResource Include="Resources\tazzina.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

@@ -19,6 +19,7 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/optimized/Icon-Small-40@3x.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/optimized/dek.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/optimized/espresso_magia.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/optimized/tazzina.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/optimized/
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhoneSimulator/Release/CarouselPageNavigationiOS.exe.mdb
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhoneSimulator/Release/CarouselPageNavigationiOS.exe
