@@ -7,9 +7,9 @@ namespace CarouselPageNavigation
 {
 	public partial class AddOrderPage : ContentPage
 	{
-		ObservableCollection<ProductsDataModel> all_products = ProductsDataModel.All;
+		ObservableCollection<ExtendedProductsDataModel> all_products = ExtendedProductsDataModel.All;
 		ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
-		ObservableCollection<ProductsDataModel> prodListToAdd = new ObservableCollection<ProductsDataModel>();
+		ObservableCollection<EditOrderDataModel> prodListToAdd = new ObservableCollection<EditOrderDataModel>();
 		//ObservableCollection<ProductsDataModel> products = new ObservableCollection<ProductsDataModel>();
 
 
@@ -73,11 +73,10 @@ namespace CarouselPageNavigation
 				}
 				else
 				{
-					ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
-
-					prodListToAdd.Add(p);
-
-
+					ExtendedProductsDataModel p = (ExtendedProductsDataModel)ProductsList.SelectedItem;
+					//EditOrderDataModel p2 = (EditOrderDataModel)ProductsList.SelectedItem;
+					EditOrderDataModel myProduct = new EditOrderDataModel { product = p };
+					prodListToAdd.Add(myProduct);
 
 					DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
 				}
@@ -102,6 +101,22 @@ namespace CarouselPageNavigation
 		{
 			Navigation.PopModalAsync();
 		}
+
+
+		//public void OnSave(object sender, EventArgs args)
+		//{
+		//	OrderDataModel new_order =
+		//				new OrderDataModel
+		//				{
+		//					Id = Guid.NewGuid().ToString(),
+		//					orderName = entOrderName.Text,
+		//					products = prodListToAdd
+		//				};
+
+		//	orders.Add(new_order);
+
+		//	Navigation.PopModalAsync();
+		//}
 
 
 		public void OnSave(object sender, EventArgs args)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace CarouselPageNavigation
@@ -50,17 +51,26 @@ namespace CarouselPageNavigation
 
 		async void OnActionSheetSimpleClicked(object sender, EventArgs e)
 		{
-			ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
-			string[] orderItems = new string[orders.Count];
-			for (int i = 0; i < orders.Count; i++)
+			try
 			{
-				orderItems[i] = orders[i].orderName;
+				ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
+				string[] orderItems = new string[orders.Count];
+				for (int i = 0; i < orders.Count; i++)
+				{
+					orderItems[i] = orders[i].orderName;
+				}
+
+				var action = await DisplayActionSheet("Choose Order to edit", "Cancel", null, orderItems);
+				if (action != null && action != "")
+				{
+					EditOrderPage eop = new EditOrderPage(action);
+					await Navigation.PushModalAsync(eop);
+				}
 			}
-
-			var action = await DisplayActionSheet("Choose Order to edit", "Cancel", null, orderItems);
-			EditOrderPage eop = new EditOrderPage(action);
-			await Navigation.PushModalAsync(eop);
-
+			catch
+			{
+				return;
+			}
 		}
 
 

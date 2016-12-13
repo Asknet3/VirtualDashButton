@@ -23,27 +23,27 @@ namespace CarouselPageNavigation
 			OrderDataModel order = GetOrder(name);
 
 			oName.Text = order.orderName; // nome dell'ordine
-			ObservableCollection<ProductsDataModel> ProductsInList = order.products;
+			ObservableCollection<EditOrderDataModel> ProductsInList = order.products;
 			countProducts.Text = "Tot Products: " + ProductsInList.Count.ToString(); // Numero di prodotti già inseriti nell'ordine
 
-			ObservableCollection<ProductsDataModel> all_products = ProductsDataModel.All;
+			ObservableCollection<ExtendedProductsDataModel> all_products = ExtendedProductsDataModel.All;
 
 			List<EditOrderDataModel> newList =  new List<EditOrderDataModel>();
 
 
 
-			foreach (ProductsDataModel p in all_products)
+			foreach (ExtendedProductsDataModel p in all_products)
 			{
-				foreach (ProductsDataModel p_in_order in ProductsInList)
+				foreach (EditOrderDataModel p_in_order in ProductsInList)
 				{
-					if (p_in_order.Id != p.Id )
+					if (p_in_order.product.Id != p.Id )
 					{
 						//productsNotInOrder.Add(p);
 						item = new EditOrderDataModel { product = p, TextContainsInList = "", isInOrder=false};
 					}
 					else
 					{
-						item = new EditOrderDataModel { product = p, TextContainsInList = "** GIA' IN ORDINE **", isInOrder = true};
+						item = new EditOrderDataModel { product = p, quantity=p.Quantity, TextContainsInList = "** GIA' IN ORDINE **", isInOrder = true};
 					}
 
 					// Se il prodotto esiste già in lista ma non è segnato come IN ORDINE, 

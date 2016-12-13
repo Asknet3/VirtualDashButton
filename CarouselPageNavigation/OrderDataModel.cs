@@ -10,15 +10,13 @@ namespace CarouselPageNavigation
 	{
 		public string Id { get; set; }
 		public string orderName { get; set; }
-		public ObservableCollection<ProductsDataModel> products { get; set; }
-
-
+		public ObservableCollection<EditOrderDataModel> products { get; set; }
 
 
 
 		// Creo una Lista di prodotti come esempio da caricare all'avvio dell'App
-		public static ObservableCollection<ProductsDataModel> exampleProductsList = new ObservableCollection<ProductsDataModel>();
-		static ProductsDataModel prod1 = ProductsDataModel.All[0];
+		public static ObservableCollection<EditOrderDataModel> exampleProductsList = new ObservableCollection<EditOrderDataModel>();
+		static ExtendedProductsDataModel prod1 = ExtendedProductsDataModel.All[0];
 
 		//public static ProductsDataModel prod1 =  new ProductsDataModel
 		//{
@@ -50,7 +48,8 @@ namespace CarouselPageNavigation
 
 		static OrderDataModel()
 		{
-			exampleProductsList.Add(prod1); // Aggiungo un prodotto di esempio alla lista
+			EditOrderDataModel myProd1 = new EditOrderDataModel { product = prod1};
+			exampleProductsList.Add(myProd1); // Aggiungo un prodotto di esempio alla lista
 
 			All = new ObservableCollection<OrderDataModel>
 			{
@@ -60,7 +59,6 @@ namespace CarouselPageNavigation
 						products=exampleProductsList
 					}
 
-				
 					//new OrderDataModel {
 					//	Img = ImageSource.FromFile("espresso_magia.png"),
 					//	Name = "Order 1",

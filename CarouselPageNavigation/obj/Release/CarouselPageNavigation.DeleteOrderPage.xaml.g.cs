@@ -20,9 +20,13 @@ namespace CarouselPageNavigation {
         private global::Xamarin.Forms.ListView OrderList;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button btnCancel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(DeleteOrderPage));
             OrderList = this.FindByName <global::Xamarin.Forms.ListView>("OrderList");
+            btnCancel = this.FindByName <global::Xamarin.Forms.Button>("btnCancel");
         }
     }
 }

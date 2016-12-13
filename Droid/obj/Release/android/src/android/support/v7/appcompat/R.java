@@ -2703,6 +2703,24 @@ containing a value of this type.
         public static int tazzina=0x7f0200cd;
     }
     public static final class id {
+        public static int OptionHostName=0x7f0a00a1;
+        public static int OptionPort=0x7f0a00a2;
+        public static int OptionRemoteServer=0x7f0a00a0;
+        public static int OptionsButton=0x7f0a00b0;
+        public static int ResultFullName=0x7f0a00ab;
+        public static int ResultMessage=0x7f0a00ad;
+        public static int ResultResultState=0x7f0a00ac;
+        public static int ResultRunSingleMethodTest=0x7f0a00aa;
+        public static int ResultStackTrace=0x7f0a00ae;
+        public static int ResultsFailed=0x7f0a00a6;
+        public static int ResultsId=0x7f0a00a3;
+        public static int ResultsIgnored=0x7f0a00a7;
+        public static int ResultsInconclusive=0x7f0a00a8;
+        public static int ResultsMessage=0x7f0a00a9;
+        public static int ResultsPassed=0x7f0a00a5;
+        public static int ResultsResult=0x7f0a00a4;
+        public static int RunTestsButton=0x7f0a00af;
+        public static int TestSuiteListView=0x7f0a00b1;
         public static int action0=0x7f0a0093;
         public static int action_bar=0x7f0a0062;
         public static int action_bar_activity_content=0x7f0a0001;
@@ -2933,10 +2951,14 @@ containing a value of this type.
         public static int notification_template_media=0x7f030030;
         public static int notification_template_part_chronometer=0x7f030031;
         public static int notification_template_part_time=0x7f030032;
-        public static int select_dialog_item_material=0x7f030033;
-        public static int select_dialog_multichoice_material=0x7f030034;
-        public static int select_dialog_singlechoice_material=0x7f030035;
-        public static int support_simple_spinner_dropdown_item=0x7f030036;
+        public static int options=0x7f030033;
+        public static int results=0x7f030034;
+        public static int select_dialog_item_material=0x7f030035;
+        public static int select_dialog_multichoice_material=0x7f030036;
+        public static int select_dialog_singlechoice_material=0x7f030037;
+        public static int support_simple_spinner_dropdown_item=0x7f030038;
+        public static int test_result=0x7f030039;
+        public static int test_suite=0x7f03003a;
     }
     public static final class string {
         public static int abc_action_bar_home_description=0x7f06002e;

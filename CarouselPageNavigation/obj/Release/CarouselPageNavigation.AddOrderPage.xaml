@@ -36,7 +36,7 @@
 			<ListView x:Name="ProductsList">
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
-			      <ViewCell Height="150">
+			      <ViewCell Height="170">
 			         <ViewCell.ContextActions>
 			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
 			               Text="ADD" />
@@ -54,6 +54,8 @@
 								<Label Text="{Binding Name}" TextColor="#333333" />
 								<Label Text="{Binding Description}" TextColor="#333333" />
 								<Label Text="{Binding Price}" TextColor="#333333" />
+								<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" TextColor="#333333" />
+								<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />	
 					         </StackLayout>
 					</StackLayout>
 
