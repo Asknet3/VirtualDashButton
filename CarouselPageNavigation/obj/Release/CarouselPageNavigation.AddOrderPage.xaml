@@ -5,35 +5,41 @@
 	</ContentPage.Padding>
 	
 	<ContentPage.Content>
-		<StackLayout Padding="0,0,0,0" Orientation="Vertical" BackgroundColor="#f0efed">
-			<Entry x:Name="entOrderName"  Placeholder="Type Order Name..." />
-			<StackLayout BackgroundColor="#f0efed" Padding="10,0,10,0">
-				<Label 
-					Text="{Binding Name}" 
-					FontSize="15" 
-					TextColor="#333333" >
-				</Label>
-				<Label 
-					Text="Select or deselect products from" 
-					FontSize="15" 
-					TextColor="#333333" >
-				</Label>
 
-				<Label 
-					Text="list below by swiping right" 
-					FontSize="15" 
-					TextColor="#333333" >
-				</Label>
-	
-				<ContentView Padding="0,10,0,0">
-					<Label 
-						Text="PRODUCTS" 
-						FontSize="20" 
-						TextColor="#333333" />
-				</ContentView>
-			</StackLayout>
+		<StackLayout Padding="0,0,0,0" Orientation="Vertical" BackgroundColor="#f0efed">
+			<Entry x:Name="entOrderName" Placeholder="Type Order Name..." BackgroundColor="#f0efed" />
+
 		
-			<ListView x:Name="ProductsList">
+			<ListView x:Name="ProductsList" 
+				Header="">
+				<ListView.HeaderTemplate>
+					<DataTemplate>
+						<Grid >
+							<StackLayout BackgroundColor="#f0efed" Padding="10,0,10,0">
+								<!-- <Label Text="{Binding Name}" FontSize="15" TextColor="#333333" /> -->
+								<Label 
+									Text="Select or deselect products from" 
+									FontSize="15" 
+									TextColor="#333333" >
+								</Label>
+
+								<Label 
+									Text="list below by swiping right" 
+									FontSize="15" 
+									TextColor="#333333" >
+								</Label>
+					
+								<ContentView Padding="0,10,0,0">
+									<Label 
+										Text="PRODUCTS" 
+										FontSize="20" 
+										TextColor="#333333" />
+								</ContentView>
+							</StackLayout>
+						</Grid>
+					</DataTemplate>
+				</ListView.HeaderTemplate>
+				
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
 			      <ViewCell Height="90">
@@ -43,7 +49,7 @@
 			         </ViewCell.ContextActions>
 
 
-			         <StackLayout Orientation="Horizontal" Padding="10,5,0,5" >
+			         <StackLayout Orientation="Horizontal" Padding="0,5,0,5" >
 							<StackLayout Orientation="Horizontal">
 								<Image Source="{Binding Img}" />
 							</StackLayout>
@@ -96,7 +102,6 @@
 					Clicked="OnCancel"	
 					/>
 			</StackLayout>
-			
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

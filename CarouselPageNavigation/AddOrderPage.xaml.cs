@@ -120,42 +120,17 @@ namespace CarouselPageNavigation
 
 
 
+
 		public void OnCancel(object sender, EventArgs args)
 		{
 			Navigation.PopModalAsync();
 		}
 
 
-		//public void OnSave(object sender, EventArgs args)
-		//{
-		//	OrderDataModel new_order =
-		//				new OrderDataModel
-		//				{
-		//					Id = Guid.NewGuid().ToString(),
-		//					orderName = entOrderName.Text,
-		//					products = prodListToAdd
-		//				};
-
-		//	orders.Add(new_order);
-
-		//	Navigation.PopModalAsync();
-		//}
 
 
 		public void OnSave(object sender, EventArgs args)
 		{
-			//OrderDataModel new_order =
-			//			new OrderDataModel
-			//			{
-			//				Id = Guid.NewGuid().ToString(),
-			//				orderName = entOrderName.Text,
-			//				products = prodListToAdd
-			//			};
-
-			//orders.Add(new_order);
-
-
-
 			// Aggiungo l'ordine appena creato
 			newOrder.Nome_ordine = entOrderName.Text;
 			database.Insert(newOrder);

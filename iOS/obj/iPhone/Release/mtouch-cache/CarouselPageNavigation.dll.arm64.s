@@ -3203,7 +3203,7 @@ Lme_25:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_AddOrderPage_OnCancel_object_System_EventArgs
 CarouselPageNavigation_AddOrderPage_OnCancel_object_System_EventArgs:
-.loc 7 125 0 prologue_end
+.loc 7 126 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -3231,7 +3231,7 @@ Lme_26:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_AddOrderPage_OnSave_object_System_EventArgs
 CarouselPageNavigation_AddOrderPage_OnSave_object_System_EventArgs:
-.loc 7 160 0 prologue_end
+.loc 7 135 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
 .word 0xa9016bb9
@@ -3255,14 +3255,14 @@ bl _p_83
 .word 0x91004000
 bl _p_5
 .word 0xf9402ba0
-.loc 7 161 0
+.loc 7 136 0
 .word 0xf940e742
 .word 0xf940eb41
 .word 0xaa0203e0
 .word 0xf940005e
 bl _p_38
 .word 0x93407c00
-.loc 7 166 0
+.loc 7 141 0
 .word 0xf940ef41
 .word 0xaa0103e0
 .word 0xf940003e
@@ -3281,7 +3281,7 @@ ldr x15, [x16, #928]
 .word 0xf8706830
 .word 0xd63f0200
 .word 0xaa0003f9
-.loc 7 168 0
+.loc 7 143 0
 .word 0xaa1903e1
 .word 0xf940eb40
 .word 0xaa0003e2
@@ -3289,7 +3289,7 @@ ldr x15, [x16, #928]
 .word 0xb9802800
 .word 0xf940003e
 .word 0xb9001b20
-.loc 7 169 0
+.loc 7 144 0
 .word 0xf940e742
 .word 0xaa0203e0
 .word 0xaa1903e1
@@ -3327,7 +3327,7 @@ ldr x15, [x16, #856]
 .word 0xd63f0200
 .word 0xf94027be
 .word 0xd61f03c0
-.loc 7 173 0
+.loc 7 148 0
 .word 0xaa1a03e0
 bl _p_50
 .word 0xaa0003e1
@@ -24821,7 +24821,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "9F87D394-680B-4AEE-9ED4-F81EA6A4782C"
+	.asciz "5FF02E6A-0732-47D7-87DF-E8793C64283D"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -24904,7 +24904,7 @@ _mono_aot_file_info:
 	.long 544,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 158,254,188,186,181,117,91,159,116,103,140,132,226,243,130,205
+	.byte 219,34,67,70,167,96,10,136,31,163,179,9,105,40,237,233
 	.globl _mono_aot_module_CarouselPageNavigation_info
 	.align 3
 _mono_aot_module_CarouselPageNavigation_info:
@@ -36376,7 +36376,7 @@ Lfde36_end:
 	.asciz "CarouselPageNavigation.AddOrderPage:OnCancel"
 	.asciz "CarouselPageNavigation_AddOrderPage_OnCancel_object_System_EventArgs"
 
-	.byte 6,125
+	.byte 6,126
 	.quad CarouselPageNavigation_AddOrderPage_OnCancel_object_System_EventArgs
 	.quad Lme_26
 
@@ -36439,7 +36439,7 @@ LDIFF_SYM1974=LTDIE_272 - Ldebug_info_start
 	.asciz "CarouselPageNavigation.AddOrderPage:OnSave"
 	.asciz "CarouselPageNavigation_AddOrderPage_OnSave_object_System_EventArgs"
 
-	.byte 6,160,1
+	.byte 6,135,1
 	.quad CarouselPageNavigation_AddOrderPage_OnSave_object_System_EventArgs
 	.quad Lme_27
 
