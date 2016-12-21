@@ -1,5 +1,4 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/MonoAndroid,Version=v6.0.AssemblyAttribute.cs
-/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/CarouselPageNavigation.Droid.dll.mdb
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/CarouselPageNavigation.Droid.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/com.companyname.carouselpagenavigation.apk
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/bin/com.companyname.carouselpagenavigation.apk
@@ -14,7 +13,6 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/com.companyname.carouselpagenavigation-Signed.apk
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/uploadflags.txt
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/CarouselPageNavigation.Droid.dll
-/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/CarouselPageNavigation.Droid.dll.mdb
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/Xamarin.Android.Support.Animated.Vector.Drawable.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/Xamarin.Android.Support.Design.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/Xamarin.Android.Support.v4.dll
@@ -31,5 +29,11 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/Xamarin.Forms.Platform.Android.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/Xamarin.Forms.Platform.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/Xamarin.Forms.Xaml.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/SQLitePCLRaw.core.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/SQLitePCLRaw.lib.e_sqlite3.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/SQLitePCLRaw.provider.e_sqlite3.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/SQLitePCLRaw.batteries_green.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/SQLitePCLRaw.batteries_v2.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/SQLite-net.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/CarouselPageNavigation.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/CarouselPageNavigation.dll.mdb

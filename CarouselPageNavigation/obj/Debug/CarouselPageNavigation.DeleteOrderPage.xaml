@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CarouselPageNavigation.DeleteOrderPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
+	</ContentPage.Padding>
+
+	<ContentPage.Content>
+		<StackLayout Padding="0,5,0,0" BackgroundColor="#f0efed">
+
+			<StackLayout Padding="10,0,0,0" BackgroundColor="#f0efed">
+				<Label>
+					<Label.FormattedText>
+				        <FormattedString>
+				            <FormattedString.Spans>
+				                <Span Text="Order List" ForegroundColor="#333333" FontAttributes="Bold" FontSize="30" />
+				            </FormattedString.Spans>
+				        </FormattedString>
+				    </Label.FormattedText>
+				</Label>
+
+				<Label>
+					<Label.FormattedText>
+				        <FormattedString>
+				            <FormattedString.Spans>
+				                <Span Text="This is your current order list, " ForegroundColor="#333333" FontSize="16" />
+				            </FormattedString.Spans>
+				        </FormattedString>
+				    </Label.FormattedText>
+				</Label>
+
+				<Label>
+					<Label.FormattedText>
+				        <FormattedString>
+				            <FormattedString.Spans>
+				                <Span Text="To delete single one, tap it " ForegroundColor="#333333" FontSize="16"/>
+				            </FormattedString.Spans>
+				        </FormattedString>
+				    </Label.FormattedText>
+				</Label>
+			<ContentView Padding="0,20,0,0" >
+				<Label>
+					<Label.FormattedText>
+				        <FormattedString>
+				            <FormattedString.Spans>
+				                <Span Text="ORDERS " ForegroundColor="#333333" FontSize="20" FontAttributes="Bold"/>
+				            </FormattedString.Spans>
+				        </FormattedString>
+				    </Label.FormattedText>
+				</Label>
+			</ContentView>
+		</StackLayout>
+			
+		
+		<ListView x:Name="OrderList" BackgroundColor="White" >
+		  <ListView.ItemTemplate>
+		    <DataTemplate>
+		      <ViewCell Height="50" Tapped="OnItemTapped" >
+		         <ViewCell.ContextActions>
+		            <MenuItem Clicked="OnDelete"
+		               Text="Delete" IsDestructive="True" CommandParameter="{Binding RecordIdentifier}" />
+		         </ViewCell.ContextActions>
+		         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="10,0,10,0">
+					<Label Text="{Binding orderName}" TextColor="#333333" />
+						<StackLayout Orientation="Horizontal">
+							<Label Text="N. of Products: " TextColor="#333333" />
+							<Label Text="{Binding products.Count}" TextColor="#333333" />
+						</StackLayout>
+		         </StackLayout>
+		      </ViewCell>
+		    </DataTemplate>
+		  </ListView.ItemTemplate>
+		</ListView>
+
+			<StackLayout BackgroundColor="#333333" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
+				<Button 
+					TextColor="#f0efed"
+					BackgroundColor="#333333"
+					x:Name="btnCancel"		
+					Text="Cancel" 
+					WidthRequest="100" 
+					HeightRequest="50" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					Clicked="OnCancel"	
+					/>
+			</StackLayout>
+			
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

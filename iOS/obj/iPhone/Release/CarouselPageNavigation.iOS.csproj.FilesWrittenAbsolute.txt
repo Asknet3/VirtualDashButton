@@ -29,5 +29,10 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/Xamarin.Forms.Platform.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/Xamarin.Forms.Platform.iOS.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/Xamarin.Forms.Xaml.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/SQLitePCLRaw.core.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/SQLitePCLRaw.provider.sqlite3.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/SQLitePCLRaw.batteries_green.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/SQLitePCLRaw.batteries_v2.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/SQLite-net.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/CarouselPageNavigation.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/CarouselPageNavigation.dll.mdb

@@ -6,17 +6,19 @@
 		x:Class="CarouselPageNavigation.MainPage"
 		Title="{Binding orderName}" >
 
-
 	<CarouselPage.ItemTemplate>
+		
 		<DataTemplate>
 			<ContentPage>
 				<ContentPage.Padding>
 					<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
 				</ContentPage.Padding>
 
-
+				
+				
 				<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0efed">
-					<Label x:Name="lblName" Text="{Binding orderName}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,10,0,5" />
+<!--				<ActivityIndicator Color="Red"  IsRunning="{Binding Busy}" IsVisible="{Binding Busy}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+					<Label Text="{Binding Nome_ordine}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,10,0,5" />
 					<Image Source="tazzina.png" />
 					<Button 
 						BackgroundColor="#478cba"

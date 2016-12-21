@@ -25,7 +25,7 @@
 					TextColor="#333333" >
 				</Label>
 	
-				<ContentView Padding="0,20,0,0">
+				<ContentView Padding="0,10,0,0">
 					<Label 
 						Text="PRODUCTS" 
 						FontSize="20" 
@@ -36,7 +36,7 @@
 			<ListView x:Name="ProductsList">
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
-			      <ViewCell Height="170">
+			      <ViewCell Height="90">
 			         <ViewCell.ContextActions>
 			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
 			               Text="ADD" />
@@ -48,15 +48,21 @@
 								<Image Source="{Binding Img}" />
 							</StackLayout>
 							
-					         <StackLayout Orientation="Vertical"  Padding="10,5,0,5" VerticalOptions="CenterAndExpand">
-								<ContentView HorizontalOptions="Start">
-								</ContentView>
+					         <StackLayout Orientation="Vertical"  Padding="0,5,0,5" VerticalOptions="CenterAndExpand">
+								<!--<ContentView HorizontalOptions="Start">
+								</ContentView>-->
+								<Label Text="{Binding Id_prodotto}" IsVisible='false' TextColor="#333333" />
 								<Label Text="{Binding Name}" TextColor="#333333" />
 								<Label Text="{Binding Description}" TextColor="#333333" />
 								<Label Text="{Binding Price}" TextColor="#333333" />
-								<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" TextColor="#333333" />
-								<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />	
+								<!--<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" TextColor="#333333" />-->
+								<!--<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />	-->
 					         </StackLayout>
+
+							<StackLayout Orientation="Vertical" Padding="3,0,3,0" VerticalOptions='Center' HorizontalOptions='EndAndExpand' >
+								<Label Text="{Binding Source={x:Reference stepper}, Path=Value}" TextColor="#333333" HorizontalOptions='Center' />
+								<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />
+							</StackLayout>		
 					</StackLayout>
 
 							

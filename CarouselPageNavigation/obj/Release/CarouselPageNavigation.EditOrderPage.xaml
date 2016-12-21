@@ -26,14 +26,14 @@
 								<!--<ContentView HorizontalOptions="Start">-->
 									<!--<Image Grid.Column="0" Source="Checked.png" Margin="5" IsVisible="{Binding IsChecked}"/>
 	                                <Image Grid.Column="0" Source="Unchecked.png" Margin="5" IsVisible="{Binding UnChecked}"/>		-->
-									<Image Source="{Binding product.Img}" />
+									<Image Source="{Binding Img}" />
 								<!--</ContentView>-->
 								</StackLayout>
 								<StackLayout Orientation="Vertical" BackgroundColor="#f0efed" >
-									<Label Text="{Binding product.Name}" TextColor="#333333" />
-									<Label Text="{Binding product.Description}" TextColor="#333333" />
-									<Label Text="{Binding product.Price}" TextColor="#333333" />
-									<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding quantity}" IsVisible="{Binding isInOrder}"  />	
+									<Label Text="{Binding Name}" TextColor="#333333" />
+									<Label Text="{Binding Description}" TextColor="#333333" />
+									<Label Text="{Binding Price}" TextColor="#333333" />
+									<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}" IsVisible="{Binding isInOrder}"  />	
 									<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" IsVisible="{Binding IsVisible}" TextColor="#333333" />
 									<Label Text="{Binding TextContainsInList}" IsVisible="{Binding isInOrder}" TextColor="#333333" />
 					         	</StackLayout>
