@@ -16,6 +16,8 @@ namespace CarouselPageNavigation
 			OrderList.ItemsSource = orders;
 			OrderList.HasUnevenRows = true;
 
+			OrderList.SeparatorColor = Color.FromHex("#f0efed");
+
 			//ProductsList.IsPullToRefreshEnabled = true;
 		}
 
@@ -24,5 +26,28 @@ namespace CarouselPageNavigation
 			orders.Remove((OrderDataModel)OrderList.SelectedItem);
 			DisplayAlert("Ordine rimosso!", "Puoi aggiungerne un altro cliccando su ADD", "OK");
 		}
+
+
+
+		public void OnCancel(object sender, EventArgs args)
+		{
+			Navigation.PopModalAsync();
+		}
+
+
+
+		// Gestisce il colore delle riche al Tap
+		public void OnItemTapped(object sender, EventArgs e)
+		{
+			ViewCell cell = (ViewCell)sender;
+			cell.Height = 50;
+			cell.View.VerticalOptions = LayoutOptions.FillAndExpand;
+			cell.View.HorizontalOptions = LayoutOptions.FillAndExpand;
+			cell.View.BackgroundColor = Color.FromHex("#ededed");
+		}
+
+
+
+
 	}
 }

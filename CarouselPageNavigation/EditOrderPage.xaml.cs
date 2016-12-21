@@ -4,77 +4,112 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using SQLite;
 using Xamarin.Forms;
 
 namespace CarouselPageNavigation
 {
 	public partial class EditOrderPage : ContentPage
 	{
-		ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
-		EditOrderDataModel item;
+		SQLiteConnection database;
+		List<Ordini> orders = new List<Ordini>();
+
+		//Product item;
 
 		public EditOrderPage(string name)
 		{
 			InitializeComponent();
+
+			// Creo la connessione al Database
+			database = DependencyService.Get<ISQLite>().GetConnection();
+
+
+			orders = database.Query<Ordini>("SELECT Nome_ordine FROM Ordini");
+
+
 			//ProductList.SelectedItem = null; //Disabilito la possibilità di selezionare i prodotti già facenti parte dell'ordine.
 			ProductList.HasUnevenRows = true;
 			 
 
-			OrderDataModel order = GetOrder(name);
+			Ordini order = GetOrder(name);
 
-			oName.Text = order.orderName; // nome dell'ordine
-			ObservableCollection<ProductsDataModel> ProductsInList = order.products;
+			oName.Text = order.Nome_ordine; // nome dell'ordine
+
+			List<ProductExstended> ProductsInList = new List<ProductExstended>();
+			ProductsInList = database.Query<ProductExstended>("SELECT * FROM OrdiniProdotti as op, Product as p, Ordini as o WHERE op.Id_prodotto = p.Id AND op.Id_ordine = o.Id_ordine AND o.Nome_ordine='" + name + "'");
 			countProducts.Text = "Tot Products: " + ProductsInList.Count.ToString(); // Numero di prodotti già inseriti nell'ordine
 
-			ObservableCollection<ProductsDataModel> all_products = ProductsDataModel.All;
 
-			List<EditOrderDataModel> newList =  new List<EditOrderDataModel>();
+			List<ProductExstended> ProductsNOTInList = new List<ProductExstended>();
+			ProductsNOTInList = database.Query<ProductExstended>("SELECT * FROM Product as p, OrdiniProdotti as op ON op.Id_prodotto = p.Id, Ordini as o on op.Id_ordine = o.Id_ordine WHERE o.Nome_ordine !='" + name +"'");
 
+			//ObservableCollection<ExtendedProductsDataModel> all_products = ExtendedProductsDataModel.All;
 
-
-			foreach (ProductsDataModel p in all_products)
+			// Segno i prodotti in Ordine assegnandogli una stringa di testo
+			foreach (ProductExstended p in ProductsInList)
 			{
-				foreach (ProductsDataModel p_in_order in ProductsInList)
-				{
-					if (p_in_order.Id != p.Id )
-					{
-						//productsNotInOrder.Add(p);
-						item = new EditOrderDataModel { product = p, TextContainsInList = "", isInOrder=false};
-					}
-					else
-					{
-						item = new EditOrderDataModel { product = p, TextContainsInList = "** GIA' IN ORDINE **", isInOrder = true};
-					}
-
-					// Se il prodotto esiste già in lista ma non è segnato come IN ORDINE, 
-					// lo cancello e lo sostituisco con il nuovo che è IN ORDINE
-					if (AlreadyInList(p, newList) && item.isInOrder)
-					{
-						ChangeElem(p, item, newList);
-					}
-					else if(!AlreadyInList(p, newList))
-					{ 
-						newList.Add(item);
-					}
-				}
+				p.TextContainsInList = "** GIA' IN ORDINE **";
 			}
+
+
+			// Creo la lista che conterrà tutti i prodotti, quelli in ordine e quelli non e la inizializzo con i prodotti IN ORDINE
+			List<ProductExstended> newList = ProductsInList; // Aggiungo i prodotti IN ORDINE
+
+
+			// Setto il campo Quantity dei prodotti NON IN ORDINE a 0 e li aggiungo alla lista newList
+			foreach (ProductExstended p in ProductsNOTInList)
+			{
+				p.Quantity = 0;
+				if(!AlreadyInList(p, newList))
+				newList.Add(p);
+			}
+
+
+
+			//foreach (ProductExstended p in all_products)
+			//{
+			//	foreach (Product p_in_order in ProductsInList)
+			//	{
+			//		if (p_in_order.Id == p.Id )
+			//		{
+			//			//productsNotInOrder.Add(p);
+			//			item = new Product {Img= p.Img, Name=p.Name, Description=p.Description, Price=p.Price, Product_id = p.Product_id};
+			//		}
+			//		else
+			//		{
+			//			item = new EditOrderDataModel { product = p, quantity=p.Quantity, TextContainsInList = "** GIA' IN ORDINE **", isInOrder = true};
+			//		}
+
+			//		// Se il prodotto esiste già in lista ma non è segnato come IN ORDINE, 
+			//		// lo cancello e lo sostituisco con il nuovo che è IN ORDINE
+			//		if (AlreadyInList(p, newList) && item.isInOrder)
+			//		{
+			//			ChangeElem(p, item, newList);
+			//		}
+			//		else if(!AlreadyInList(p, newList))
+			//		{ 
+			//			newList.Add(item);
+			//		}
+			//	}
+			//}
 
 			ProductList.ItemsSource = newList;
 		}
 
 
 		// Cerca un ordine
-		public OrderDataModel GetOrder(string orderName)
+		public Ordini GetOrder(string orderName)
 		{
-			foreach (OrderDataModel order in orders)
-			{
-				if (order.orderName.ToLowerInvariant().Equals(orderName.ToLowerInvariant()))
-				{
-					return order;
-				}
-			}
-			return null;
+			List<Ordini> order = database.Query<Ordini>("SELECT * FROM Ordini WHERE Nome_ordine='" + orderName + "'");
+
+			if (order.Count > 0)
+				return order[0]; // restituisco il primo ordine (che comunque dovrebbe sempre essere l'unico per via del controllo sul Nome_ordine)
+			else
+				return null;
 		}
+
+
+
 
 
 		public void OnAdd(object sender, EventArgs e)
@@ -156,10 +191,10 @@ namespace CarouselPageNavigation
 		}
 
 
-		public bool AlreadyInList(ProductsDataModel p, List<EditOrderDataModel>list)
+		public bool AlreadyInList(ProductExstended p, List<ProductExstended>list)
 		{
-			foreach (EditOrderDataModel item in list) {
-				if (item.product == p)
+			foreach (ProductExstended item in list) {
+				if (item.Id == p.Id)
 					return true;
 			}
 			return false;

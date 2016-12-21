@@ -1,43 +1,51 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using SQLite;
 using Xamarin.Forms;
 
 namespace CarouselPageNavigation
 {
 	public partial class AddOrderPage : ContentPage
 	{
-		ObservableCollection<ProductsDataModel> all_products = ProductsDataModel.All;
-		ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
-		ObservableCollection<ProductsDataModel> prodListToAdd = new ObservableCollection<ProductsDataModel>();
-		//ObservableCollection<ProductsDataModel> products = new ObservableCollection<ProductsDataModel>();
+		SQLiteConnection database;
+		Ordini newOrder;
+
+		//Creo una lista di OrdiniProdotti da aggiungere che verrà usata quando si clicca sul bottone Salva
+		ObservableCollection<OrdiniProdotti> ListProdToAdd = new ObservableCollection<OrdiniProdotti>();
+		ObservableCollection<ProductExstended> allProductsExtended = new ObservableCollection<ProductExstended>();
+
+		List<Ordini> orders = new List<Ordini>();
 
 
 		public AddOrderPage()
 		{
-			//foreach (ProductsDataModel p in all_products)
-			//{
-			//	bool esiste = false;
-			//	foreach (OrderDataModel o in orders) {
-			//		if (p.Id == o.Product_id)
-			//		{
-			//			esiste = true;
-			//		}
-			//	}
-			//	if (!esiste)
-			//	{
-			//		products.Add(p); // Aggiungo il prodotto alla lista di prodotti da visualizzare.
-			//	}
-			//}
-
 			InitializeComponent();
-			ProductsList.ItemsSource = all_products;
-			ProductsList.HasUnevenRows = true;
 
+			// Creo la connessione al Database
+			database = DependencyService.Get<ISQLite>().GetConnection();
+
+			orders = database.Query<Ordini>("SELECT Nome_ordine FROM Ordini");
+
+			// Preparo un ordine dentro cui verranno aggiunti i prodotti selezionati dall'utente
+			newOrder = new Ordini();
+
+			var allProducts = database.Table<Product>(); // Lista di TUTTI i prodotti nella tabella Product del DB
+
+			foreach (Product p in allProducts)
+			{
+				ProductExstended pe = new ProductExstended { Id =p.Id, Description = p.Description, Img = p.Img, Name = p.Name, Price = p.Price, Product_id = p.Product_id };
+				allProductsExtended.Add(pe);
+			}
+
+			ProductsList.ItemsSource = allProductsExtended;
+			ProductsList.HasUnevenRows = true;
 			//ProductsList.IsPullToRefreshEnabled = true;
 
-			//ProductsList.ItemTapped += this.OnAdd;
 
+
+			//ProductsList.ItemTapped += this.OnAdd;
 			//ProductsList.ItemTapped += (object sender, ItemTappedEventArgs e) =>
 			//{
 			//	// don't do anything if we just de-selected the row
@@ -47,11 +55,11 @@ namespace CarouselPageNavigation
 			//};
 		}
 
-		public bool OrderExists(string orderName) {
+		public bool OrderNameExists(string orderName) {
 			bool exists = false;
-			foreach (OrderDataModel order in orders)
+			foreach (Ordini order in orders)
 			{
-				if (order.orderName.ToLowerInvariant().Equals(orderName))
+				if (order.Nome_ordine.ToLowerInvariant().Equals(orderName))
 				{
 					exists = true;
 					break;
@@ -67,19 +75,33 @@ namespace CarouselPageNavigation
 		{
 			if (ProductsList.SelectedItem != null)
 			{
-				if (OrderExists(entOrderName.Text))
+				if (OrderNameExists(entOrderName.Text))
 				{
 					DisplayAlert("ATTENZIONE!", "Esiste già un ordine con lo stesso nome.", "OK");
 				}
 				else
 				{
-					ProductsDataModel p = (ProductsDataModel)ProductsList.SelectedItem;
+					ProductExstended p = (ProductExstended)ProductsList.SelectedItem;
 
-					prodListToAdd.Add(p);
+					//EditOrderDataModel p2 = (EditOrderDataModel)ProductsList.SelectedItem;
 
 
+
+					// Creo il prodotto e lo aggiungo alla lista dei prodotti da aggiungere all'ordine 
+					OrdiniProdotti prodToAdd = new OrdiniProdotti {Id_prodotto=p.Id, Quantity=p.Quantity};
+					//prodToAdd.Quantity = qt;
+
+
+					ListProdToAdd.Add(prodToAdd);
+
+
+					//EditOrderDataModel myProduct = new EditOrderDataModel { product = p };
+					//prodListToAdd.Add(myProduct);
 
 					DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
+
+					allProductsExtended.Remove(p);  // Aggiorno la lista dopo aver aggiunto il prodotto.
+
 				}
 			}
 			else
@@ -104,17 +126,49 @@ namespace CarouselPageNavigation
 		}
 
 
+		//public void OnSave(object sender, EventArgs args)
+		//{
+		//	OrderDataModel new_order =
+		//				new OrderDataModel
+		//				{
+		//					Id = Guid.NewGuid().ToString(),
+		//					orderName = entOrderName.Text,
+		//					products = prodListToAdd
+		//				};
+
+		//	orders.Add(new_order);
+
+		//	Navigation.PopModalAsync();
+		//}
+
+
 		public void OnSave(object sender, EventArgs args)
 		{
-			OrderDataModel new_order =
-						new OrderDataModel
-						{
-							Id = Guid.NewGuid().ToString(),
-							orderName = entOrderName.Text,
-							products = prodListToAdd
-						};
+			//OrderDataModel new_order =
+			//			new OrderDataModel
+			//			{
+			//				Id = Guid.NewGuid().ToString(),
+			//				orderName = entOrderName.Text,
+			//				products = prodListToAdd
+			//			};
 
-			orders.Add(new_order);
+			//orders.Add(new_order);
+
+
+
+			// Aggiungo l'ordine appena creato
+			newOrder.Nome_ordine = entOrderName.Text;
+			database.Insert(newOrder);
+
+
+
+			// Aggiungo i prodotti selezionati nella rispettiva tabella del DB
+			foreach (OrdiniProdotti prodToAdd in ListProdToAdd)
+			{
+				prodToAdd.Id_ordine = newOrder.Id_ordine; // Assegno ad ogni prodotto l'ID dell'ordine appena creato a cui fanno riferimento
+				database.Insert(prodToAdd);
+			}
+
 
 			Navigation.PopModalAsync();
 		}

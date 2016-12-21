@@ -27,6 +27,28 @@ namespace CarouselPageNavigation.Droid
 		public static void UpdateIdValues()
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CarouselPageNavigation.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Android.NUnitLite.Resource.Id.OptionHostName = global::CarouselPageNavigation.Droid.Resource.Id.OptionHostName;
+			global::Xamarin.Android.NUnitLite.Resource.Id.OptionPort = global::CarouselPageNavigation.Droid.Resource.Id.OptionPort;
+			global::Xamarin.Android.NUnitLite.Resource.Id.OptionRemoteServer = global::CarouselPageNavigation.Droid.Resource.Id.OptionRemoteServer;
+			global::Xamarin.Android.NUnitLite.Resource.Id.OptionsButton = global::CarouselPageNavigation.Droid.Resource.Id.OptionsButton;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultFullName = global::CarouselPageNavigation.Droid.Resource.Id.ResultFullName;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultMessage = global::CarouselPageNavigation.Droid.Resource.Id.ResultMessage;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultResultState = global::CarouselPageNavigation.Droid.Resource.Id.ResultResultState;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultRunSingleMethodTest = global::CarouselPageNavigation.Droid.Resource.Id.ResultRunSingleMethodTest;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultStackTrace = global::CarouselPageNavigation.Droid.Resource.Id.ResultStackTrace;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultsFailed = global::CarouselPageNavigation.Droid.Resource.Id.ResultsFailed;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultsId = global::CarouselPageNavigation.Droid.Resource.Id.ResultsId;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultsIgnored = global::CarouselPageNavigation.Droid.Resource.Id.ResultsIgnored;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultsInconclusive = global::CarouselPageNavigation.Droid.Resource.Id.ResultsInconclusive;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultsMessage = global::CarouselPageNavigation.Droid.Resource.Id.ResultsMessage;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultsPassed = global::CarouselPageNavigation.Droid.Resource.Id.ResultsPassed;
+			global::Xamarin.Android.NUnitLite.Resource.Id.ResultsResult = global::CarouselPageNavigation.Droid.Resource.Id.ResultsResult;
+			global::Xamarin.Android.NUnitLite.Resource.Id.RunTestsButton = global::CarouselPageNavigation.Droid.Resource.Id.RunTestsButton;
+			global::Xamarin.Android.NUnitLite.Resource.Id.TestSuiteListView = global::CarouselPageNavigation.Droid.Resource.Id.TestSuiteListView;
+			global::Xamarin.Android.NUnitLite.Resource.Layout.options = global::CarouselPageNavigation.Droid.Resource.Layout.options;
+			global::Xamarin.Android.NUnitLite.Resource.Layout.results = global::CarouselPageNavigation.Droid.Resource.Layout.results;
+			global::Xamarin.Android.NUnitLite.Resource.Layout.test_result = global::CarouselPageNavigation.Droid.Resource.Layout.test_result;
+			global::Xamarin.Android.NUnitLite.Resource.Layout.test_suite = global::CarouselPageNavigation.Droid.Resource.Layout.test_suite;
 		}
 		
 		public partial class Animation
@@ -2432,6 +2454,60 @@ namespace CarouselPageNavigation.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f0a00a1
+			public const int OptionHostName = 2131361953;
+			
+			// aapt resource value: 0x7f0a00a2
+			public const int OptionPort = 2131361954;
+			
+			// aapt resource value: 0x7f0a00a0
+			public const int OptionRemoteServer = 2131361952;
+			
+			// aapt resource value: 0x7f0a00b0
+			public const int OptionsButton = 2131361968;
+			
+			// aapt resource value: 0x7f0a00ab
+			public const int ResultFullName = 2131361963;
+			
+			// aapt resource value: 0x7f0a00ad
+			public const int ResultMessage = 2131361965;
+			
+			// aapt resource value: 0x7f0a00ac
+			public const int ResultResultState = 2131361964;
+			
+			// aapt resource value: 0x7f0a00aa
+			public const int ResultRunSingleMethodTest = 2131361962;
+			
+			// aapt resource value: 0x7f0a00ae
+			public const int ResultStackTrace = 2131361966;
+			
+			// aapt resource value: 0x7f0a00a6
+			public const int ResultsFailed = 2131361958;
+			
+			// aapt resource value: 0x7f0a00a3
+			public const int ResultsId = 2131361955;
+			
+			// aapt resource value: 0x7f0a00a7
+			public const int ResultsIgnored = 2131361959;
+			
+			// aapt resource value: 0x7f0a00a8
+			public const int ResultsInconclusive = 2131361960;
+			
+			// aapt resource value: 0x7f0a00a9
+			public const int ResultsMessage = 2131361961;
+			
+			// aapt resource value: 0x7f0a00a5
+			public const int ResultsPassed = 2131361957;
+			
+			// aapt resource value: 0x7f0a00a4
+			public const int ResultsResult = 2131361956;
+			
+			// aapt resource value: 0x7f0a00af
+			public const int RunTestsButton = 2131361967;
+			
+			// aapt resource value: 0x7f0a00b1
+			public const int TestSuiteListView = 2131361969;
+			
 			// aapt resource value: 0x7f0a0093
 			public const int action0 = 2131361939;
 			
@@ -3144,16 +3220,28 @@ namespace CarouselPageNavigation.Droid
 			public const int notification_template_part_time = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int select_dialog_item_material = 2130903091;
+			public const int options = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int select_dialog_multichoice_material = 2130903092;
+			public const int results = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int select_dialog_singlechoice_material = 2130903093;
+			public const int select_dialog_item_material = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int support_simple_spinner_dropdown_item = 2130903094;
+			public const int select_dialog_multichoice_material = 2130903094;
+			
+			// aapt resource value: 0x7f030037
+			public const int select_dialog_singlechoice_material = 2130903095;
+			
+			// aapt resource value: 0x7f030038
+			public const int support_simple_spinner_dropdown_item = 2130903096;
+			
+			// aapt resource value: 0x7f030039
+			public const int test_result = 2130903097;
+			
+			// aapt resource value: 0x7f03003a
+			public const int test_suite = 2130903098;
 			
 			static Layout()
 			{

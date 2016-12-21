@@ -6,10 +6,10 @@
 	</ContentPage.Padding>
 	
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
+		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#f0efed">
 
-			<Label x:Name="oName" Text="" />
-			<Label x:Name="countProducts" Text="" />
+			<Label x:Name="oName" Text="" TextColor="#333333"  />
+			<Label x:Name="countProducts" Text="" TextColor="#333333"  />
 			<!--<ListView x:Name="ProductList" CachingStrategy="RecycleElement" >-->
 			<ListView x:Name="ProductList" >
 			  <ListView.ItemTemplate>
@@ -20,22 +20,22 @@
 			               	Text="ADD" />
 			         </ViewCell.ContextActions>
 
-						<Grid>
-							<StackLayout Orientation="Horizontal" Padding="10,5,0,5" >
-								<StackLayout Orientation="Horizontal">
+						<Grid BackgroundColor="#f0efed">
+							<StackLayout Orientation="Horizontal" Padding="10,5,0,5" BackgroundColor="#f0efed" >
+								<StackLayout Orientation="Horizontal" BackgroundColor="#f0efed">
 								<!--<ContentView HorizontalOptions="Start">-->
 									<!--<Image Grid.Column="0" Source="Checked.png" Margin="5" IsVisible="{Binding IsChecked}"/>
 	                                <Image Grid.Column="0" Source="Unchecked.png" Margin="5" IsVisible="{Binding UnChecked}"/>		-->
-									<Image Source="{Binding product.Img}" />
+									<Image Source="{Binding Img}" />
 								<!--</ContentView>-->
 								</StackLayout>
-								<StackLayout Orientation="Vertical">
-									<Label Text="{Binding product.Name}" />
-									<Label Text="{Binding product.Description}" />
-									<Label Text="{Binding product.Price}" />
-									<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding quantity}" IsVisible="{Binding isInOrder}"  />	
-									<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" IsVisible="{Binding IsVisible}" />
-									<Label Text="{Binding TextContainsInList}" IsVisible="{Binding isInOrder}" />
+								<StackLayout Orientation="Vertical" BackgroundColor="#f0efed" >
+									<Label Text="{Binding Name}" TextColor="#333333" />
+									<Label Text="{Binding Description}" TextColor="#333333" />
+									<Label Text="{Binding Price}" TextColor="#333333" />
+									<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}" IsVisible="{Binding isInOrder}"  />	
+									<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" IsVisible="{Binding IsVisible}" TextColor="#333333" />
+									<Label Text="{Binding TextContainsInList}" IsVisible="{Binding isInOrder}" TextColor="#333333" />
 					         	</StackLayout>
 							</StackLayout>	
 						</Grid>

@@ -15,3 +15,7 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/Xamarin.Forms.Core.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/Xamarin.Forms.Platform.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/Xamarin.Forms.Xaml.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/SQLitePCLRaw.core.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/SQLitePCLRaw.batteries_green.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/SQLitePCLRaw.batteries_v2.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/SQLite-net.dll

@@ -1,9 +1,13 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Globalization.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/Xamarin.Forms.Core.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Threading.Tasks.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Text.RegularExpressions.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/Mono.Dynamic.Interpreter.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/CarouselPageNavigationiOS.exe
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Resources.ResourceManager.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/SQLitePCLRaw.provider.sqlite3.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.ServiceModel.Internals.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/SQLitePCLRaw.batteries_v2.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.ComponentModel.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Reflection.Extensions.dll
@@ -13,7 +17,7 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Linq.Expressions.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Diagnostics.Tools.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/mscorlib.dll
-/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Text.RegularExpressions.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/SQLitePCLRaw.core.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Core.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Net.Http.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Diagnostics.Debug.dll
@@ -23,6 +27,7 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/Xamarin.iOS.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/Xamarin.Forms.Platform.iOS.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Threading.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/SQLite-net.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.Runtime.Extensions.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/System.ObjectModel.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhoneSimulator/Release/mtouch-cache/Link/Xamarin.Forms.Platform.dll

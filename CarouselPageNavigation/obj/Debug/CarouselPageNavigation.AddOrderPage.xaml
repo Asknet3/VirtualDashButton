@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CarouselPageNavigation.AddOrderPage">
+	<ContentPage.Padding>
+			<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
+	</ContentPage.Padding>
+	
+	<ContentPage.Content>
+		<StackLayout Padding="0,0,0,0" Orientation="Vertical" BackgroundColor="#f0efed">
+			<Entry x:Name="entOrderName"  Placeholder="Type Order Name..." />
+			<!--<StackLayout BackgroundColor="#f0efed" Padding="10,0,10,0">-->
+				<Label 
+					Text="{Binding Name}" 
+					FontSize="15" 
+					TextColor="#333333" >
+				</Label>
+				<Label 
+					Text="Select or deselect products from" 
+					FontSize="15" 
+					TextColor="#333333" >
+				</Label>
+
+				<Label 
+					Text="list below by swiping right" 
+					FontSize="15" 
+					TextColor="#333333" >
+				</Label>
+	
+				<ContentView Padding="0,20,0,0">
+					<Label 
+						Text="PRODUCTS" 
+						FontSize="20" 
+						TextColor="#333333" />
+				</ContentView>
+			<!--</StackLayout>-->
+		
+			<ListView x:Name="ProductsList">
+			  <ListView.ItemTemplate>
+			    <DataTemplate>
+			      <ViewCell Height="170">
+			         <ViewCell.ContextActions>
+			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
+			               Text="ADD" />
+			         </ViewCell.ContextActions>
+
+
+			         <StackLayout Orientation="Horizontal" Padding="10,5,0,5" >
+							<StackLayout Orientation="Horizontal">
+								<Image Source="{Binding Img}" />
+							</StackLayout>
+							
+					         <StackLayout Orientation="Vertical"  Padding="10,5,0,5" VerticalOptions="CenterAndExpand">
+								<ContentView HorizontalOptions="Start">
+								</ContentView>
+								<Label Text="{Binding Id_prodotto}" IsVisible='false' TextColor="#333333" />
+								<Label Text="{Binding Name}" TextColor="#333333" />
+								<Label Text="{Binding Description}" TextColor="#333333" />
+								<Label Text="{Binding Price}" TextColor="#333333" />
+								<!--<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" TextColor="#333333" />-->
+								<!--<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />	-->
+								<Label Text="{Binding Source={x:Reference stepper}, Path=Value}" TextColor="#333333" />
+
+					         </StackLayout>
+
+							<StackLayout Orientation="Horizontal" Padding="10,0,5,0" >
+								<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />
+							</StackLayout>		
+					</StackLayout>
+
+							
+			      </ViewCell>
+			    </DataTemplate>
+			  </ListView.ItemTemplate>
+			</ListView>
+
+			<StackLayout BackgroundColor="#333333" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
+				<Button 
+					TextColor="#f0efed"
+					BackgroundColor="#333333"	
+					x:Name="btnSave"	
+					Text="Save" 
+					WidthRequest="100" 
+					HeightRequest="50" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					Clicked="OnSave"
+					/>
+				
+				<Button 
+					TextColor="#f0efed"
+					BackgroundColor="#333333"	
+					x:Name="btnCancel"		
+					Text="Cancel" 
+					WidthRequest="100" 
+					HeightRequest="50" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					Clicked="OnCancel"	
+					/>
+			</StackLayout>
+			
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

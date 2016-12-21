@@ -99,6 +99,7 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "CarouselPageNavigation.Droid.dll" comes first in this list. */
 		"CarouselPageNavigation.Droid.dll",
+		"Xamarin.Android.NUnitLite.dll",
 		"Java.Interop.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
@@ -116,7 +117,14 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"SQLitePCLRaw.core.dll",
+		"SQLitePCLRaw.lib.e_sqlite3.dll",
+		"SQLitePCLRaw.provider.e_sqlite3.dll",
+		"SQLitePCLRaw.batteries_green.dll",
+		"SQLitePCLRaw.batteries_v2.dll",
+		"SQLite-net.dll",
 		"CarouselPageNavigation.dll",
+		"Xamarin.Android.NUnitLite.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
