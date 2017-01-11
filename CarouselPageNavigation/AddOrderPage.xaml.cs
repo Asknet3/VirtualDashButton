@@ -42,17 +42,6 @@ namespace CarouselPageNavigation
 			ProductsList.ItemsSource = allProductsExtended;
 			ProductsList.HasUnevenRows = true;
 			//ProductsList.IsPullToRefreshEnabled = true;
-
-
-
-			//ProductsList.ItemTapped += this.OnAdd;
-			//ProductsList.ItemTapped += (object sender, ItemTappedEventArgs e) =>
-			//{
-			//	// don't do anything if we just de-selected the row
-			//	if (e.Item == null) return;
-			//	// do something with e.SelectedItem
-			//	((ListView)sender).SelectedItem = null; // de-select the row
-			//};
 		}
 
 		public bool OrderNameExists(string orderName) {
@@ -68,6 +57,16 @@ namespace CarouselPageNavigation
 			return exists;
 		}
 
+
+
+		private void OnItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			if (e != null)
+			{
+				ProductExstended product = e.Item as ProductExstended;
+				DisplayAlert("ATTENZIONE!", "Hai selezionato " + product.Name, "OK");
+			}
+		}
 
 
 

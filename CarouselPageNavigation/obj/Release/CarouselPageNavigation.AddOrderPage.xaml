@@ -10,8 +10,8 @@
 			<Entry x:Name="entOrderName" Placeholder="Type Order Name..." BackgroundColor="#f0efed" />
 
 		
-			<ListView x:Name="ProductsList" 
-				Header="">
+			<!--<ListView x:Name="ProductsList" Header="" ItemTapped="OnItemTapped">-->
+			<ListView x:Name="ProductsList" Header="" >
 				<ListView.HeaderTemplate>
 					<DataTemplate>
 						<Grid >
@@ -42,7 +42,7 @@
 				
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
-			      <ViewCell Height="90">
+			      <ViewCell Height="95">
 			         <ViewCell.ContextActions>
 			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
 			               Text="ADD" />

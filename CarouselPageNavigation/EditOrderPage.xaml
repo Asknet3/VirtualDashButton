@@ -14,10 +14,10 @@
 			<ListView x:Name="ProductList" >
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
-			      <ViewCell BindingContextChanged="OnBindingContextChanged">
+			      <ViewCell>
 			         <ViewCell.ContextActions>
-			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" 
-			               	Text="ADD" />
+			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" Text="ADD"/>
+						<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="DELETE" />
 			         </ViewCell.ContextActions>
 
 						<Grid BackgroundColor="#f0efed">
@@ -33,9 +33,9 @@
 									<Label Text="{Binding Name}" TextColor="#333333" />
 									<Label Text="{Binding Description}" TextColor="#333333" />
 									<Label Text="{Binding Price}" TextColor="#333333" />
-									<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}" IsVisible="{Binding isInOrder}"  />	
+									<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}" />	
 									<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" IsVisible="{Binding IsVisible}" TextColor="#333333" />
-									<Label Text="{Binding TextContainsInList}" IsVisible="{Binding isInOrder}" TextColor="#333333" />
+									<Label Text="{Binding TextContainsInList}" TextColor="#333333" />
 					         	</StackLayout>
 							</StackLayout>	
 						</Grid>
@@ -54,6 +54,7 @@
 					HeightRequest="50" 
 					HorizontalOptions="FillAndExpand"
 					VerticalOptions="FillAndExpand"
+					Clicked="OnSave"
 					/>
 				
 				<Button 

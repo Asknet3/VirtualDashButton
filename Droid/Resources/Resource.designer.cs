@@ -26,7 +26,6 @@ namespace CarouselPageNavigation.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CarouselPageNavigation.Droid.Resource.Attribute.actionBarSize;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionHostName = global::CarouselPageNavigation.Droid.Resource.Id.OptionHostName;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionPort = global::CarouselPageNavigation.Droid.Resource.Id.OptionPort;
 			global::Xamarin.Android.NUnitLite.Resource.Id.OptionRemoteServer = global::CarouselPageNavigation.Droid.Resource.Id.OptionRemoteServer;
@@ -49,6 +48,7 @@ namespace CarouselPageNavigation.Droid
 			global::Xamarin.Android.NUnitLite.Resource.Layout.results = global::CarouselPageNavigation.Droid.Resource.Layout.results;
 			global::Xamarin.Android.NUnitLite.Resource.Layout.test_result = global::CarouselPageNavigation.Droid.Resource.Layout.test_result;
 			global::Xamarin.Android.NUnitLite.Resource.Layout.test_suite = global::CarouselPageNavigation.Droid.Resource.Layout.test_suite;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CarouselPageNavigation.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
