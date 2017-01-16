@@ -55,7 +55,8 @@ namespace CarouselPageNavigation
 				{
 					Description = "un prodotto di test",
 					Name = "Prod Test",
-					Price = "€15,00"
+					Price = "€15,00",
+					Img="Dek.png"
 				};
 				database.Insert(p1);
 
@@ -63,7 +64,8 @@ namespace CarouselPageNavigation
 				{
 					Description = "secondo prodotto di test",
 					Name = "Prod2 Test",
-					Price = "€13,00"
+					Price = "€13,00",
+					Img = "Espresso_magia.png"
 				};
 				database.Insert(p2);
 
@@ -71,7 +73,8 @@ namespace CarouselPageNavigation
 				{
 					Description = "terzo prodotto di test",
 					Name = "Prod3 Test",
-					Price = "€8,00"
+					Price = "€8,00",
+					Img = "Dek.png"
 				};
 				database.Insert(p3);
 			}

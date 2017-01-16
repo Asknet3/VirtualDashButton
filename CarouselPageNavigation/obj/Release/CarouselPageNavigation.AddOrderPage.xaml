@@ -81,6 +81,21 @@
 				<Button 
 					TextColor="#f0efed"
 					BackgroundColor="#333333"	
+					x:Name="btnCancel"		
+					Text="Cancel" 
+					WidthRequest="100" 
+					HeightRequest="50" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					Clicked="OnCancel"	
+					/>
+
+
+
+				<Button 
+					BorderRadius="0"
+					TextColor="#f0efed"
+					BackgroundColor="#4caa77"	
 					x:Name="btnSave"	
 					Text="Save" 
 					WidthRequest="100" 
@@ -90,17 +105,6 @@
 					Clicked="OnSave"
 					/>
 				
-				<Button 
-					TextColor="#f0efed"
-					BackgroundColor="#333333"	
-					x:Name="btnCancel"		
-					Text="Cancel" 
-					WidthRequest="100" 
-					HeightRequest="50" 
-					HorizontalOptions="FillAndExpand"
-					VerticalOptions="FillAndExpand"
-					Clicked="OnCancel"	
-					/>
 			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>

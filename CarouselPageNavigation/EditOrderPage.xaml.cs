@@ -42,6 +42,11 @@ namespace CarouselPageNavigation
 			ProductsInList = database.Query<ProductExstended>("SELECT * FROM OrdiniProdotti as op, Product as p, Ordini as o WHERE op.Id_prodotto = p.Id AND op.Id_ordine = o.Id_ordine AND o.Nome_ordine='" + name + "'");
 			countProducts.Text = "Tot Products: " + ProductsInList.Count.ToString(); // Numero di prodotti già inseriti nell'ordine
 
+			if (Device.OS == TargetPlatform.iOS)
+				oabstract.Text = "Select or Deselect products from list below by swiping left";
+			else if (Device.OS == TargetPlatform.Android)
+				oabstract.Text = "Select or Deselect products from list below by longpress on product";
+
 			ProductsNOTInList = database.Query<ProductExstended>("SELECT * FROM Product as p, OrdiniProdotti as op ON op.Id_prodotto = p.Id, Ordini as o on op.Id_ordine = o.Id_ordine WHERE o.Nome_ordine !='" + name +"'");
 
 			//ObservableCollection<ExtendedProductsDataModel> all_products = ExtendedProductsDataModel.All;
@@ -49,7 +54,7 @@ namespace CarouselPageNavigation
 			// Segno i prodotti in Ordine assegnandogli una stringa di testo
 			foreach (ProductExstended p in ProductsInList)
 			{
-				p.TextContainsInList = "** GIA' IN ORDINE **";
+				p.TextContainsInList = "** IN ORDINE **";
 			}
 
 

@@ -23,6 +23,9 @@ namespace CarouselPageNavigation
 		{
 			InitializeComponent();
 
+			// Catturo l'elemento selezionato al Tap
+			ProductsList.ItemTapped += this.OnItemTapped;
+
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
 
@@ -64,6 +67,9 @@ namespace CarouselPageNavigation
 			if (e != null)
 			{
 				ProductExstended product = e.Item as ProductExstended;
+
+				ProductsList.SelectedItem = product;
+
 				DisplayAlert("ATTENZIONE!", "Hai selezionato " + product.Name, "OK");
 			}
 		}
@@ -72,7 +78,10 @@ namespace CarouselPageNavigation
 
 		public void OnAdd(object sender, EventArgs e)
 		{
-			if (ProductsList.SelectedItem != null)
+			var mi = ((MenuItem)sender);
+
+			//if (ProductsList.SelectedItem != null)
+			if (mi != null)
 			{
 				if (OrderNameExists(entOrderName.Text))
 				{
@@ -80,27 +89,23 @@ namespace CarouselPageNavigation
 				}
 				else
 				{
-					ProductExstended p = (ProductExstended)ProductsList.SelectedItem;
+					//ProductExstended p = (ProductExstended)ProductsList.SelectedItem;
+
+					ProductExstended p = (ProductExstended)mi.CommandParameter;
 
 					//EditOrderDataModel p2 = (EditOrderDataModel)ProductsList.SelectedItem;
 
 
-
-					// Creo il prodotto e lo aggiungo alla lista dei prodotti da aggiungere all'ordine 
+					// Creo il prodotto
 					OrdiniProdotti prodToAdd = new OrdiniProdotti {Id_prodotto=p.Id, Quantity=p.Quantity};
-					//prodToAdd.Quantity = qt;
 
-
-					ListProdToAdd.Add(prodToAdd);
-
-
-					//EditOrderDataModel myProduct = new EditOrderDataModel { product = p };
-					//prodListToAdd.Add(myProduct);
+					//Aggiungo il prodotto  alla lista dei prodotti da aggiungere all'ordine solo se non già presente
+					if(!AlreadyInList(p.Id, ListProdToAdd))
+						ListProdToAdd.Add(prodToAdd);
 
 					DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
 
 					allProductsExtended.Remove(p);  // Aggiorno la lista dopo aver aggiunto il prodotto.
-
 				}
 			}
 			else
@@ -143,8 +148,21 @@ namespace CarouselPageNavigation
 				database.Insert(prodToAdd);
 			}
 
-
 			Navigation.PopModalAsync();
+		}
+
+
+		// Verifica che 
+		public bool AlreadyInList(int id, ObservableCollection<OrdiniProdotti> list)
+		{
+			foreach (OrdiniProdotti op in list)
+			{
+				if (op.Id_prodotto == id)
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 
 	}
