@@ -385,7 +385,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "230DD065-223A-4E13-B08A-C89BD0F0486B"
+	.asciz "5F7AE7C4-4093-448C-9244-1A0806EB7CF1"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -468,7 +468,7 @@ _mono_aot_file_info:
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 191,94,70,167,223,209,81,227,3,75,167,166,163,255,161,175
+	.byte 2,69,255,222,148,39,135,240,213,152,71,163,92,223,91,103
 	.globl _mono_aot_module_CarouselPageNavigationiOS_info
 	.align 2
 _mono_aot_module_CarouselPageNavigationiOS_info:

@@ -60,11 +60,12 @@
 		               Text="Delete" IsDestructive="True" CommandParameter="{Binding RecordIdentifier}" />
 		         </ViewCell.ContextActions>
 		         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="10,0,10,0">
-					<Label Text="{Binding orderName}" TextColor="#333333" />
-						<StackLayout Orientation="Horizontal">
-							<Label Text="N. of Products: " TextColor="#333333" />
-							<Label Text="{Binding products.Count}" TextColor="#333333" />
-						</StackLayout>
+		         		<Label Text="{Binding Id_ordine}" IsVisible="false" />
+						<Label Text="{Binding Nome_ordine}" TextColor="#333333" />
+						<!--<StackLayout Orientation="Horizontal">-->
+							<!--<Label Text="N. of Products: " TextColor="#333333" />-->
+							<!--<Label Text="{Binding products.Count}" TextColor="#333333" />-->
+						<!--</StackLayout>-->
 		         </StackLayout>
 		      </ViewCell>
 		    </DataTemplate>

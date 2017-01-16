@@ -5,45 +5,51 @@
 	</ContentPage.Padding>
 	
 	<ContentPage.Content>
-		<StackLayout Padding="0,0,0,0" Orientation="Vertical" BackgroundColor="#f0efed">
-			<Entry x:Name="entOrderName"  Placeholder="Type Order Name..." />
-			<StackLayout BackgroundColor="#f0efed" Padding="10,0,10,0">
-				<Label 
-					Text="{Binding Name}" 
-					FontSize="15" 
-					TextColor="#333333" >
-				</Label>
-				<Label 
-					Text="Select or deselect products from" 
-					FontSize="15" 
-					TextColor="#333333" >
-				</Label>
 
-				<Label 
-					Text="list below by swiping right" 
-					FontSize="15" 
-					TextColor="#333333" >
-				</Label>
-	
-				<ContentView Padding="0,10,0,0">
-					<Label 
-						Text="PRODUCTS" 
-						FontSize="20" 
-						TextColor="#333333" />
-				</ContentView>
-			</StackLayout>
+		<StackLayout Padding="0,0,0,0" Orientation="Vertical" BackgroundColor="#f0efed">
+			<Entry x:Name="entOrderName" Placeholder="Type Order Name..." BackgroundColor="#f0efed" />
+
 		
-			<ListView x:Name="ProductsList">
+			<!--<ListView x:Name="ProductsList" Header="" ItemTapped="OnItemTapped">-->
+			<ListView x:Name="ProductsList" Header="" >
+				<ListView.HeaderTemplate>
+					<DataTemplate>
+						<Grid >
+							<StackLayout BackgroundColor="#f0efed" Padding="10,0,10,0">
+								<!-- <Label Text="{Binding Name}" FontSize="15" TextColor="#333333" /> -->
+								<Label 
+									Text="Select or deselect products from" 
+									FontSize="15" 
+									TextColor="#333333" >
+								</Label>
+
+								<Label 
+									Text="list below by swiping right" 
+									FontSize="15" 
+									TextColor="#333333" >
+								</Label>
+					
+								<ContentView Padding="0,10,0,0">
+									<Label 
+										Text="PRODUCTS" 
+										FontSize="20" 
+										TextColor="#333333" />
+								</ContentView>
+							</StackLayout>
+						</Grid>
+					</DataTemplate>
+				</ListView.HeaderTemplate>
+				
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
-			      <ViewCell Height="90">
+			      <ViewCell Height="95">
 			         <ViewCell.ContextActions>
 			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"
 			               Text="ADD" />
 			         </ViewCell.ContextActions>
 
 
-			         <StackLayout Orientation="Horizontal" Padding="10,5,0,5" >
+			         <StackLayout Orientation="Horizontal" Padding="3,5,0,5" >
 							<StackLayout Orientation="Horizontal">
 								<Image Source="{Binding Img}" />
 							</StackLayout>
@@ -52,9 +58,9 @@
 								<!--<ContentView HorizontalOptions="Start">
 								</ContentView>-->
 								<Label Text="{Binding Id_prodotto}" IsVisible='false' TextColor="#333333" />
-								<Label Text="{Binding Name}" TextColor="#333333" />
-								<Label Text="{Binding Description}" TextColor="#333333" />
-								<Label Text="{Binding Price}" TextColor="#333333" />
+								<Label Text="{Binding Name}" FontSize="14" TextColor="#333333" />
+								<Label Text="{Binding Description}" FontSize="12" TextColor="#333333" />
+								<Label Text="{Binding Price}" FontSize="13" TextColor="#333333" />
 								<!--<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" TextColor="#333333" />-->
 								<!--<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />	-->
 					         </StackLayout>
@@ -75,6 +81,21 @@
 				<Button 
 					TextColor="#f0efed"
 					BackgroundColor="#333333"	
+					x:Name="btnCancel"		
+					Text="Cancel" 
+					WidthRequest="100" 
+					HeightRequest="50" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					Clicked="OnCancel"	
+					/>
+
+
+
+				<Button 
+					BorderRadius="0"
+					TextColor="#f0efed"
+					BackgroundColor="#4caa77"	
 					x:Name="btnSave"	
 					Text="Save" 
 					WidthRequest="100" 
@@ -84,19 +105,7 @@
 					Clicked="OnSave"
 					/>
 				
-				<Button 
-					TextColor="#f0efed"
-					BackgroundColor="#333333"	
-					x:Name="btnCancel"		
-					Text="Cancel" 
-					WidthRequest="100" 
-					HeightRequest="50" 
-					HorizontalOptions="FillAndExpand"
-					VerticalOptions="FillAndExpand"
-					Clicked="OnCancel"	
-					/>
 			</StackLayout>
-			
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

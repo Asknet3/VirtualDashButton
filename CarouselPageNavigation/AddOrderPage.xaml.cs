@@ -23,6 +23,9 @@ namespace CarouselPageNavigation
 		{
 			InitializeComponent();
 
+			// Catturo l'elemento selezionato al Tap
+			ProductsList.ItemTapped += this.OnItemTapped;
+
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
 
@@ -42,17 +45,6 @@ namespace CarouselPageNavigation
 			ProductsList.ItemsSource = allProductsExtended;
 			ProductsList.HasUnevenRows = true;
 			//ProductsList.IsPullToRefreshEnabled = true;
-
-
-
-			//ProductsList.ItemTapped += this.OnAdd;
-			//ProductsList.ItemTapped += (object sender, ItemTappedEventArgs e) =>
-			//{
-			//	// don't do anything if we just de-selected the row
-			//	if (e.Item == null) return;
-			//	// do something with e.SelectedItem
-			//	((ListView)sender).SelectedItem = null; // de-select the row
-			//};
 		}
 
 		public bool OrderNameExists(string orderName) {
@@ -70,10 +62,26 @@ namespace CarouselPageNavigation
 
 
 
+		private void OnItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			if (e != null)
+			{
+				ProductExstended product = e.Item as ProductExstended;
+
+				ProductsList.SelectedItem = product;
+
+				DisplayAlert("ATTENZIONE!", "Hai selezionato " + product.Name, "OK");
+			}
+		}
+
+
 
 		public void OnAdd(object sender, EventArgs e)
 		{
-			if (ProductsList.SelectedItem != null)
+			var mi = ((MenuItem)sender);
+
+			//if (ProductsList.SelectedItem != null)
+			if (mi != null)
 			{
 				if (OrderNameExists(entOrderName.Text))
 				{
@@ -81,27 +89,23 @@ namespace CarouselPageNavigation
 				}
 				else
 				{
-					ProductExstended p = (ProductExstended)ProductsList.SelectedItem;
+					//ProductExstended p = (ProductExstended)ProductsList.SelectedItem;
+
+					ProductExstended p = (ProductExstended)mi.CommandParameter;
 
 					//EditOrderDataModel p2 = (EditOrderDataModel)ProductsList.SelectedItem;
 
 
-
-					// Creo il prodotto e lo aggiungo alla lista dei prodotti da aggiungere all'ordine 
+					// Creo il prodotto
 					OrdiniProdotti prodToAdd = new OrdiniProdotti {Id_prodotto=p.Id, Quantity=p.Quantity};
-					//prodToAdd.Quantity = qt;
 
-
-					ListProdToAdd.Add(prodToAdd);
-
-
-					//EditOrderDataModel myProduct = new EditOrderDataModel { product = p };
-					//prodListToAdd.Add(myProduct);
+					//Aggiungo il prodotto  alla lista dei prodotti da aggiungere all'ordine solo se non già presente
+					if(!AlreadyInList(p.Id, ListProdToAdd))
+						ListProdToAdd.Add(prodToAdd);
 
 					DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
 
 					allProductsExtended.Remove(p);  // Aggiorno la lista dopo aver aggiunto il prodotto.
-
 				}
 			}
 			else
@@ -120,42 +124,17 @@ namespace CarouselPageNavigation
 
 
 
+
 		public void OnCancel(object sender, EventArgs args)
 		{
 			Navigation.PopModalAsync();
 		}
 
 
-		//public void OnSave(object sender, EventArgs args)
-		//{
-		//	OrderDataModel new_order =
-		//				new OrderDataModel
-		//				{
-		//					Id = Guid.NewGuid().ToString(),
-		//					orderName = entOrderName.Text,
-		//					products = prodListToAdd
-		//				};
-
-		//	orders.Add(new_order);
-
-		//	Navigation.PopModalAsync();
-		//}
 
 
 		public void OnSave(object sender, EventArgs args)
 		{
-			//OrderDataModel new_order =
-			//			new OrderDataModel
-			//			{
-			//				Id = Guid.NewGuid().ToString(),
-			//				orderName = entOrderName.Text,
-			//				products = prodListToAdd
-			//			};
-
-			//orders.Add(new_order);
-
-
-
 			// Aggiungo l'ordine appena creato
 			newOrder.Nome_ordine = entOrderName.Text;
 			database.Insert(newOrder);
@@ -169,8 +148,21 @@ namespace CarouselPageNavigation
 				database.Insert(prodToAdd);
 			}
 
-
 			Navigation.PopModalAsync();
+		}
+
+
+		// Verifica che 
+		public bool AlreadyInList(int id, ObservableCollection<OrdiniProdotti> list)
+		{
+			foreach (OrdiniProdotti op in list)
+			{
+				if (op.Id_prodotto == id)
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 
 	}

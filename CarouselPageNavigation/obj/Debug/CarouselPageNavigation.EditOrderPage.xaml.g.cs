@@ -23,22 +23,26 @@ namespace CarouselPageNavigation {
         private global::Xamarin.Forms.Label countProducts;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label oabstract;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ListView ProductList;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button btnSave;
+        private global::Xamarin.Forms.Button btnCancel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button btnCancel;
+        private global::Xamarin.Forms.Button btnSave;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(EditOrderPage));
             oName = this.FindByName <global::Xamarin.Forms.Label>("oName");
             countProducts = this.FindByName <global::Xamarin.Forms.Label>("countProducts");
+            oabstract = this.FindByName <global::Xamarin.Forms.Label>("oabstract");
             ProductList = this.FindByName <global::Xamarin.Forms.ListView>("ProductList");
-            btnSave = this.FindByName <global::Xamarin.Forms.Button>("btnSave");
             btnCancel = this.FindByName <global::Xamarin.Forms.Button>("btnCancel");
+            btnSave = this.FindByName <global::Xamarin.Forms.Button>("btnSave");
         }
     }
 }

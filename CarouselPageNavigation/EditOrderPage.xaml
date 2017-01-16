@@ -6,56 +6,56 @@
 	</ContentPage.Padding>
 	
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#f0efed">
-
-			<Label x:Name="oName" Text="" TextColor="#333333"  />
-			<Label x:Name="countProducts" Text="" TextColor="#333333"  />
+		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
+			<StackLayout Padding="3,5,0,5" VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#f0efed" >
+				<Label x:Name="oName" Text="" TextColor="#333333" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+				<Label x:Name="countProducts" Text="" TextColor="#333333" FontSize="13" />
+				<Label x:Name="oabstract" Text="" TextColor="#888" FontSize="14" HorizontalOptions='StartAndExpand' WidthRequest="280" />
+			</StackLayout>
 			<!--<ListView x:Name="ProductList" CachingStrategy="RecycleElement" >-->
 			<ListView x:Name="ProductList" >
 			  <ListView.ItemTemplate>
 			    <DataTemplate>
-			      <ViewCell BindingContextChanged="OnBindingContextChanged">
+			      <ViewCell>
 			         <ViewCell.ContextActions>
-			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" 
-			               	Text="ADD" />
+			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" Text="ADD"/>
+						<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="DELETE" IsDestructive="true" />
 			         </ViewCell.ContextActions>
 
-						<Grid BackgroundColor="#f0efed">
-							<StackLayout Orientation="Horizontal" Padding="10,5,0,5" BackgroundColor="#f0efed" >
-								<StackLayout Orientation="Horizontal" BackgroundColor="#f0efed">
-								<!--<ContentView HorizontalOptions="Start">-->
-									<!--<Image Grid.Column="0" Source="Checked.png" Margin="5" IsVisible="{Binding IsChecked}"/>
-	                                <Image Grid.Column="0" Source="Unchecked.png" Margin="5" IsVisible="{Binding UnChecked}"/>		-->
-									<Image Source="{Binding Img}" />
-								<!--</ContentView>-->
+						<Grid>
+							<StackLayout Orientation="Vertical" Padding="3,5,0,5" HorizontalOptions='FillAndExpand' >
+								<StackLayout Orientation="Horizontal" Padding="10,5,0,2"  HorizontalOptions='FillAndExpand' >
+									<StackLayout Orientation="Horizontal" >
+										<Image Source="{Binding Img}" />
+										<!--<Image Source="Dek.png" />-->
+									</StackLayout>
+										
+									<StackLayout Orientation="Vertical" HorizontalOptions='FillAndExpand' >
+										<Label Text="{Binding Name}" FontSize="14" FontAttributes="Bold" TextColor="#333333" />
+										<Label Text="{Binding Description}" TextColor="#333333" FontSize="12" HorizontalOptions='StartAndExpand' WidthRequest="150" />
+										<Label Text="{Binding Price}" FontSize="13" TextColor="#333333" />
+									</StackLayout>
+
+									<StackLayout Orientation="Vertical" Padding="3,0,3,0" VerticalOptions='Center' HorizontalOptions='EndAndExpand' >
+										<Label BindingContext="{x:Reference Name=stepper}" FontSize="14" Text="{Binding Value}" IsVisible="{Binding IsVisible}" TextColor="#333333" HorizontalOptions='CenterAndExpand' />	
+										<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}" HorizontalOptions='Center' />	
+							        </StackLayout>
+							       		
+								</StackLayout>	
+
+								<StackLayout Orientation="Vertical" Padding="10,0,0,0">
+									<Label Text="{Binding TextContainsInList}" TextColor="#55c66c" FontSize="13" FontAttributes="Bold" HorizontalOptions='Center' />
 								</StackLayout>
-								<StackLayout Orientation="Vertical" BackgroundColor="#f0efed" >
-									<Label Text="{Binding Name}" TextColor="#333333" />
-									<Label Text="{Binding Description}" TextColor="#333333" />
-									<Label Text="{Binding Price}" TextColor="#333333" />
-									<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}" IsVisible="{Binding isInOrder}"  />	
-									<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" IsVisible="{Binding IsVisible}" TextColor="#333333" />
-									<Label Text="{Binding TextContainsInList}" IsVisible="{Binding isInOrder}" TextColor="#333333" />
-					         	</StackLayout>
-							</StackLayout>	
+									
+							</StackLayout>
 						</Grid>
+							
 			      </ViewCell>
 			    </DataTemplate>
 			  </ListView.ItemTemplate>
 			</ListView>
 
 			<StackLayout BackgroundColor="#333333" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
-				<Button 
-					TextColor="#f0efed"
-					BackgroundColor="#333333"
-					x:Name="btnSave"	
-					Text="Save" 
-					WidthRequest="100" 
-					HeightRequest="50" 
-					HorizontalOptions="FillAndExpand"
-					VerticalOptions="FillAndExpand"
-					/>
-				
 				<Button 
 					TextColor="#f0efed"
 					BackgroundColor="#333333"
@@ -67,6 +67,20 @@
 					VerticalOptions="FillAndExpand"
 					Clicked="OnCancel"	
 					/>
+
+				<Button 
+					BorderRadius="0"
+					TextColor="#f0efed"
+					BackgroundColor="#4caa77"
+					x:Name="btnSave"	
+					Text="Save" 
+					WidthRequest="100" 
+					HeightRequest="50" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					Clicked="OnSave"
+					/>
+				
 			</StackLayout>
 			
 		</StackLayout>
