@@ -6,7 +6,7 @@
 	</ContentPage.Padding>
 	
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
+		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#f0efed">
 			<StackLayout Padding="3,5,0,5" VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#f0efed" >
 				<Label x:Name="oName" Text="" TextColor="#333333" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
 				<Label x:Name="countProducts" Text="" TextColor="#333333" FontSize="13" />

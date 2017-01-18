@@ -2172,7 +2172,7 @@ namespace CarouselPageNavigation.Droid
 			public const int common_plus_signin_btn_text_light_pressed = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int dek = 2130837621;
+			public const int Dek = 2130837621;
 			
 			// aapt resource value: 0x7f020076
 			public const int design_fab_background = 2130837622;
@@ -2181,7 +2181,7 @@ namespace CarouselPageNavigation.Droid
 			public const int design_snackbar_background = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int espresso_magia = 2130837624;
+			public const int Espresso_magia = 2130837624;
 			
 			// aapt resource value: 0x7f020079
 			public const int ic_audiotrack = 2130837625;

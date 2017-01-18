@@ -13,7 +13,7 @@
 	--sdk \
 	10.2 \
 	--targetver \
-	7.0 \
+	9.3 \
 	--http-message-handler=HttpClientHandler \
 	--tls-provider=default \
 	"--abi=armv7,arm64" \

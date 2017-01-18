@@ -121,6 +121,8 @@ jit_code_start:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_iOS_Application__ctor
 CarouselPageNavigation_iOS_Application__ctor:
+.file 1 "<unknown>"
+.loc 1 1 0
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -133,8 +135,7 @@ Lme_0:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_iOS_Application_Main_string__
 CarouselPageNavigation_iOS_Application_Main_string__:
-.file 1 "/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Main.cs"
-.loc 1 17 0 prologue_end
+.loc 1 1 0
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -154,6 +155,7 @@ Lme_1:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_iOS_AppDelegate__ctor
 CarouselPageNavigation_iOS_AppDelegate__ctor:
+.loc 1 1 0
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -168,15 +170,13 @@ Lme_2:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_iOS_AppDelegate_FinishedLaunching_UIKit_UIApplication_Foundation_NSDictionary
 CarouselPageNavigation_iOS_AppDelegate_FinishedLaunching_UIKit_UIApplication_Foundation_NSDictionary:
-.file 2 "/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/AppDelegate.cs"
-.loc 2 15 0 prologue_end
+.loc 1 1 0
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xf9000fa1
 .word 0xf90013a2
 bl _p_3
-.loc 2 17 0
 
 adrp x16, mono_aot_CarouselPageNavigationiOS_got@PAGE+0
 add x16, x16, mono_aot_CarouselPageNavigationiOS_got@PAGEOFF
@@ -187,7 +187,6 @@ bl _p_5
 .word 0xf9401ba1
 .word 0xf9400ba0
 bl _p_6
-.loc 2 19 0
 .word 0xf9400ba0
 .word 0xf9400fa1
 .word 0xf94013a2
@@ -202,8 +201,7 @@ Lme_3:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_iOS_SQLite_iOS__ctor
 CarouselPageNavigation_iOS_SQLite_iOS__ctor:
-.file 3 "/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/SQLite_iOS.cs"
-.loc 3 12 0 prologue_end
+.loc 1 1 0
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -216,7 +214,7 @@ Lme_4:
 	.align 4
 	.no_dead_strip CarouselPageNavigation_iOS_SQLite_iOS_GetConnection
 CarouselPageNavigation_iOS_SQLite_iOS_GetConnection:
-.loc 3 19 0 prologue_end
+.loc 1 1 0
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -225,10 +223,8 @@ adrp x16, mono_aot_CarouselPageNavigationiOS_got@PAGE+0
 add x16, x16, mono_aot_CarouselPageNavigationiOS_got@PAGEOFF
 ldr x0, [x16, #136]
 .word 0xf9001ba0
-.loc 3 20 0
 .word 0xd28000a0
 bl _p_8
-.loc 3 21 0
 
 adrp x16, mono_aot_CarouselPageNavigationiOS_got@PAGE+0
 add x16, x16, mono_aot_CarouselPageNavigationiOS_got@PAGEOFF
@@ -239,10 +235,8 @@ add x16, x16, mono_aot_CarouselPageNavigationiOS_got@PAGEOFF
 ldr x2, [x16, #152]
 bl _p_9
 .word 0xf9401ba1
-.loc 3 22 0
 bl _p_10
 .word 0xf90017a0
-.loc 3 24 0
 
 adrp x16, mono_aot_CarouselPageNavigationiOS_got@PAGE+0
 add x16, x16, mono_aot_CarouselPageNavigationiOS_got@PAGEOFF
@@ -262,7 +256,6 @@ bl _p_12
 .word 0xd2800022
 bl _p_13
 .word 0xf94013a0
-.loc 3 27 0
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
@@ -437,7 +430,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "5F7AE7C4-4093-448C-9244-1A0806EB7CF1"
+	.asciz "9C2EE8A9-965B-4CF6-9D59-76013E03EA34"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -520,7 +513,7 @@ _mono_aot_file_info:
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 249,148,37,218,26,41,50,241,91,116,233,158,154,38,212,113
+	.byte 119,246,193,93,122,159,38,40,90,63,124,207,205,180,46,82
 	.globl _mono_aot_module_CarouselPageNavigationiOS_info
 	.align 3
 _mono_aot_module_CarouselPageNavigationiOS_info:
@@ -608,7 +601,7 @@ Lfde0_end:
 	.asciz "CarouselPageNavigation.iOS.Application:Main"
 	.asciz "CarouselPageNavigation_iOS_Application_Main_string__"
 
-	.byte 1,17
+	.byte 0,0
 	.quad CarouselPageNavigation_iOS_Application_Main_string__
 	.quad Lme_1
 
@@ -5274,7 +5267,7 @@ LDIFF_SYM841=LTDIE_134 - Ldebug_info_start
 	.asciz "CarouselPageNavigation.iOS.AppDelegate:FinishedLaunching"
 	.asciz "CarouselPageNavigation_iOS_AppDelegate_FinishedLaunching_UIKit_UIApplication_Foundation_NSDictionary"
 
-	.byte 2,15
+	.byte 0,0
 	.quad CarouselPageNavigation_iOS_AppDelegate_FinishedLaunching_UIKit_UIApplication_Foundation_NSDictionary
 	.quad Lme_3
 
@@ -5340,7 +5333,7 @@ LDIFF_SYM850=LTDIE_135 - Ldebug_info_start
 	.asciz "CarouselPageNavigation.iOS.SQLite_iOS:.ctor"
 	.asciz "CarouselPageNavigation_iOS_SQLite_iOS__ctor"
 
-	.byte 3,12
+	.byte 0,0
 	.quad CarouselPageNavigation_iOS_SQLite_iOS__ctor
 	.quad Lme_4
 
@@ -5886,7 +5879,7 @@ LDIFF_SYM948=LTDIE_136 - Ldebug_info_start
 	.asciz "CarouselPageNavigation.iOS.SQLite_iOS:GetConnection"
 	.asciz "CarouselPageNavigation_iOS_SQLite_iOS_GetConnection"
 
-	.byte 3,19
+	.byte 0,0
 	.quad CarouselPageNavigation_iOS_SQLite_iOS_GetConnection
 	.quad Lme_5
 
@@ -5896,27 +5889,27 @@ LDIFF_SYM948=LTDIE_136 - Ldebug_info_start
 LDIFF_SYM949=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM949
 	.byte 0,11
-	.asciz "sqliteFilename"
+	.asciz "V_0"
 
 LDIFF_SYM950=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM950
 	.byte 0,11
-	.asciz "documentsPath"
+	.asciz "V_1"
 
 LDIFF_SYM951=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM951
 	.byte 0,11
-	.asciz "libFolder"
+	.asciz "V_2"
 
 LDIFF_SYM952=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM952
 	.byte 0,11
-	.asciz "path"
+	.asciz "V_3"
 
 LDIFF_SYM953=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM953
 	.byte 0,11
-	.asciz "conn"
+	.asciz "V_4"
 
 LDIFF_SYM954=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM954
