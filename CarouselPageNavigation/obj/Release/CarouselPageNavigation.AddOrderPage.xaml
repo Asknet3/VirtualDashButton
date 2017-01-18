@@ -49,7 +49,7 @@
 			         </ViewCell.ContextActions>
 
 
-			         <StackLayout Orientation="Horizontal" Padding="0,5,0,5" >
+			         <StackLayout Orientation="Horizontal" Padding="3,5,0,5" >
 							<StackLayout Orientation="Horizontal">
 								<Image Source="{Binding Img}" />
 							</StackLayout>
@@ -58,9 +58,9 @@
 								<!--<ContentView HorizontalOptions="Start">
 								</ContentView>-->
 								<Label Text="{Binding Id_prodotto}" IsVisible='false' TextColor="#333333" />
-								<Label Text="{Binding Name}" TextColor="#333333" />
-								<Label Text="{Binding Description}" TextColor="#333333" />
-								<Label Text="{Binding Price}" TextColor="#333333" />
+								<Label Text="{Binding Name}" FontSize="14" TextColor="#333333" />
+								<Label Text="{Binding Description}" FontSize="12" TextColor="#333333" />
+								<Label Text="{Binding Price}" FontSize="13" TextColor="#333333" />
 								<!--<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" TextColor="#333333" />-->
 								<!--<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />	-->
 					         </StackLayout>

@@ -18,6 +18,8 @@ namespace CarouselPageNavigation
 		ObservableCollection<OrdiniProdotti> ListProdToAdd = new ObservableCollection<OrdiniProdotti>();
 		ObservableCollection<OrdiniProdotti> ListProdToDelete = new ObservableCollection<OrdiniProdotti>();
 
+		ObservableCollection<ProductExstended> tmpList = new ObservableCollection<ProductExstended>();
+
 		Ordini order;
 		//Product item;
 
@@ -100,6 +102,9 @@ namespace CarouselPageNavigation
 			//}
 
 			ProductList.ItemsSource = newList;
+
+			// Creo una copia dell'attuale Lista dentro tmpList che mi servirà per refreshare la lista quando un prodotto viene selezionato
+			tmpList = newList;
 		}
 
 
@@ -120,9 +125,11 @@ namespace CarouselPageNavigation
 		// Aggiungere un nuovo prodotto all'ordine
 		public void OnAdd(object sender, EventArgs e)
 		{
-			if (ProductList.SelectedItem != null)
+			var mi = ((MenuItem)sender);
+
+			if (mi != null)
 			{
-				ProductExstended selectedProduct = ProductList.SelectedItem as ProductExstended;
+				ProductExstended selectedProduct = (ProductExstended)mi.CommandParameter;
 
 				if (ProductInOrder(selectedProduct.Id))  // Il prodotto è già presente in quest'ordine.
 				{
@@ -136,6 +143,12 @@ namespace CarouselPageNavigation
 						OrdiniProdotti prodToAdd = new OrdiniProdotti { Id_prodotto = selectedProduct.Id, Quantity = selectedProduct.Quantity };
 						ListProdToAdd.Add(prodToAdd);
 
+						// Aggiorno la lista
+						int indexSelectedProduct = tmpList.IndexOf(selectedProduct);
+						selectedProduct.TextContainsInList = "Checked";
+						tmpList[indexSelectedProduct]=selectedProduct;
+
+						ProductList.ItemsSource = tmpList;
 						DisplayAlert("Prodotto Aggiunto!", "Salva l'ordine per confermare", "OK");
 					}
 				}
@@ -154,9 +167,11 @@ namespace CarouselPageNavigation
 		// Rimuovere un prodotto dall'ordine
 		public void OnDelete(object sender, EventArgs e)
 		{
-			if (ProductList.SelectedItem != null)
+			var mi = ((MenuItem)sender);
+
+			if (mi != null)
 			{
-				ProductExstended selectedProduct = ProductList.SelectedItem as ProductExstended;
+				ProductExstended selectedProduct = (ProductExstended)mi.CommandParameter;
 
 				if (!ProductInOrder(selectedProduct.Id))  // Il prodotto NON è ancora presente in quest'ordine.
 				{
@@ -169,6 +184,9 @@ namespace CarouselPageNavigation
 						// Creo il prodotto e lo aggiungo alla lista dei prodotti da rimuovere dall'ordine 
 						OrdiniProdotti prodToDelete = new OrdiniProdotti { Id_prodotto = selectedProduct.Id, Quantity = selectedProduct.Quantity };
 						ListProdToDelete.Add(prodToDelete);
+
+						// Aggiorno la lista
+						tmpList.Remove(selectedProduct);
 
 						DisplayAlert("Prodotto rimosso dall'ordine!", "Salva per confermare", "OK");
 					}
@@ -256,6 +274,9 @@ namespace CarouselPageNavigation
 			return false;
 		}
 
+
+
+
 		public bool AlreadyInList(ProductExstended p, ObservableCollection<OrdiniProdotti> list)
 		{
 			foreach (OrdiniProdotti item in list)
@@ -270,19 +291,19 @@ namespace CarouselPageNavigation
 
 
 
-		public void ChangeElem(ProductsDataModel p, EditOrderDataModel item, List<EditOrderDataModel> list)
-		{
-			for (int i = 0; i < list.Count; i++)
-			{
-				if (list[i].product == p) 
-				{
-					// Elimino il vecchio item e lo sostituisco con il nuovo
-					list.RemoveAt(i);
-					list.Insert(i,item);
-					//list.Add(item);
-				}
-			}
-		}
+		//public void ChangeElem(ProductsDataModel p, EditOrderDataModel item, List<EditOrderDataModel> list)
+		//{
+		//	for (int i = 0; i < list.Count; i++)
+		//	{
+		//		if (list[i].product == p) 
+		//		{
+		//			// Elimino il vecchio item e lo sostituisco con il nuovo
+		//			list.RemoveAt(i);
+		//			list.Insert(i,item);
+		//			//list.Add(item);
+		//		}
+		//	}
+		//}
 
 
 		public bool ProductInOrder(int id_prodotto)

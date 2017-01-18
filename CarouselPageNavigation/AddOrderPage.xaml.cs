@@ -23,8 +23,12 @@ namespace CarouselPageNavigation
 		{
 			InitializeComponent();
 
-			// Catturo l'elemento selezionato al Tap
-			ProductsList.ItemTapped += this.OnItemTapped;
+			// Catturo l'elemento selezionato e ne elimino la selezione
+			ProductsList.ItemSelected += (sender, e) => {
+				((ListView)sender).SelectedItem = null; // de-select the row
+			};
+
+
 
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
@@ -47,6 +51,8 @@ namespace CarouselPageNavigation
 			//ProductsList.IsPullToRefreshEnabled = true;
 		}
 
+
+
 		public bool OrderNameExists(string orderName) {
 			bool exists = false;
 			foreach (Ordini order in orders)
@@ -62,17 +68,19 @@ namespace CarouselPageNavigation
 
 
 
-		private void OnItemTapped(object sender, ItemTappedEventArgs e)
-		{
-			if (e != null)
-			{
-				ProductExstended product = e.Item as ProductExstended;
 
-				ProductsList.SelectedItem = product;
 
-				DisplayAlert("ATTENZIONE!", "Hai selezionato " + product.Name, "OK");
-			}
-		}
+		//private void OnItemTapped(object sender, ItemTappedEventArgs e)
+		//{
+		//	if (e != null)
+		//	{
+		//		ProductExstended product = e.Item as ProductExstended;
+
+		//		ProductsList.SelectedItem = product;
+
+		//		DisplayAlert("ATTENZIONE!", "Hai selezionato " + product.Name, "OK");
+		//	}
+		//}
 
 
 
@@ -135,20 +143,27 @@ namespace CarouselPageNavigation
 
 		public void OnSave(object sender, EventArgs args)
 		{
-			// Aggiungo l'ordine appena creato
-			newOrder.Nome_ordine = entOrderName.Text;
-			database.Insert(newOrder);
-
-
-
-			// Aggiungo i prodotti selezionati nella rispettiva tabella del DB
-			foreach (OrdiniProdotti prodToAdd in ListProdToAdd)
+			if (entOrderName.Text != null && entOrderName.Text != string.Empty)
 			{
-				prodToAdd.Id_ordine = newOrder.Id_ordine; // Assegno ad ogni prodotto l'ID dell'ordine appena creato a cui fanno riferimento
-				database.Insert(prodToAdd);
-			}
+				// Aggiungo l'ordine appena creato
+				newOrder.Nome_ordine = entOrderName.Text;
+				database.Insert(newOrder);
 
-			Navigation.PopModalAsync();
+
+
+				// Aggiungo i prodotti selezionati nella rispettiva tabella del DB
+				foreach (OrdiniProdotti prodToAdd in ListProdToAdd)
+				{
+					prodToAdd.Id_ordine = newOrder.Id_ordine; // Assegno ad ogni prodotto l'ID dell'ordine appena creato a cui fanno riferimento
+					database.Insert(prodToAdd);
+				}
+
+				Navigation.PopModalAsync();
+			}
+			else
+			{ 
+				DisplayAlert("ATTENZIONE!", "Devi prima inserire il nome dell'ordine!", "OK");
+			}
 		}
 
 

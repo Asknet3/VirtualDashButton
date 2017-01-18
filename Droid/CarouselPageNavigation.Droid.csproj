@@ -143,8 +143,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable\dek.png" />
-    <AndroidResource Include="Resources\drawable\espresso_magia.png" />
+    <AndroidResource Include="Resources\drawable\Dek.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Espresso_magia.png" />
     <AndroidResource Include="Resources\drawable\tazzina.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>

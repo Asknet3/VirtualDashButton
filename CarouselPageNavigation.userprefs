@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{1F498E45-B00D-477C-9645-B223BA83AB35}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/AddOrderPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/EditOrderPage.xaml">
     <Files>
-      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="80" Column="4" />
-      <File FileName="CarouselPageNavigation/EditOrderPage.xaml.cs" Line="292" Column="17" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="CarouselPageNavigation/AddOrderPage.xaml" Line="52" Column="61" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="41" Column="23" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml" Line="13" Column="70" />
+      <File FileName="CarouselPageNavigation/EditOrderPage.xaml.cs" Line="183" Column="7" />
+      <File FileName="CarouselPageNavigation/EditOrderPage.xaml" Line="15" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/DeleteOrderPage.xaml.cs" relfile="CarouselPageNavigation/DeleteOrderPage.xaml.cs" line="35" column="1" />
@@ -15,6 +15,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.Droid PreferredExecutionTarget="Android.Android22" />
-  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB5E2DA8-8F3D-45AE-B9FD-637DF7319E12" />
+  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.fc86942488421af4816ddca87e45cf7b98cce8b7" />
   <MultiItemStartupConfigurations />
 </Properties>
