@@ -15,7 +15,7 @@
 	--sdk \
 	10.2 \
 	--targetver \
-	7.0 \
+	9.3 \
 	--http-message-handler=HttpClientHandler \
 	--tls-provider=default \
 	--abi=i386 \
@@ -48,6 +48,8 @@
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.3.180/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.3.180/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	-r \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
 	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Debug/CarouselPageNavigation.dll \
 	-r \
@@ -332,6 +334,8 @@
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.3.180/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.2.3.3.180/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	-r \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
 	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Debug/CarouselPageNavigation.dll \
 	--target-framework \
