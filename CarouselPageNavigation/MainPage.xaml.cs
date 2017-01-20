@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using SQLite;
 using Xamarin.Forms;
 
@@ -16,11 +19,11 @@ namespace CarouselPageNavigation
 
 		public int numOfOrders;
 
-
 		public MainPage()
 		{
 			InitializeComponent();
 			BackgroundColor = Color.FromHex("f0efed");
+
 
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
@@ -86,7 +89,7 @@ namespace CarouselPageNavigation
 			{
 				database.CreateTable<OrdiniProdotti>();
 
-				// Aggiungo i prodotti alla tabella associativa con i relativi ordini di esempio alla tabella
+				// Aggiungo i prodotti alla tabella associativa con i relativi Ordini di esempio alla tabella
 				OrdiniProdotti ord_prod1 = new OrdiniProdotti
 				{
 					Id_ordine = 1,
@@ -119,20 +122,53 @@ namespace CarouselPageNavigation
 
 			if (isFirstLoad && isFirstAppearing)
 			{
-				// Estraggo tutti gli ordini dal DB e li assegno in visualizzazione alla ListView
+				// Richiamo il WebService che contiene gli hash di Ordini e Capsule per poi confrontarli con quelli in locale. 
+				// Se diversi richiamo un Update del DB
+				List<lastUpdate> lastUpdates = Check_Last_Update();
+
+
+
+				if (true)  // ***** effettuare il confronto con l'hash nel DB locale *****   Se diversi richiamo un Update del DB
+				{
+					if (!Utility.OrderExists(database, "X-MAS Gift")) // Verifico che non esista già l'ordine che si vuole aggiungere
+					{
+						// ***** Solo per test aggiungo un nuovo ordine invece di fare l'Update. *****
+						Ordini nuovoOrdine = new Ordini();
+						nuovoOrdine.Nome_ordine = "X-MAS Gift";
+						database.Insert(nuovoOrdine);
+
+
+						// Aggiungo un prodotto di test associato a questo nuovo ordine
+						OrdiniProdotti prodToAdd = new OrdiniProdotti();
+						prodToAdd.Id_ordine = nuovoOrdine.Id_ordine;
+						prodToAdd.Id_prodotto = 1;
+						prodToAdd.Quantity = 16;
+						database.Insert(prodToAdd);
+					}
+				}
+
+
+				
+				// Estraggo tutti gli Ordini dal DB e li assegno in visualizzazione alla ListView
 				allOrders = database.Query<Ordini>("SELECT Nome_ordine FROM Ordini");
+
 				numOfOrders = allOrders.Count;
 				ItemsSource = allOrders;
 				isFirstLoad = false;
 			}
+
 		}
 
 
-		protected override void OnAppearing()
+
+
+
+		protected override  void OnAppearing()
 		{
 			base.OnAppearing();
 
-			// Estraggo tutti gli ordini dal DB e li assegno in visualizzazione alla ListView
+
+			// Estraggo tutti gli Ordini dal DB e li assegno in visualizzazione alla ListView
 			allOrders = database.Query<Ordini>("SELECT Nome_ordine FROM Ordini");
 
 			if (allOrders.Count != numOfOrders)  // Solo nel caso in cui il numero di Ordini è cambiato rispetto a quello iniziale, aggiorno la lista.
@@ -176,7 +212,7 @@ namespace CarouselPageNavigation
 
 
 
-		// Apro la pagina che gestisce la cancellazione degli ordini
+		// Apro la pagina che gestisce la cancellazione degli Ordini
 		public void DeleteOrder(object sender, EventArgs args)
 		{
 			DeleteOrderPage dop = new DeleteOrderPage();
@@ -209,6 +245,33 @@ namespace CarouselPageNavigation
 			{
 				return;
 			}
+		}
+
+
+
+		public class lastUpdate 
+		{
+			public string Ordini;
+			public string Capsule;
+		}
+
+
+
+
+		/// <summary>
+		/// Checks the last update. Richiama un WebService che restituisce il JSON contenente gli hash di Ordini e Capsule
+		/// </summary>
+		/// <returns>JSON contenente gli hash di Ordini e Capsule</returns>
+		public List<lastUpdate> Check_Last_Update()
+		{
+			string url = "http://service.dyv.mystaging.eu/Services.asmx/GetLastUpdate";
+			var uri = new Uri(url);
+
+			HttpClient hc = new HttpClient();
+			string contents = hc.GetStringAsync(uri).Result;
+			List<lastUpdate> res = JsonConvert.DeserializeObject<List<lastUpdate>>(contents);
+
+			return res;
 		}
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using SQLite;
 using Xamarin.Forms;
 
@@ -30,6 +31,18 @@ namespace CarouselPageNavigation
 				Price = price			
 			};
 			return connection.Insert(prod);
+		}
+
+
+
+		public static bool OrderExists(SQLiteConnection connection, string orderName)
+		{
+			string q = "SELECT Nome_ordine FROM Ordini WHERE Nome_ordine='" + orderName + "'";
+
+			List<Ordini> searchOrder = connection.Query<Ordini>(q);
+			if (searchOrder.Count > 0)
+				return true;
+			return false;
 		}
 
 	}
