@@ -10,13 +10,13 @@ namespace CarouselPageNavigation
 	public partial class AddOrderPage : ContentPage
 	{
 		SQLiteConnection database;
-		Ordini newOrder;
+		Bundle newOrder;
 
-		//Creo una lista di OrdiniProdotti da aggiungere che verrà usata quando si clicca sul bottone Salva
-		ObservableCollection<OrdiniProdotti> ListProdToAdd = new ObservableCollection<OrdiniProdotti>();
+		//Creo una lista di BundleProdotti da aggiungere che verrà usata quando si clicca sul bottone Salva
+		ObservableCollection<BundleProdotti> ListProdToAdd = new ObservableCollection<BundleProdotti>();
 		ObservableCollection<ProductExstended> allProductsExtended = new ObservableCollection<ProductExstended>();
 
-		List<Ordini> orders = new List<Ordini>();
+		List<Bundle> orders = new List<Bundle>();
 
 
 		public AddOrderPage()
@@ -33,16 +33,16 @@ namespace CarouselPageNavigation
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
 
-			orders = database.Query<Ordini>("SELECT Nome_ordine FROM Ordini");
+			orders = database.Query<Bundle>("SELECT name FROM Bundle");
 
 			// Preparo un ordine dentro cui verranno aggiunti i prodotti selezionati dall'utente
-			newOrder = new Ordini();
+			newOrder = new Bundle();
 
 			var allProducts = database.Table<Product>(); // Lista di TUTTI i prodotti nella tabella Product del DB
 
 			foreach (Product p in allProducts)
 			{
-				ProductExstended pe = new ProductExstended { Id =p.Id, Description = p.Description, Img = p.Img, Name = p.Name, Price = p.Price, Product_id = p.Product_id };
+				ProductExstended pe = new ProductExstended { id =p.id, description = p.description, image = p.image, name = p.name, price = p.price, sku = p.sku, priority=p.sku};
 				allProductsExtended.Add(pe);
 			}
 
@@ -55,9 +55,9 @@ namespace CarouselPageNavigation
 
 		public bool OrderNameExists(string orderName) {
 			bool exists = false;
-			foreach (Ordini order in orders)
+			foreach (Bundle order in orders)
 			{
-				if (order.Nome_ordine.ToLowerInvariant().Equals(orderName))
+				if (order.name.ToLowerInvariant().Equals(orderName))
 				{
 					exists = true;
 					break;
@@ -104,11 +104,11 @@ namespace CarouselPageNavigation
 					//EditOrderDataModel p2 = (EditOrderDataModel)ProductsList.SelectedItem;
 
 
-					// Creo il prodotto
-					OrdiniProdotti prodToAdd = new OrdiniProdotti {Id_prodotto=p.Id, Quantity=p.Quantity};
+					// Creo l'associazione Bundle-Prodotti 
+					BundleProdotti prodToAdd = new BundleProdotti {id_capsule=p.id, quantity=p.quantity};
 
 					//Aggiungo il prodotto  alla lista dei prodotti da aggiungere all'ordine solo se non già presente
-					if(!AlreadyInList(p.Id, ListProdToAdd))
+					if(!AlreadyInList(p.id, ListProdToAdd))
 						ListProdToAdd.Add(prodToAdd);
 
 					DisplayAlert("Prodotto Aggiunto!", "Adesso potrai effettuare il tuo ordine con un semplic click!", "OK");
@@ -146,16 +146,25 @@ namespace CarouselPageNavigation
 			if (entOrderName.Text != null && entOrderName.Text != string.Empty)
 			{
 				// Aggiungo l'ordine appena creato
-				newOrder.Nome_ordine = entOrderName.Text;
-				database.Insert(newOrder);
+				newOrder.name = entOrderName.Text;
 
+				string sku = newOrder.sku == null ? "": newOrder.sku;
+				string name = newOrder.name == null ? "" : newOrder.name;
+				string description = newOrder.description == null ? "" : newOrder.description;
+				string image = newOrder.image == null ? "" : newOrder.image;
+				string price = newOrder.price == null ? "" : newOrder.price;
+				int priority = newOrder.priority == 0 ? 50 : newOrder.priority;
+
+				database.Query<int>("INSERT INTO Bundle (sku, name, description, image, price, priority, by_admin) VALUES ('" + sku  +  "', '" + name  +  "', '" + description +  "', '" + image + "', '" + price +  "', " + priority + ", 0)");
+
+				string sql = @"SELECT MAX(rowId) FROM Bundle";
+				long id_bundle = database.ExecuteScalar<Int64>(sql);
 
 
 				// Aggiungo i prodotti selezionati nella rispettiva tabella del DB
-				foreach (OrdiniProdotti prodToAdd in ListProdToAdd)
+				foreach (BundleProdotti prodToAdd in ListProdToAdd)
 				{
-					prodToAdd.Id_ordine = newOrder.Id_ordine; // Assegno ad ogni prodotto l'ID dell'ordine appena creato a cui fanno riferimento
-					database.Insert(prodToAdd);
+					database.Query<Bundle>("INSERT INTO BundleProdotti  VALUES (" + id_bundle + ", " + prodToAdd.id_capsule + ", " + prodToAdd.quantity  + ")");
 				}
 
 				Navigation.PopModalAsync();
@@ -168,11 +177,11 @@ namespace CarouselPageNavigation
 
 
 		// Verifica che 
-		public bool AlreadyInList(int id, ObservableCollection<OrdiniProdotti> list)
+		public bool AlreadyInList(int id, ObservableCollection<BundleProdotti> list)
 		{
-			foreach (OrdiniProdotti op in list)
+			foreach (BundleProdotti op in list)
 			{
-				if (op.Id_prodotto == id)
+				if (op.id_capsule == id)
 				{
 					return true;
 				}

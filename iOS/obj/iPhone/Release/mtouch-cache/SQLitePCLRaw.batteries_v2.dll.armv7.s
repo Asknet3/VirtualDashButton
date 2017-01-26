@@ -126,9 +126,7 @@ SQLitePCL_Batteries_V2_Init:
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,159,229,0,0,0,234
 	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 48
-	.byte 0,0,159,231,0,0,208,229,0,15,80,227,15,0,0,26,0,0,159,229,0,0,0,234
-	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 52
-	.byte 0,0,159,231,13,31,160,227
+	.byte 0,0,159,231,14,31,160,227
 bl _p_1
 
 	.byte 0,0,141,229
@@ -137,20 +135,9 @@ bl _p_2
 	.byte 0,0,157,229
 bl _p_3
 
-	.byte 0,0,159,229,0,0,0,234
-	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 48
-	.byte 0,0,159,231,64,19,160,227,0,16,192,229,3,223,141,226,0,1,189,232,128,128,189,232
+	.byte 3,223,141,226,0,1,189,232,128,128,189,232
 
 Lme_0:
-.text
-	.align 2
-	.no_dead_strip SQLitePCL_Batteries_V2__cctor
-SQLitePCL_Batteries_V2__cctor:
-.loc 1 1 0
-
-	.byte 128,64,45,233,13,112,160,225,0,1,45,233,1,223,77,226,1,223,141,226,0,1,189,232,128,128,189,232
-
-Lme_1:
 .text
 	.align 3
 jit_code_end:
@@ -161,7 +148,6 @@ jit_code_end:
 method_addresses:
 	.no_dead_strip method_addresses
 bl SQLitePCL_Batteries_V2_Init
-bl SQLitePCL_Batteries_V2__cctor
 bl method_addresses
 method_addresses_end:
 
@@ -180,8 +166,7 @@ unbox_trampoline_addresses:
 	.align 3
 unwind_info:
 
-	.byte 31,12,13,0,68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,2,92,10,68,14,12,68,8,8,14,8,68,11
-	.byte 29,12,13,0,68,14,8,135,2,72,14,12,136,3,142,1,68,14,16,10,68,14,12,68,8,8,14,8,68,11
+	.byte 31,12,13,0,68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,2,40,10,68,14,12,68,8,8,14,8,68,11
 
 .text
 	.align 4
@@ -192,23 +177,23 @@ plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_1:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 68,257
+	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 64,245
 	.no_dead_strip plt_SQLitePCL_SQLite3Provider_sqlite3__ctor
 plt_SQLitePCL_SQLite3Provider_sqlite3__ctor:
 _p_2:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 72,265
+	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 68,253
 	.no_dead_strip plt_SQLitePCL_raw_SetProvider_SQLitePCL_ISQLite3Provider
 plt_SQLitePCL_raw_SetProvider_SQLitePCL_ISQLite3Provider:
 _p_3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 76,270
+	.long mono_aot_SQLitePCLRaw_batteries_v2_got - . + 72,258
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_SQLitePCLRaw_batteries_v2_got, 84
+.lcomm mono_aot_SQLitePCLRaw_batteries_v2_got, 80
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -231,7 +216,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "0AA59D4F-ADF5-4551-AFFE-437426FAB836"
+	.asciz "AB353769-47BB-4B2F-9A54-AFF6E2ECC138"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -308,13 +293,13 @@ _mono_aot_file_info:
 	.align 2
 	.long unbox_trampoline_addresses
 
-	.long 17,84,4,3,66,387000831,0,312
-	.long 128,4,4,10,0,15,1064,744
+	.long 16,80,4,2,66,387000831,0,296
+	.long 128,4,4,10,0,15,1048,744
 	.long 336,184,0,280,312,240,0,176
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 208,108,27,131,234,134,149,253,242,46,171,70,131,70,215,131
+	.byte 94,229,126,200,36,182,115,125,28,196,253,247,120,85,43,17
 	.globl _mono_aot_module_SQLitePCLRaw_batteries_v2_info
 	.align 2
 _mono_aot_module_SQLitePCLRaw_batteries_v2_info:
@@ -344,37 +329,9 @@ Lfde0_start:
 
 LDIFF_SYM4=Lme_0 - SQLitePCL_Batteries_V2_Init
 	.long LDIFF_SYM4
-	.byte 68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,2,92,10,68,14,12,68,8,8,14,8,68,11
+	.byte 68,14,8,135,2,72,14,12,136,3,142,1,68,14,24,2,40,10,68,14,12,68,8,8,14,8,68,11
 	.align 2
 Lfde0_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "SQLitePCL.Batteries_V2:.cctor"
-	.asciz "SQLitePCL_Batteries_V2__cctor"
-
-	.byte 0,0
-	.long SQLitePCL_Batteries_V2__cctor
-	.long Lme_1
-
-	.byte 2,118,16,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM5=Lfde1_end - Lfde1_start
-	.long LDIFF_SYM5
-Lfde1_start:
-
-	.long 0
-	.align 2
-	.long SQLitePCL_Batteries_V2__cctor
-
-LDIFF_SYM6=Lme_1 - SQLitePCL_Batteries_V2__cctor
-	.long LDIFF_SYM6
-	.byte 68,14,8,135,2,72,14,12,136,3,142,1,68,14,16,10,68,14,12,68,8,8,14,8,68,11
-	.align 2
-Lfde1_end:
 
 .section __DWARF, __debug_info,regular,debug
 

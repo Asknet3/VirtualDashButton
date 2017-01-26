@@ -12,7 +12,7 @@ namespace CarouselPageNavigation
 		//ObservableCollection<OrderDataModel> orders = OrderDataModel.All;
 
 		SQLiteConnection database;
-		ObservableCollection<Ordini> orders = new ObservableCollection<Ordini>();
+		ObservableCollection<Bundle> orders = new ObservableCollection<Bundle>();
 
 		public DeleteOrderPage()
 		{
@@ -21,7 +21,7 @@ namespace CarouselPageNavigation
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
 
-			orders = new ObservableCollection<Ordini>(database.Query<Ordini>("SELECT * FROM Ordini"));
+			orders = new ObservableCollection<Bundle>(database.Query<Bundle>("SELECT * FROM Bundle WHERE sku IS NULL OR sku = ''"));
 
 			OrderList.ItemsSource = orders;
 			OrderList.HasUnevenRows = true;
@@ -33,19 +33,26 @@ namespace CarouselPageNavigation
 
 		public void OnDelete(object sender, EventArgs e)
 		{
-			// orders.Remove((OrderDataModel)OrderList.SelectedItem);
-			Ordini order = (Ordini)OrderList.SelectedItem;
+			var mi = ((MenuItem)sender);
 
-			int deleteOrder = database.Delete(order); // Cancella l'ordine
-			int deleteOrdiniProdotti = database.Execute("DELETE FROM OrdiniProdotti WHERE Id_ordine = ?", order.Id_ordine); // Cancella tutti i prodotti che si riferiscono a quest'ordine
-
-			if (deleteOrder > 0 && deleteOrdiniProdotti > 0)
+			//if (ProductsList.SelectedItem != null)
+			if (mi != null)
 			{
-				DisplayAlert("Ordine rimosso!", "Puoi aggiungerne un altro cliccando su ADD", "OK");
 
-				orders.Remove(order);
+				// orders.Remove((OrderDataModel)OrderList.SelectedItem);
+				Bundle order = (Bundle)mi.CommandParameter;
 
-				// Navigation.PopModalAsync();
+				int deleteOrder = database.Execute("DELETE FROM Bundle WHERE id=" + order.id); // Cancella l'ordine
+				int deleteBundleProdotti = database.Execute("DELETE FROM BundleProdotti WHERE id_bundle = ?", order.id); // Cancella tutti i prodotti che si riferiscono a quest'ordine
+
+				if (deleteOrder > 0 && deleteBundleProdotti > 0)
+				{
+					DisplayAlert("Ordine rimosso!", "Puoi aggiungerne un altro cliccando su ADD", "OK");
+
+					orders.Remove(order);
+
+					// Navigation.PopModalAsync();
+				}
 			}
 		}
 

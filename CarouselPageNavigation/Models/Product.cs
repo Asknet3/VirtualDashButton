@@ -7,14 +7,14 @@ namespace CarouselPageNavigation
 	public class Product
 	{
 		[PrimaryKey, AutoIncrement]
-		public int Id { get; set; }
+		public int id { get; set; }
 
-		public string Product_id { get; set; }
-		public string Img { get; set; }
-		public string Name { get; set; }
-		public string Description { get; set; }
-		//public Color Color { get; set; }
-		public string Price { get; set; }
+		public string sku { get; set; }
+		public string name { get; set; }
+		public string description { get; set; }
+		public string image { get; set; }
+		public string price { get; set; }
+		public string priority { get; set; }
 
 		public Product()
 		{

@@ -1,21 +1,29 @@
-﻿<Properties StartupConfiguration="{1F498E45-B00D-477C-9645-B223BA83AB35}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/Helper/Utility.cs">
+﻿<Properties StartupConfiguration="{1F498E45-B00D-477C-9645-B223BA83AB35}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/EditOrderPage.xaml.cs">
     <Files>
-      <File FileName="CarouselPageNavigation/Models/Product.cs" Line="1" Column="1" />
-      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="20" Column="1" />
-      <File FileName="CarouselPageNavigation/Models/Ordini.cs" Line="1" Column="1" />
-      <File FileName="CarouselPageNavigation/MainPage.xaml.cs" Line="75" Column="29" />
-      <File FileName="CarouselPageNavigation/DeleteOrderPage.xaml.cs" Line="24" Column="44" />
-      <File FileName="CarouselPageNavigation/EditOrderPage.xaml.cs" Line="11" Column="2" />
-      <File FileName="Droid/Assets/AboutAssets.txt" Line="9" Column="36" />
-      <File FileName="CarouselPageNavigation/Helper/Utility.cs" Line="40" Column="42" />
+      <File FileName="CarouselPageNavigation/MainPage.xaml.cs" Line="179" Column="1" />
+      <File FileName="CarouselPageNavigation/Helper/Services.cs" Line="66" Column="1" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="161" Column="1" />
+      <File FileName="CarouselPageNavigation/Models/Bundle.cs" Line="9" Column="30" />
+      <File FileName="CarouselPageNavigation/DeleteOrderPage.xaml.cs" Line="45" Column="1" />
+      <File FileName="CarouselPageNavigation/obj/Debug/CarouselPageNavigation.MainPage.xaml.g.cs" Line="1" Column="1" />
+      <File FileName="CarouselPageNavigation/Helper/Utility.cs" Line="114" Column="95" />
+      <File FileName="CarouselPageNavigation/DiscoverOrderPage.xaml" Line="41" Column="31" />
+      <File FileName="CarouselPageNavigation/Models/LastUpdate.cs" Line="6" Column="15" />
+      <File FileName="CarouselPageNavigation/App.cs" Line="10" Column="1" />
+      <File FileName="CarouselPageNavigation/MainPage.xaml" Line="44" Column="36" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml" Line="47" Column="71" />
+      <File FileName="CarouselPageNavigation/EditOrderPage.xaml.cs" Line="47" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/Helper/Utility.cs" relfile="CarouselPageNavigation/Helper/Utility.cs" line="154" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB5E2DA8-8F3D-45AE-B9FD-637DF7319E12" />
+  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.Droid PreferredExecutionTarget="Android.Android22" />
+  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.20682607-5F37-4887-BF75-D6E18E018FCF" />
   <MultiItemStartupConfigurations />
 </Properties>

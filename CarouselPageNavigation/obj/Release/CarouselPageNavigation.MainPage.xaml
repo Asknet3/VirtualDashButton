@@ -3,8 +3,7 @@
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		xmlns:controls="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-		x:Class="CarouselPageNavigation.MainPage"
-		Title="{Binding orderName}" >
+		x:Class="CarouselPageNavigation.MainPage" >
 
 	<CarouselPage.ItemTemplate>
 		
@@ -18,17 +17,33 @@
 				
 				<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0efed">
 <!--				<ActivityIndicator Color="Red"  IsRunning="{Binding Busy}" IsVisible="{Binding Busy}" VerticalOptions="Center" HorizontalOptions="Center" />-->
-					<Label Text="{Binding Nome_ordine}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,10,0,5" />
+					<Label Text="{Binding name}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,10,0,5" />
 					<Image Source="tazzina.png" />
-					<Button 
-						BackgroundColor="#478cba"
-						TextColor="#f0efed"	 
-						Text="Order Now" 
-						WidthRequest="130" 
-						HeightRequest="40" 
-						HorizontalOptions="Center" 
-						VerticalOptions="CenterAndExpand"
-						Clicked="OnBuyClicked"/>
+
+					<StackLayout VerticalOptions="FillAndExpand"  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+						<Button 
+							BackgroundColor="#478cba"
+							TextColor="#f0efed"	 
+							Text="Order Now" 
+							WidthRequest="130" 
+							HeightRequest="40" 
+							HorizontalOptions="Center" 
+							VerticalOptions="CenterAndExpand"
+							Clicked="OnBuyClicked"/>
+
+						<Button 
+							BackgroundColor="#478cba"
+							TextColor="#f0efed"	 
+							Text="Discover" 
+							WidthRequest="130" 
+							HeightRequest="40" 
+							HorizontalOptions="Center" 
+							VerticalOptions="CenterAndExpand"
+							Clicked="OnDiscoverClicked"
+							CommandParameter="{Binding id}"
+							IsVisible="{Binding by_admin}" />
+					</StackLayout>
+					
 					<!--<Label Text="{Binding Description}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
 					<Label Text="{Binding Price}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  />-->
 

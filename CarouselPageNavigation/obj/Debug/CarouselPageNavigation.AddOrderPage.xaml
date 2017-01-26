@@ -51,23 +51,23 @@
 
 			         <StackLayout Orientation="Horizontal" Padding="3,5,0,5" >
 							<StackLayout Orientation="Horizontal">
-								<Image Source="{Binding Img}" />
+								<Image Source="{Binding image}" />
 							</StackLayout>
 							
 					         <StackLayout Orientation="Vertical"  Padding="0,5,0,5" VerticalOptions="CenterAndExpand">
 								<!--<ContentView HorizontalOptions="Start">
 								</ContentView>-->
-								<Label Text="{Binding Id_prodotto}" IsVisible='false' TextColor="#333333" />
-								<Label Text="{Binding Name}" FontSize="14" TextColor="#333333" />
-								<Label Text="{Binding Description}" FontSize="12" TextColor="#333333" />
-								<Label Text="{Binding Price}" FontSize="13" TextColor="#333333" />
+								<Label Text="{Binding id}" IsVisible='false' TextColor="#333333" />
+								<Label Text="{Binding name}" FontSize="14" TextColor="#333333" />
+								<Label Text="{Binding description}" FontSize="12" TextColor="#333333" />
+								<Label Text="{Binding price}" FontSize="13" TextColor="#333333" />
 								<!--<Label BindingContext="{x:Reference Name=stepper}"  Text="{Binding Value}" TextColor="#333333" />-->
 								<!--<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />	-->
 					         </StackLayout>
 
 							<StackLayout Orientation="Vertical" Padding="3,0,3,0" VerticalOptions='Center' HorizontalOptions='EndAndExpand' >
 								<Label Text="{Binding Source={x:Reference stepper}, Path=Value}" TextColor="#333333" HorizontalOptions='Center' />
-								<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding Quantity}"  />
+								<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding quantity}"  />
 							</StackLayout>		
 					</StackLayout>
 

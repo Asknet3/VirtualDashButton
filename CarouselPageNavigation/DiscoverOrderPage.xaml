@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CarouselPageNavigation.DiscoverOrderPage">
+	<ContentPage.Padding>
+			<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+
+		<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#f0efed">
+			<StackLayout Padding="3,5,0,5" VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#f0efed" >
+				<Label x:Name="bName" Text="" TextColor="#333333" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+				<!--<Label x:Name="countProducts" Text="" TextColor="#333333" FontSize="13" />-->
+				<Label x:Name="bAbstract" Text="" TextColor="#888" FontSize="14" HorizontalOptions='StartAndExpand' WidthRequest="280" />
+			</StackLayout>
+			<!--<ListView x:Name="ProductList" CachingStrategy="RecycleElement" >-->
+			<ListView x:Name="DiscoverProductList" >
+			  <ListView.ItemTemplate>
+			    <DataTemplate>
+			      <ViewCell>
+			         <!--<ViewCell.ContextActions>
+			            <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}" Text="ADD"/>
+						<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="DELETE" IsDestructive="true" />
+			         </ViewCell.ContextActions>-->
+
+						<Grid>
+							<StackLayout Orientation="Vertical" Padding="3,5,0,5" HorizontalOptions='FillAndExpand' HeightRequest="75" >
+								<StackLayout Orientation="Horizontal" Padding="10,5,0,2"  HorizontalOptions='FillAndExpand' >
+									<StackLayout Orientation="Horizontal" >
+										<Image Source="{Binding image}" />
+										<!--<Image Source="Dek.png" />-->
+									</StackLayout>
+										
+									<StackLayout Orientation="Vertical" HorizontalOptions='FillAndExpand' >
+										<Label Text="{Binding name}" FontSize="14" FontAttributes="Bold" TextColor="#333333" />
+										<Label Text="{Binding description}" TextColor="#333333" FontSize="12" HorizontalOptions='StartAndExpand' WidthRequest="150" />
+										<Label Text="{Binding price}" FontSize="13" TextColor="#333333" />
+									</StackLayout>
+
+									<StackLayout Orientation="Horizontal" Padding="3,0,3,0" VerticalOptions='Center' HorizontalOptions='StartAndExpand' >
+										<Label FontSize="14" Text="Qt:" TextColor="#333333" HorizontalOptions='CenterAndExpand' />
+										<Label FontSize="14" Text="{Binding quantity}" TextColor="#333333" HorizontalOptions='CenterAndExpand' />	
+							        </StackLayout>	
+							       		
+								</StackLayout>	
+									
+							</StackLayout>
+						</Grid>
+							
+			      </ViewCell>
+			    </DataTemplate>
+			  </ListView.ItemTemplate>
+			</ListView>
+
+			<StackLayout BackgroundColor="#333333" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
+				<Button 
+					TextColor="#f0efed"
+					BackgroundColor="#333333"
+					x:Name="btnCancel"		
+					Text="Cancel" 
+					WidthRequest="100" 
+					HeightRequest="50" 
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					Clicked="OnCancel"	
+					/>
+			</StackLayout>
+			
+		</StackLayout>
+
+		
+	</ContentPage.Content>
+</ContentPage>
