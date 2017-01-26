@@ -7,7 +7,7 @@ namespace CarouselPageNavigation.Droid
 	[Activity(Label = "CarouselPageNavigation.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
-		protected override void OnCreate(Bundle bundle)
+		protected override void OnCreate(Android.OS.Bundle bundle)
 		{
 			base.OnCreate(bundle);
 

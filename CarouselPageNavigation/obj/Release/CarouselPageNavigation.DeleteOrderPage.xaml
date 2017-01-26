@@ -57,11 +57,11 @@
 		      <ViewCell Height="50" Tapped="OnItemTapped" >
 		         <ViewCell.ContextActions>
 		            <MenuItem Clicked="OnDelete"
-		               Text="Delete" IsDestructive="True" CommandParameter="{Binding RecordIdentifier}" />
+		               Text="Delete" IsDestructive="True" CommandParameter="{Binding .}" />
 		         </ViewCell.ContextActions>
 		         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="10,0,10,0">
-		         		<Label Text="{Binding Id_ordine}" IsVisible="false" />
-						<Label Text="{Binding Nome_ordine}" TextColor="#333333" />
+		         		<Label Text="{Binding id}" IsVisible="false" />
+						<Label Text="{Binding name}" TextColor="#333333" />
 						<!--<StackLayout Orientation="Horizontal">-->
 							<!--<Label Text="N. of Products: " TextColor="#333333" />-->
 							<!--<Label Text="{Binding products.Count}" TextColor="#333333" />-->

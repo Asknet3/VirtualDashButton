@@ -80,25 +80,12 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./LaunchImage.launchimage/(null)[2d][Default-Portrait.png]</string>
-				<string>./LaunchImage.launchimage/(null)[2d][Default-Portrait@2x.png]</string>
+				<string>./AppIcon.appiconset/[][ipad][40x40][][][2x]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Assets.xcassets</string>
 			<key>message</key>
-			<string>The launch image set "LaunchImage" has 2 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./AppIcon.appiconset/[][ipad][29x29][][][2x]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Assets.xcassets</string>
-			<key>message</key>
-			<string>The file "Icon-Small@2x.png" for the image set "AppIcon" does not exist.</string>
+			<string>The file "Icon-Small-40@2x.png" for the image set "AppIcon" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
 		</dict>
@@ -117,14 +104,27 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./AppIcon.appiconset/[][ipad][40x40][][][2x]</string>
+				<string>./AppIcon.appiconset/[][ipad][29x29][][][2x]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Assets.xcassets</string>
 			<key>message</key>
-			<string>The file "Icon-Small-40@2x.png" for the image set "AppIcon" does not exist.</string>
+			<string>The file "Icon-Small@2x.png" for the image set "AppIcon" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./LaunchImage.launchimage/(null)[2d][Default-Portrait.png]</string>
+				<string>./LaunchImage.launchimage/(null)[2d][Default-Portrait@2x.png]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>The launch image set "LaunchImage" has 2 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
 		</dict>
 	</array>
 </dict>

@@ -15,7 +15,8 @@ namespace CarouselPageNavigation
 		SQLiteConnection database;
 		bool isFirstLoad = true;
 		bool isFirstAppearing = true;
-		public List<Ordini> allOrders = new List<Ordini>();
+		public List<Bundle> allOrders = new List<Bundle>();
+		public bool ShowButton = false;
 
 		public int numOfOrders;
 
@@ -29,18 +30,17 @@ namespace CarouselPageNavigation
 			database = DependencyService.Get<ISQLite>().GetConnection();
 
 
-
-			#region Ordini
-			// Se non esiste la Tabella Ordini, la creo
-			if (!Utility.TableExists<Ordini>(database))
+			#region Bundle
+			// Se non esiste la Tabella Bundle, la creo
+			if (!Utility.TableExists<Bundle>(database))
 			{
-				database.CreateTable<Ordini>();
+				database.CreateTable<Bundle>();
 
 				// Aggiungo un elemento di esempio alla tabella
-				Ordini ordine1 = new Ordini
+				Bundle ordine1 = new Bundle
 				{
-					Data_acquisto = DateTime.Now.Date.ToString(),
-					Nome_ordine = "House"
+					name = "House",
+					priority = 50
 				};
 
 				database.Insert(ordine1);
@@ -56,63 +56,63 @@ namespace CarouselPageNavigation
 				// Aggiungo 3 prodotti di esempio alla tabella
 				Product p1 = new Product
 				{
-					Description = "un prodotto di test",
-					Name = "Prod Test",
-					Price = "€15,00",
-					Img="Dek.png"
+					description = "un prodotto di test",
+					name = "Prod Test",
+					price = "€15,00",
+					image="Dek.png"
 				};
 				database.Insert(p1);
 
 				Product p2 = new Product
 				{
-					Description = "secondo prodotto di test",
-					Name = "Prod2 Test",
-					Price = "€13,00",
-					Img = "Espresso_magia.png"
+					description = "secondo prodotto di test",
+					name = "Prod2 Test",
+					price = "€13,00",
+					image = "Espresso_magia.png"
 				};
 				database.Insert(p2);
 
 				Product p3 = new Product
 				{
-					Description = "terzo prodotto di test",
-					Name = "Prod3 Test",
-					Price = "€8,00",
-					Img = "Dek.png"
+					description = "terzo prodotto di test",
+					name = "Prod3 Test",
+					price = "€8,00",
+					image = "Dek.png"
 				};
 				database.Insert(p3);
 			}
 			#endregion
 
-			#region OrdiniProdotti
-			// Se non esiste la Tabella OrdiniProdotti, la creo
-			if (!Utility.TableExists<OrdiniProdotti>(database))
+			#region BundleProdotti
+			// Se non esiste la Tabella BundleProdotti, la creo
+			if (!Utility.TableExists<BundleProdotti>(database))
 			{
-				database.CreateTable<OrdiniProdotti>();
+				database.CreateTable<BundleProdotti>();
 
-				// Aggiungo i prodotti alla tabella associativa con i relativi Ordini di esempio alla tabella
-				OrdiniProdotti ord_prod1 = new OrdiniProdotti
+				// Aggiungo i prodotti alla tabella associativa con i relativi Bundle di esempio alla tabella
+				BundleProdotti ord_prod1 = new BundleProdotti
 				{
-					Id_ordine = 1,
-					Id_prodotto = 1,
-					Quantity = 4
+					id_bundle = 1,
+					id_capsule = 1,
+					quantity = 4
 				};
 				database.Insert(ord_prod1);
 
 				// Aggiungo qualche prodotto di esempio alla tabella
-				OrdiniProdotti ord_prod2 = new OrdiniProdotti
+				BundleProdotti ord_prod2 = new BundleProdotti
 				{
-					Id_ordine = 1,
-					Id_prodotto = 2,
-					Quantity = 3
+					id_bundle = 1,
+					id_capsule = 2,
+					quantity = 3
 				};
 				database.Insert(ord_prod2);
 
 				// Aggiungo qualche prodotto di esempio alla tabella
-				OrdiniProdotti ord_prod3 = new OrdiniProdotti
+				BundleProdotti ord_prod3 = new BundleProdotti
 				{
-					Id_ordine = 1,
-					Id_prodotto = 3,
-					Quantity = 1
+					id_bundle = 1,
+					id_capsule = 3,
+					quantity = 1
 				};
 				database.Insert(ord_prod3);
 			}
@@ -122,35 +122,38 @@ namespace CarouselPageNavigation
 
 			if (isFirstLoad && isFirstAppearing)
 			{
-				// Richiamo il WebService che contiene gli hash di Ordini e Capsule per poi confrontarli con quelli in locale. 
-				// Se diversi richiamo un Update del DB
-				List<lastUpdate> lastUpdates = Check_Last_Update();
+				/* Richiamo il WebService che contiene gli hash di Bundle e Capsule per poi confrontarli con quelli in locale. 
+			 	 * Se diversi richiamo un Update del DB */
+				#region LastUpdate
+				List<LastUpdate> remoteLastUpdates = Services.Check_Last_Update();
 
-
-
-				if (true)  // ***** effettuare il confronto con l'hash nel DB locale *****   Se diversi richiamo un Update del DB
+				if (!Utility.TableExists<LastUpdate>(database)) // Se non esiste la Tabella LastUpdate, la creo e gli assegno i valori presi dal WevService
 				{
-					if (!Utility.OrderExists(database, "X-MAS Gift")) // Verifico che non esista già l'ordine che si vuole aggiungere
-					{
-						// ***** Solo per test aggiungo un nuovo ordine invece di fare l'Update. *****
-						Ordini nuovoOrdine = new Ordini();
-						nuovoOrdine.Nome_ordine = "X-MAS Gift";
-						database.Insert(nuovoOrdine);
+					database.CreateTable<LastUpdate>();
+					LastUpdate lu = new LastUpdate();
+					lu.Bundle = lu.Capsule = ""; // inizializzo i campi della tabella
+					database.Insert(lu);
+				}
 
+				List<LastUpdate> localLastUpdate = database.Query<LastUpdate>("SELECT * FROM LastUpdate");
 
-						// Aggiungo un prodotto di test associato a questo nuovo ordine
-						OrdiniProdotti prodToAdd = new OrdiniProdotti();
-						prodToAdd.Id_ordine = nuovoOrdine.Id_ordine;
-						prodToAdd.Id_prodotto = 1;
-						prodToAdd.Quantity = 16;
-						database.Insert(prodToAdd);
-					}
+				if (localLastUpdate[0].Bundle != remoteLastUpdates[0].Bundle) // L'hash dei Bundle è cambiato
+				{
+					Utility.UpdateBundles();  // Aggiorno i Bundle in locale
 				}
 
 
+				if (localLastUpdate[0].Bundle != remoteLastUpdates[0].Bundle) // L'hash delle capsule è cambiato
+				{
+					//Utility.UpdateCapsules();  // Aggiorno le Capsule in locale
+				}
+				#endregion
+
+
+
 				
-				// Estraggo tutti gli Ordini dal DB e li assegno in visualizzazione alla ListView
-				allOrders = database.Query<Ordini>("SELECT Nome_ordine FROM Ordini");
+				// Estraggo tutti gli Bundle dal DB e li assegno in visualizzazione alla ListView
+				allOrders = database.Query<Bundle>("SELECT * FROM Bundle ORDER BY priority");
 
 				numOfOrders = allOrders.Count;
 				ItemsSource = allOrders;
@@ -168,10 +171,10 @@ namespace CarouselPageNavigation
 			base.OnAppearing();
 
 
-			// Estraggo tutti gli Ordini dal DB e li assegno in visualizzazione alla ListView
-			allOrders = database.Query<Ordini>("SELECT Nome_ordine FROM Ordini");
+			// Estraggo tutti gli Bundle dal DB e li assegno in visualizzazione alla ListView
+			allOrders = database.Query<Bundle>("SELECT * FROM Bundle ORDER BY priority");
 
-			if (allOrders.Count != numOfOrders)  // Solo nel caso in cui il numero di Ordini è cambiato rispetto a quello iniziale, aggiorno la lista.
+			if (allOrders.Count != numOfOrders)  // Solo nel caso in cui il numero di Bundle è cambiato rispetto a quello iniziale, aggiorno la lista.
 			{
 				ItemsSource = allOrders;
 
@@ -180,6 +183,8 @@ namespace CarouselPageNavigation
 
 			isFirstAppearing = false;
 		}
+
+
 
 
 
@@ -201,6 +206,30 @@ namespace CarouselPageNavigation
 
 
 
+
+		// Evento alla pressione del Button OrderNow
+		public async void OnDiscoverClicked(object sender, EventArgs args)
+		{
+			//EditOrderPage eop = new EditOrderPage(id_bundle);
+
+			//await Navigation.PushModalAsync(eop);
+
+			int id_bundle= (Int32)((Button)sender).CommandParameter;
+
+			//List<Bundle>discoverBundle = database.Query<Bundle>("SELECT * FROM Bundle WHERE id=" + id_bundle);
+
+			// *********  Da implementare:  apertura nuova pagina simile a EditOrderpage che conterrà la lista dei prodotti facenti parte del Bundle  *********
+
+			DiscoverOrderPage dop = new DiscoverOrderPage(id_bundle);
+			await Navigation.PushModalAsync(dop);
+
+		}
+
+
+
+
+
+
 		// Apro la pagina che gestisce l'inserimento di un nuovo ordine
 		public void AddOrder(object sender, EventArgs args)
 		{
@@ -212,7 +241,8 @@ namespace CarouselPageNavigation
 
 
 
-		// Apro la pagina che gestisce la cancellazione degli Ordini
+
+		// Apro la pagina che gestisce la cancellazione degli Bundle
 		public void DeleteOrder(object sender, EventArgs args)
 		{
 			DeleteOrderPage dop = new DeleteOrderPage();
@@ -228,52 +258,31 @@ namespace CarouselPageNavigation
 		{
 			try
 			{
-				string[] orderItems = new string[allOrders.Count];
+				//string[] orderItems = new string[allOrders.Count];
+				List<string> orderItems = new List<string>();
 				for (int i = 0; i < allOrders.Count; i++)
 				{
-					orderItems[i] = allOrders[i].Nome_ordine;
+					if (string.IsNullOrEmpty(allOrders[i].sku)) // Filtro gli ordini togliendo quelli che vengono da Lavazza
+						orderItems.Add(allOrders[i].name);
+
 				}
 
-				var action = await DisplayActionSheet("Choose Order to edit", "Cancel", null, orderItems);
+				string action = await DisplayActionSheet("Choose Order to edit", "Cancel", null, orderItems.ToArray());
 				if (action != null && action != "")
 				{
-					EditOrderPage eop = new EditOrderPage(action);
+					int id_bundle = (allOrders.Find(x => x.name == action)).id;
+					                
+					//EditOrderPage eop = new EditOrderPage(action);
+					EditOrderPage eop = new EditOrderPage(id_bundle);
+
 					await Navigation.PushModalAsync(eop);
 				}
 			}
-			catch
+			catch(Exception ex)
 			{
 				return;
 			}
 		}
-
-
-
-		public class lastUpdate 
-		{
-			public string Ordini;
-			public string Capsule;
-		}
-
-
-
-
-		/// <summary>
-		/// Checks the last update. Richiama un WebService che restituisce il JSON contenente gli hash di Ordini e Capsule
-		/// </summary>
-		/// <returns>JSON contenente gli hash di Ordini e Capsule</returns>
-		public List<lastUpdate> Check_Last_Update()
-		{
-			string url = "http://service.dyv.mystaging.eu/Services.asmx/GetLastUpdate";
-			var uri = new Uri(url);
-
-			HttpClient hc = new HttpClient();
-			string contents = hc.GetStringAsync(uri).Result;
-			List<lastUpdate> res = JsonConvert.DeserializeObject<List<lastUpdate>>(contents);
-
-			return res;
-		}
-
 
 	}
 }

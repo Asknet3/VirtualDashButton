@@ -11135,14 +11135,18 @@ exception_handling:;
 		"SQLitePCLRaw.core", 
 		"SQLitePCLRaw.batteries_v2", 
 		"SQLitePCLRaw.provider.sqlite3", 
-		"Xamarin.Forms.Xaml"
+		"Xamarin.Forms.Xaml", 
+		"Newtonsoft.Json", 
+		"System.Xml.Linq", 
+		"Microsoft.CSharp", 
+		"Mono.CSharp"
 	};
 
 	static struct MTRegistrationMap __xamarin_registration_map = {
 		NULL,
 		__xamarin_registration_assemblies,
 		__xamarin_class_map,
-		19,
+		23,
 		225,
 		95
 	};

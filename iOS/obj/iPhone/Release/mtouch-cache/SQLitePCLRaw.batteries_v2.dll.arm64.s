@@ -129,40 +129,16 @@ SQLitePCL_Batteries_V2_Init:
 adrp x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGE+0
 add x16, x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGEOFF
 ldr x0, [x16, #120]
-.word 0x39400000
-.word 0x350001c0
-
-adrp x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGE+0
-add x16, x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGEOFF
-ldr x0, [x16, #128]
 bl _p_1
 .word 0xf9000ba0
 bl _p_2
 .word 0xf9400ba0
 bl _p_3
-
-adrp x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGE+0
-add x16, x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGEOFF
-ldr x0, [x16, #120]
-.word 0xd280003e
-.word 0x3900001e
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
 Lme_0:
-.text
-	.align 4
-	.no_dead_strip SQLitePCL_Batteries_V2__cctor
-SQLitePCL_Batteries_V2__cctor:
-.loc 1 1 0
-.word 0xa9bf7bfd
-.word 0x910003fd
-.word 0x910003bf
-.word 0xa8c17bfd
-.word 0xd65f03c0
-
-Lme_1:
 .text
 	.align 3
 jit_code_end:
@@ -173,7 +149,6 @@ jit_code_end:
 method_addresses:
 	.no_dead_strip method_addresses
 bl SQLitePCL_Batteries_V2_Init
-bl SQLitePCL_Batteries_V2__cctor
 bl method_addresses
 method_addresses_end:
 
@@ -192,7 +167,7 @@ unbox_trampoline_addresses:
 	.align 3
 unwind_info:
 
-	.byte 13,12,31,0,68,14,32,157,4,158,3,68,13,29,13,12,31,0,68,14,16,157,2,158,1,68,13,29
+	.byte 13,12,31,0,68,14,32,157,4,158,3,68,13,29
 
 .text
 	.align 4
@@ -203,29 +178,29 @@ plt__jit_icall_ves_icall_object_new_fast:
 _p_1:
 adrp x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGE+0
 add x16, x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGEOFF
-ldr x16, [x16, #144]
+ldr x16, [x16, #136]
 br x16
-.word 257
+.word 245
 	.no_dead_strip plt_SQLitePCL_SQLite3Provider_sqlite3__ctor
 plt_SQLitePCL_SQLite3Provider_sqlite3__ctor:
 _p_2:
 adrp x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGE+0
 add x16, x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGEOFF
-ldr x16, [x16, #152]
+ldr x16, [x16, #144]
 br x16
-.word 285
+.word 273
 	.no_dead_strip plt_SQLitePCL_raw_SetProvider_SQLitePCL_ISQLite3Provider
 plt_SQLitePCL_raw_SetProvider_SQLitePCL_ISQLite3Provider:
 _p_3:
 adrp x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGE+0
 add x16, x16, mono_aot_SQLitePCLRaw_batteries_v2_got@PAGEOFF
-ldr x16, [x16, #160]
+ldr x16, [x16, #152]
 br x16
-.word 290
+.word 278
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_SQLitePCLRaw_batteries_v2_got, 168
+.lcomm mono_aot_SQLitePCLRaw_batteries_v2_got, 160
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -248,7 +223,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "0AA59D4F-ADF5-4551-AFFE-437426FAB836"
+	.asciz "AB353769-47BB-4B2F-9A54-AFF6E2ECC138"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -325,13 +300,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 17,168,4,3,66,387000831,0,332
-	.long 128,8,8,10,0,15,1088,744
+	.long 16,160,4,2,66,387000831,0,316
+	.long 128,8,8,10,0,15,1072,744
 	.long 336,184,0,280,312,240,0,176
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 72,82,180,11,186,5,79,242,106,31,126,21,102,83,144,51
+	.byte 178,156,49,21,48,146,10,228,27,2,54,115,42,169,178,71
 	.globl _mono_aot_module_SQLitePCLRaw_batteries_v2_info
 	.align 3
 _mono_aot_module_SQLitePCLRaw_batteries_v2_info:
@@ -365,35 +340,6 @@ LDIFF_SYM4=Lme_0 - SQLitePCL_Batteries_V2_Init
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
 Lfde0_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "SQLitePCL.Batteries_V2:.cctor"
-	.asciz "SQLitePCL_Batteries_V2__cctor"
-
-	.byte 0,0
-	.quad SQLitePCL_Batteries_V2__cctor
-	.quad Lme_1
-
-	.byte 2,118,16,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM5=Lfde1_end - Lfde1_start
-	.long LDIFF_SYM5
-Lfde1_start:
-
-	.long 0
-	.align 3
-	.quad SQLitePCL_Batteries_V2__cctor
-
-LDIFF_SYM6=Lme_1 - SQLitePCL_Batteries_V2__cctor
-	.long LDIFF_SYM6
-	.long 0
-	.byte 12,31,0,68,14,16,157,2,158,1,68,13,29
-	.align 3
-Lfde1_end:
 
 .section __DWARF, __debug_info,regular,debug
 
