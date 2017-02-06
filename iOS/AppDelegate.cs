@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using TestFairyLib;
 
 namespace CarouselPageNavigation.iOS
 {
@@ -12,6 +13,8 @@ namespace CarouselPageNavigation.iOS
 	{
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
+			TestFairy.Begin("db7f5baabb72bd2d3be0275aa17e82daa3a26b16");
+
 			global::Xamarin.Forms.Forms.Init ();
 
 			LoadApplication (new App ());

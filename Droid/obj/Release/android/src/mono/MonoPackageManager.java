@@ -97,8 +97,8 @@ public class MonoPackageManager {
 
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
-		/* We need to ensure that "CarouselPageNavigation.Droid.dll" comes first in this list. */
-		"CarouselPageNavigation.Droid.dll",
+		/* We need to ensure that "LavazzaAPP.Droid.dll" comes first in this list. */
+		"LavazzaAPP.Droid.dll",
 		"Xamarin.Android.NUnitLite.dll",
 		"Java.Interop.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
@@ -124,6 +124,7 @@ class MonoPackageManager_Resources {
 		"SQLitePCLRaw.batteries_green.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLite-net.dll",
+		"TestFairy.Android.dll",
 		"CarouselPageNavigation.dll",
 		"Xamarin.Android.NUnitLite.dll",
 	};
