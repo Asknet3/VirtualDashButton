@@ -97,10 +97,11 @@ public class MonoPackageManager {
 
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
-		/* We need to ensure that "CarouselPageNavigation.Droid.dll" comes first in this list. */
-		"CarouselPageNavigation.Droid.dll",
+		/* We need to ensure that "LavazzaAPP.Droid.dll" comes first in this list. */
+		"LavazzaAPP.Droid.dll",
 		"Xamarin.Android.NUnitLite.dll",
 		"Java.Interop.dll",
+		"System.Runtime.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",
@@ -124,7 +125,32 @@ class MonoPackageManager_Resources {
 		"SQLitePCLRaw.batteries_green.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLite-net.dll",
+		"TestFairy.Android.dll",
 		"CarouselPageNavigation.dll",
+		"System.Threading.dll",
+		"System.Collections.dll",
+		"System.Collections.Concurrent.dll",
+		"System.Diagnostics.Debug.dll",
+		"System.Reflection.dll",
+		"System.Linq.dll",
+		"System.Runtime.InteropServices.dll",
+		"System.Runtime.Extensions.dll",
+		"System.Reflection.Extensions.dll",
+		"System.Threading.Tasks.dll",
+		"System.ObjectModel.dll",
+		"System.Globalization.dll",
+		"System.ComponentModel.dll",
+		"System.Xml.ReaderWriter.dll",
+		"System.Linq.Expressions.dll",
+		"System.IO.dll",
+		"System.Dynamic.Runtime.dll",
+		"System.Text.RegularExpressions.dll",
+		"System.Xml.XDocument.dll",
+		"System.Runtime.Serialization.Primitives.dll",
+		"System.Text.Encoding.dll",
+		"System.Text.Encoding.Extensions.dll",
+		"System.Resources.ResourceManager.dll",
+		"System.Diagnostics.Tools.dll",
 		"Xamarin.Android.NUnitLite.dll",
 	};
 	public static final String[] Dependencies = new String[]{

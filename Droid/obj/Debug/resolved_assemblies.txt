@@ -1,4 +1,4 @@
-/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/CarouselPageNavigation.Droid.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/LavazzaAPP.Droid.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/System.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/System.Xml.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/System.Core.dll
@@ -31,6 +31,7 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/SQLitePCLRaw.batteries_green.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/SQLitePCLRaw.batteries_v2.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/SQLite-net.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/TestFairy.Android.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/CarouselPageNavigation.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/mscorlib.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/android/assets/System.Runtime.Serialization.dll

@@ -37,7 +37,7 @@
 									</StackLayout>
 
 									<StackLayout Orientation="Vertical" Padding="3,0,3,0" VerticalOptions='Center' HorizontalOptions='EndAndExpand' >
-										<Label BindingContext="{x:Reference Name=stepper}" FontSize="14" Text="{Binding Value}" IsVisible="{Binding IsVisible}" TextColor="#333333" HorizontalOptions='CenterAndExpand' />	
+										<Label BindingContext="{x:Reference Name=stepper}" FontSize="14" Text="{Binding Value}" TextColor="#333333" HorizontalOptions='CenterAndExpand' />	
 										<Stepper x:Name="stepper" Minimum="0" Increment="1" Value="{Binding quantity}" HorizontalOptions='Center' />	
 							        </StackLayout>
 							       		

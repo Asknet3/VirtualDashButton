@@ -48,9 +48,9 @@ namespace CarouselPageNavigation
 			countProducts.Text = "Tot Products: " + ProductsInList.Count.ToString(); // Numero di prodotti già inseriti nell'ordine
 
 			if (Device.OS == TargetPlatform.iOS)
-				oabstract.Text = "Select or Deselect products from list below by swiping left";
+				oabstract.Text = "list below by swiping left";
 			else if (Device.OS == TargetPlatform.Android)
-				oabstract.Text = "Select or Deselect products from list below by longpress on product";
+				oabstract.Text = "list below by longpress on product";
 
 			ProductsNOTInList = database.Query<ProductExstended>("SELECT p.*, bp.* FROM Product as p, BundleProdotti as bp, Bundle as b on bp.id_bundle = b.id WHERE b.sku IS NULL OR b.sku = '' AND b.id !='" + id_order +"'");
 
@@ -226,7 +226,7 @@ namespace CarouselPageNavigation
 			// Inserisco i nuovi prodotti nell'ordine
 			foreach (BundleProdotti op in ListProdToAdd)
 			{ 
-				database.Query<BundleProdotti>("INSERT INTO BundleProdotti (id_bundle, id_capsule, quantity) VALUES (" + op.id_capsule + ", " + order.id + ", " + op.quantity + ")");
+				database.Query<BundleProdotti>("INSERT INTO BundleProdotti (id_bundle, id_capsule, quantity) VALUES (" + order.id +  ", " + op.id_capsule + ", " + op.quantity + ")");
 			}
 
 			// Aggiorno i prodotti già presenti nell'ordine nella rispettiva tabella del DB

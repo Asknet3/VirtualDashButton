@@ -1,2 +1,2 @@
-android.app.Application
-com.companyname.carouselpagenavigation
+android.support.multidex.MultiDexApplication
+com.companyname.LavazzaAPP

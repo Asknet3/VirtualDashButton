@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselPageNavigation", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselPageNavigation.iOS", "iOS\CarouselPageNavigation.iOS.csproj", "{1F498E45-B00D-477C-9645-B223BA83AB35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselPageNavigation.Droid", "Droid\CarouselPageNavigation.Droid.csproj", "{CF93242C-C182-47EF-866F-60CC374D1A5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LavazzaAPP.Droid", "Droid\LavazzaAPP.Droid.csproj", "{CF93242C-C182-47EF-866F-60CC374D1A5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

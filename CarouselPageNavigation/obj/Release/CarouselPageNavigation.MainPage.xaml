@@ -13,10 +13,8 @@
 					<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
 				</ContentPage.Padding>
 
-				
-				
+				<Grid>
 				<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0efed">
-<!--				<ActivityIndicator Color="Red"  IsRunning="{Binding Busy}" IsVisible="{Binding Busy}" VerticalOptions="Center" HorizontalOptions="Center" />-->
 					<Label Text="{Binding name}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,10,0,5" />
 					<Image Source="tazzina.png" />
 
@@ -29,6 +27,7 @@
 							HeightRequest="40" 
 							HorizontalOptions="Center" 
 							VerticalOptions="CenterAndExpand"
+							CommandParameter="{Binding id}"
 							Clicked="OnBuyClicked"/>
 
 						<Button 
@@ -79,7 +78,24 @@
 							Clicked="DeleteOrder"/>
 					</StackLayout>
 				</StackLayout>
+				
 
+				<RelativeLayout>
+					<ActivityIndicator x:Name="ai"  Color="#1672c9"  
+										IsRunning="false" 
+										IsVisible="true" 
+										VerticalOptions="Center" 
+										HorizontalOptions="Center"
+										RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+		                                    Property=Height,
+		                                    Factor=0.28}"
+										RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+	                                        Property=Height,
+	                                        Factor=0.29}" />
+				</RelativeLayout>
+					
+				</Grid>
+				
 			</ContentPage>
 		</DataTemplate>
 	</CarouselPage.ItemTemplate>
