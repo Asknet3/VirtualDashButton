@@ -18,11 +18,13 @@ typedef struct _compressed_data {
 } CompressedAssembly;
 
 extern const unsigned char assembly_data_LavazzaAPP_Droid_dll [];
-static CompressedAssembly assembly_bundle_LavazzaAPP_Droid_dll = {{"LavazzaAPP.Droid.dll", assembly_data_LavazzaAPP_Droid_dll, 98304}, 32345};
+static CompressedAssembly assembly_bundle_LavazzaAPP_Droid_dll = {{"LavazzaAPP.Droid.dll", assembly_data_LavazzaAPP_Droid_dll, 98816}, 32358};
 extern const unsigned char assembly_data_Xamarin_Android_NUnitLite_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_NUnitLite_dll = {{"Xamarin.Android.NUnitLite.dll", assembly_data_Xamarin_Android_NUnitLite_dll, 267776}, 105821};
+static CompressedAssembly assembly_bundle_Xamarin_Android_NUnitLite_dll = {{"Xamarin.Android.NUnitLite.dll", assembly_data_Xamarin_Android_NUnitLite_dll, 267776}, 107414};
 extern const unsigned char assembly_data_Java_Interop_dll [];
-static CompressedAssembly assembly_bundle_Java_Interop_dll = {{"Java.Interop.dll", assembly_data_Java_Interop_dll, 94208}, 28116};
+static CompressedAssembly assembly_bundle_Java_Interop_dll = {{"Java.Interop.dll", assembly_data_Java_Interop_dll, 117760}, 35391};
+extern const unsigned char assembly_data_System_Runtime_dll [];
+static CompressedAssembly assembly_bundle_System_Runtime_dll = {{"System.Runtime.dll", assembly_data_System_Runtime_dll, 13312}, 4388};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Animated_Vector_Drawable_dll [];
 static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Animated_Vector_Drawable_dll = {{"Xamarin.Android.Support.Animated.Vector.Drawable.dll", assembly_data_Xamarin_Android_Support_Animated_Vector_Drawable_dll, 40448}, 12434};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Design_dll [];
@@ -46,60 +48,113 @@ static CompressedAssembly assembly_bundle_Xamarin_GooglePlayServices_Base_dll = 
 extern const unsigned char assembly_data_Xamarin_GooglePlayServices_Basement_dll [];
 static CompressedAssembly assembly_bundle_Xamarin_GooglePlayServices_Basement_dll = {{"Xamarin.GooglePlayServices.Basement.dll", assembly_data_Xamarin_GooglePlayServices_Basement_dll, 248832}, 64030};
 extern const unsigned char assembly_data_FormsViewGroup_dll [];
-static CompressedAssembly assembly_bundle_FormsViewGroup_dll = {{"FormsViewGroup.dll", assembly_data_FormsViewGroup_dll, 11776}, 4456};
+static CompressedAssembly assembly_bundle_FormsViewGroup_dll = {{"FormsViewGroup.dll", assembly_data_FormsViewGroup_dll, 20528}, 10795};
 extern const unsigned char assembly_data_Xamarin_Forms_Core_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Forms_Core_dll = {{"Xamarin.Forms.Core.dll", assembly_data_Xamarin_Forms_Core_dll, 539136}, 206851};
+static CompressedAssembly assembly_bundle_Xamarin_Forms_Core_dll = {{"Xamarin.Forms.Core.dll", assembly_data_Xamarin_Forms_Core_dll, 529464}, 206838};
 extern const unsigned char assembly_data_Xamarin_Forms_Platform_Android_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Forms_Platform_Android_dll = {{"Xamarin.Forms.Platform.Android.dll", assembly_data_Xamarin_Forms_Platform_Android_dll, 264272}, 114402};
+static CompressedAssembly assembly_bundle_Xamarin_Forms_Platform_Android_dll = {{"Xamarin.Forms.Platform.Android.dll", assembly_data_Xamarin_Forms_Platform_Android_dll, 264272}, 116208};
 extern const unsigned char assembly_data_Xamarin_Forms_Platform_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Forms_Platform_dll = {{"Xamarin.Forms.Platform.dll", assembly_data_Xamarin_Forms_Platform_dll, 10752}, 2337};
+static CompressedAssembly assembly_bundle_Xamarin_Forms_Platform_dll = {{"Xamarin.Forms.Platform.dll", assembly_data_Xamarin_Forms_Platform_dll, 10752}, 2602};
 extern const unsigned char assembly_data_Xamarin_Forms_Xaml_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Forms_Xaml_dll = {{"Xamarin.Forms.Xaml.dll", assembly_data_Xamarin_Forms_Xaml_dll, 71680}, 30943};
+static CompressedAssembly assembly_bundle_Xamarin_Forms_Xaml_dll = {{"Xamarin.Forms.Xaml.dll", assembly_data_Xamarin_Forms_Xaml_dll, 76344}, 35170};
 extern const unsigned char assembly_data_Newtonsoft_Json_dll [];
-static CompressedAssembly assembly_bundle_Newtonsoft_Json_dll = {{"Newtonsoft.Json.dll", assembly_data_Newtonsoft_Json_dll, 505344}, 192137};
+static CompressedAssembly assembly_bundle_Newtonsoft_Json_dll = {{"Newtonsoft.Json.dll", assembly_data_Newtonsoft_Json_dll, 468480}, 186573};
 extern const unsigned char assembly_data_SQLitePCLRaw_core_dll [];
-static CompressedAssembly assembly_bundle_SQLitePCLRaw_core_dll = {{"SQLitePCLRaw.core.dll", assembly_data_SQLitePCLRaw_core_dll, 40448}, 13140};
+static CompressedAssembly assembly_bundle_SQLitePCLRaw_core_dll = {{"SQLitePCLRaw.core.dll", assembly_data_SQLitePCLRaw_core_dll, 36864}, 12763};
 extern const unsigned char assembly_data_SQLitePCLRaw_lib_e_sqlite3_dll [];
-static CompressedAssembly assembly_bundle_SQLitePCLRaw_lib_e_sqlite3_dll = {{"SQLitePCLRaw.lib.e_sqlite3.dll", assembly_data_SQLitePCLRaw_lib_e_sqlite3_dll, 1900032}, 1891327};
+static CompressedAssembly assembly_bundle_SQLitePCLRaw_lib_e_sqlite3_dll = {{"SQLitePCLRaw.lib.e_sqlite3.dll", assembly_data_SQLitePCLRaw_lib_e_sqlite3_dll, 1900032}, 1892897};
 extern const unsigned char assembly_data_SQLitePCLRaw_provider_e_sqlite3_dll [];
-static CompressedAssembly assembly_bundle_SQLitePCLRaw_provider_e_sqlite3_dll = {{"SQLitePCLRaw.provider.e_sqlite3.dll", assembly_data_SQLitePCLRaw_provider_e_sqlite3_dll, 40960}, 15237};
+static CompressedAssembly assembly_bundle_SQLitePCLRaw_provider_e_sqlite3_dll = {{"SQLitePCLRaw.provider.e_sqlite3.dll", assembly_data_SQLitePCLRaw_provider_e_sqlite3_dll, 38912}, 15118};
 extern const unsigned char assembly_data_SQLitePCLRaw_batteries_green_dll [];
-static CompressedAssembly assembly_bundle_SQLitePCLRaw_batteries_green_dll = {{"SQLitePCLRaw.batteries_green.dll", assembly_data_SQLitePCLRaw_batteries_green_dll, 5632}, 1911};
+static CompressedAssembly assembly_bundle_SQLitePCLRaw_batteries_green_dll = {{"SQLitePCLRaw.batteries_green.dll", assembly_data_SQLitePCLRaw_batteries_green_dll, 5632}, 2195};
 extern const unsigned char assembly_data_SQLitePCLRaw_batteries_v2_dll [];
-static CompressedAssembly assembly_bundle_SQLitePCLRaw_batteries_v2_dll = {{"SQLitePCLRaw.batteries_v2.dll", assembly_data_SQLitePCLRaw_batteries_v2_dll, 5632}, 1919};
+static CompressedAssembly assembly_bundle_SQLitePCLRaw_batteries_v2_dll = {{"SQLitePCLRaw.batteries_v2.dll", assembly_data_SQLitePCLRaw_batteries_v2_dll, 5632}, 2203};
 extern const unsigned char assembly_data_SQLite_net_dll [];
-static CompressedAssembly assembly_bundle_SQLite_net_dll = {{"SQLite-net.dll", assembly_data_SQLite_net_dll, 70144}, 30602};
+static CompressedAssembly assembly_bundle_SQLite_net_dll = {{"SQLite-net.dll", assembly_data_SQLite_net_dll, 70144}, 30830};
 extern const unsigned char assembly_data_TestFairy_Android_dll [];
-static CompressedAssembly assembly_bundle_TestFairy_Android_dll = {{"TestFairy.Android.dll", assembly_data_TestFairy_Android_dll, 375296}, 300544};
+static CompressedAssembly assembly_bundle_TestFairy_Android_dll = {{"TestFairy.Android.dll", assembly_data_TestFairy_Android_dll, 375296}, 328166};
 extern const unsigned char assembly_data_CarouselPageNavigation_dll [];
-static CompressedAssembly assembly_bundle_CarouselPageNavigation_dll = {{"CarouselPageNavigation.dll", assembly_data_CarouselPageNavigation_dll, 53760}, 17196};
+static CompressedAssembly assembly_bundle_CarouselPageNavigation_dll = {{"CarouselPageNavigation.dll", assembly_data_CarouselPageNavigation_dll, 55808}, 17803};
+extern const unsigned char assembly_data_System_Threading_dll [];
+static CompressedAssembly assembly_bundle_System_Threading_dll = {{"System.Threading.dll", assembly_data_System_Threading_dll, 5632}, 2118};
+extern const unsigned char assembly_data_System_Collections_dll [];
+static CompressedAssembly assembly_bundle_System_Collections_dll = {{"System.Collections.dll", assembly_data_System_Collections_dll, 5120}, 2006};
+extern const unsigned char assembly_data_System_Collections_Concurrent_dll [];
+static CompressedAssembly assembly_bundle_System_Collections_Concurrent_dll = {{"System.Collections.Concurrent.dll", assembly_data_System_Collections_Concurrent_dll, 5120}, 1867};
+extern const unsigned char assembly_data_System_Diagnostics_Debug_dll [];
+static CompressedAssembly assembly_bundle_System_Diagnostics_Debug_dll = {{"System.Diagnostics.Debug.dll", assembly_data_System_Diagnostics_Debug_dll, 4608}, 1807};
+extern const unsigned char assembly_data_System_Reflection_dll [];
+static CompressedAssembly assembly_bundle_System_Reflection_dll = {{"System.Reflection.dll", assembly_data_System_Reflection_dll, 5632}, 2091};
+extern const unsigned char assembly_data_System_Linq_dll [];
+static CompressedAssembly assembly_bundle_System_Linq_dll = {{"System.Linq.dll", assembly_data_System_Linq_dll, 4096}, 1739};
+extern const unsigned char assembly_data_System_Runtime_InteropServices_dll [];
+static CompressedAssembly assembly_bundle_System_Runtime_InteropServices_dll = {{"System.Runtime.InteropServices.dll", assembly_data_System_Runtime_InteropServices_dll, 7680}, 2836};
+extern const unsigned char assembly_data_System_Runtime_Extensions_dll [];
+static CompressedAssembly assembly_bundle_System_Runtime_Extensions_dll = {{"System.Runtime.Extensions.dll", assembly_data_System_Runtime_Extensions_dll, 5120}, 1913};
+extern const unsigned char assembly_data_System_Reflection_Extensions_dll [];
+static CompressedAssembly assembly_bundle_System_Reflection_Extensions_dll = {{"System.Reflection.Extensions.dll", assembly_data_System_Reflection_Extensions_dll, 4608}, 1728};
+extern const unsigned char assembly_data_System_Threading_Tasks_dll [];
+static CompressedAssembly assembly_bundle_System_Threading_Tasks_dll = {{"System.Threading.Tasks.dll", assembly_data_System_Threading_Tasks_dll, 5632}, 2152};
+extern const unsigned char assembly_data_System_ObjectModel_dll [];
+static CompressedAssembly assembly_bundle_System_ObjectModel_dll = {{"System.ObjectModel.dll", assembly_data_System_ObjectModel_dll, 5120}, 1959};
+extern const unsigned char assembly_data_System_Globalization_dll [];
+static CompressedAssembly assembly_bundle_System_Globalization_dll = {{"System.Globalization.dll", assembly_data_System_Globalization_dll, 5120}, 1875};
+extern const unsigned char assembly_data_System_ComponentModel_dll [];
+static CompressedAssembly assembly_bundle_System_ComponentModel_dll = {{"System.ComponentModel.dll", assembly_data_System_ComponentModel_dll, 4608}, 1762};
+extern const unsigned char assembly_data_System_Xml_ReaderWriter_dll [];
+static CompressedAssembly assembly_bundle_System_Xml_ReaderWriter_dll = {{"System.Xml.ReaderWriter.dll", assembly_data_System_Xml_ReaderWriter_dll, 5120}, 2004};
+extern const unsigned char assembly_data_System_Linq_Expressions_dll [];
+static CompressedAssembly assembly_bundle_System_Linq_Expressions_dll = {{"System.Linq.Expressions.dll", assembly_data_System_Linq_Expressions_dll, 6656}, 2303};
+extern const unsigned char assembly_data_System_IO_dll [];
+static CompressedAssembly assembly_bundle_System_IO_dll = {{"System.IO.dll", assembly_data_System_IO_dll, 4608}, 1870};
+extern const unsigned char assembly_data_System_Dynamic_Runtime_dll [];
+static CompressedAssembly assembly_bundle_System_Dynamic_Runtime_dll = {{"System.Dynamic.Runtime.dll", assembly_data_System_Dynamic_Runtime_dll, 5632}, 2029};
+extern const unsigned char assembly_data_System_Text_RegularExpressions_dll [];
+static CompressedAssembly assembly_bundle_System_Text_RegularExpressions_dll = {{"System.Text.RegularExpressions.dll", assembly_data_System_Text_RegularExpressions_dll, 4608}, 1819};
+extern const unsigned char assembly_data_System_Xml_XDocument_dll [];
+static CompressedAssembly assembly_bundle_System_Xml_XDocument_dll = {{"System.Xml.XDocument.dll", assembly_data_System_Xml_XDocument_dll, 5120}, 1933};
+extern const unsigned char assembly_data_System_Runtime_Serialization_Primitives_dll [];
+static CompressedAssembly assembly_bundle_System_Runtime_Serialization_Primitives_dll = {{"System.Runtime.Serialization.Primitives.dll", assembly_data_System_Runtime_Serialization_Primitives_dll, 5632}, 2053};
+extern const unsigned char assembly_data_System_Text_Encoding_dll [];
+static CompressedAssembly assembly_bundle_System_Text_Encoding_dll = {{"System.Text.Encoding.dll", assembly_data_System_Text_Encoding_dll, 5120}, 1850};
+extern const unsigned char assembly_data_System_Text_Encoding_Extensions_dll [];
+static CompressedAssembly assembly_bundle_System_Text_Encoding_Extensions_dll = {{"System.Text.Encoding.Extensions.dll", assembly_data_System_Text_Encoding_Extensions_dll, 4608}, 1803};
+extern const unsigned char assembly_data_System_Resources_ResourceManager_dll [];
+static CompressedAssembly assembly_bundle_System_Resources_ResourceManager_dll = {{"System.Resources.ResourceManager.dll", assembly_data_System_Resources_ResourceManager_dll, 4608}, 1793};
+extern const unsigned char assembly_data_System_Diagnostics_Tools_dll [];
+static CompressedAssembly assembly_bundle_System_Diagnostics_Tools_dll = {{"System.Diagnostics.Tools.dll", assembly_data_System_Diagnostics_Tools_dll, 4608}, 1755};
 extern const unsigned char assembly_data_System_dll [];
-static CompressedAssembly assembly_bundle_System_dll = {{"System.dll", assembly_data_System_dll, 779264}, 303039};
+static CompressedAssembly assembly_bundle_System_dll = {{"System.dll", assembly_data_System_dll, 2228224}, 776337};
 extern const unsigned char assembly_data_System_Xml_dll [];
-static CompressedAssembly assembly_bundle_System_Xml_dll = {{"System.Xml.dll", assembly_data_System_Xml_dll, 1164800}, 408944};
+static CompressedAssembly assembly_bundle_System_Xml_dll = {{"System.Xml.dll", assembly_data_System_Xml_dll, 2566144}, 831601};
 extern const unsigned char assembly_data_System_Core_dll [];
-static CompressedAssembly assembly_bundle_System_Core_dll = {{"System.Core.dll", assembly_data_System_Core_dll, 920576}, 306903};
+static CompressedAssembly assembly_bundle_System_Core_dll = {{"System.Core.dll", assembly_data_System_Core_dll, 941056}, 317191};
 extern const unsigned char assembly_data_Mono_Android_dll [];
-static CompressedAssembly assembly_bundle_Mono_Android_dll = {{"Mono.Android.dll", assembly_data_Mono_Android_dll, 1911296}, 460009};
+static CompressedAssembly assembly_bundle_Mono_Android_dll = {{"Mono.Android.dll", assembly_data_Mono_Android_dll, 22255616}, 4886370};
+extern const unsigned char assembly_data_System_IO_Compression_dll [];
+static CompressedAssembly assembly_bundle_System_IO_Compression_dll = {{"System.IO.Compression.dll", assembly_data_System_IO_Compression_dll, 101888}, 40954};
 extern const unsigned char assembly_data_System_Net_Http_dll [];
-static CompressedAssembly assembly_bundle_System_Net_Http_dll = {{"System.Net.Http.dll", assembly_data_System_Net_Http_dll, 82432}, 35764};
+static CompressedAssembly assembly_bundle_System_Net_Http_dll = {{"System.Net.Http.dll", assembly_data_System_Net_Http_dll, 124416}, 50595};
 extern const unsigned char assembly_data_mscorlib_dll [];
-static CompressedAssembly assembly_bundle_mscorlib_dll = {{"mscorlib.dll", assembly_data_mscorlib_dll, 2286080}, 777038};
+static CompressedAssembly assembly_bundle_mscorlib_dll = {{"mscorlib.dll", assembly_data_mscorlib_dll, 3725312}, 1291036};
 extern const unsigned char assembly_data_System_Runtime_Serialization_dll [];
-static CompressedAssembly assembly_bundle_System_Runtime_Serialization_dll = {{"System.Runtime.Serialization.dll", assembly_data_System_Runtime_Serialization_dll, 442368}, 160827};
+static CompressedAssembly assembly_bundle_System_Runtime_Serialization_dll = {{"System.Runtime.Serialization.dll", assembly_data_System_Runtime_Serialization_dll, 888320}, 280786};
 extern const unsigned char assembly_data_System_ServiceModel_Internals_dll [];
-static CompressedAssembly assembly_bundle_System_ServiceModel_Internals_dll = {{"System.ServiceModel.Internals.dll", assembly_data_System_ServiceModel_Internals_dll, 58368}, 21465};
+static CompressedAssembly assembly_bundle_System_ServiceModel_Internals_dll = {{"System.ServiceModel.Internals.dll", assembly_data_System_ServiceModel_Internals_dll, 227840}, 86241};
+extern const unsigned char assembly_data_System_ComponentModel_Composition_dll [];
+static CompressedAssembly assembly_bundle_System_ComponentModel_Composition_dll = {{"System.ComponentModel.Composition.dll", assembly_data_System_ComponentModel_Composition_dll, 270848}, 104762};
 extern const unsigned char assembly_data_System_Xml_Linq_dll [];
-static CompressedAssembly assembly_bundle_System_Xml_Linq_dll = {{"System.Xml.Linq.dll", assembly_data_System_Xml_Linq_dll, 59392}, 24026};
+static CompressedAssembly assembly_bundle_System_Xml_Linq_dll = {{"System.Xml.Linq.dll", assembly_data_System_Xml_Linq_dll, 133632}, 50257};
 extern const unsigned char assembly_data_Microsoft_CSharp_dll [];
-static CompressedAssembly assembly_bundle_Microsoft_CSharp_dll = {{"Microsoft.CSharp.dll", assembly_data_Microsoft_CSharp_dll, 30720}, 12197};
+static CompressedAssembly assembly_bundle_Microsoft_CSharp_dll = {{"Microsoft.CSharp.dll", assembly_data_Microsoft_CSharp_dll, 30720}, 12258};
 extern const unsigned char assembly_data_Mono_CSharp_dll [];
-static CompressedAssembly assembly_bundle_Mono_CSharp_dll = {{"Mono.CSharp.dll", assembly_data_Mono_CSharp_dll, 1363456}, 481884};
+static CompressedAssembly assembly_bundle_Mono_CSharp_dll = {{"Mono.CSharp.dll", assembly_data_Mono_CSharp_dll, 1358848}, 481275};
 
 static const CompressedAssembly *compressed [] = {
 	&assembly_bundle_LavazzaAPP_Droid_dll,
 	&assembly_bundle_Xamarin_Android_NUnitLite_dll,
 	&assembly_bundle_Java_Interop_dll,
+	&assembly_bundle_System_Runtime_dll,
 	&assembly_bundle_Xamarin_Android_Support_Animated_Vector_Drawable_dll,
 	&assembly_bundle_Xamarin_Android_Support_Design_dll,
 	&assembly_bundle_Xamarin_Android_Support_v4_dll,
@@ -125,14 +180,40 @@ static const CompressedAssembly *compressed [] = {
 	&assembly_bundle_SQLite_net_dll,
 	&assembly_bundle_TestFairy_Android_dll,
 	&assembly_bundle_CarouselPageNavigation_dll,
+	&assembly_bundle_System_Threading_dll,
+	&assembly_bundle_System_Collections_dll,
+	&assembly_bundle_System_Collections_Concurrent_dll,
+	&assembly_bundle_System_Diagnostics_Debug_dll,
+	&assembly_bundle_System_Reflection_dll,
+	&assembly_bundle_System_Linq_dll,
+	&assembly_bundle_System_Runtime_InteropServices_dll,
+	&assembly_bundle_System_Runtime_Extensions_dll,
+	&assembly_bundle_System_Reflection_Extensions_dll,
+	&assembly_bundle_System_Threading_Tasks_dll,
+	&assembly_bundle_System_ObjectModel_dll,
+	&assembly_bundle_System_Globalization_dll,
+	&assembly_bundle_System_ComponentModel_dll,
+	&assembly_bundle_System_Xml_ReaderWriter_dll,
+	&assembly_bundle_System_Linq_Expressions_dll,
+	&assembly_bundle_System_IO_dll,
+	&assembly_bundle_System_Dynamic_Runtime_dll,
+	&assembly_bundle_System_Text_RegularExpressions_dll,
+	&assembly_bundle_System_Xml_XDocument_dll,
+	&assembly_bundle_System_Runtime_Serialization_Primitives_dll,
+	&assembly_bundle_System_Text_Encoding_dll,
+	&assembly_bundle_System_Text_Encoding_Extensions_dll,
+	&assembly_bundle_System_Resources_ResourceManager_dll,
+	&assembly_bundle_System_Diagnostics_Tools_dll,
 	&assembly_bundle_System_dll,
 	&assembly_bundle_System_Xml_dll,
 	&assembly_bundle_System_Core_dll,
 	&assembly_bundle_Mono_Android_dll,
+	&assembly_bundle_System_IO_Compression_dll,
 	&assembly_bundle_System_Net_Http_dll,
 	&assembly_bundle_mscorlib_dll,
 	&assembly_bundle_System_Runtime_Serialization_dll,
 	&assembly_bundle_System_ServiceModel_Internals_dll,
+	&assembly_bundle_System_ComponentModel_Composition_dll,
 	&assembly_bundle_System_Xml_Linq_dll,
 	&assembly_bundle_Microsoft_CSharp_dll,
 	&assembly_bundle_Mono_CSharp_dll,

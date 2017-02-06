@@ -16,6 +16,12 @@ public abstract class TestSuiteInstrumentation
 	}
 
 
+	public TestSuiteInstrumentation () throws java.lang.Throwable
+	{
+		super ();
+	}
+
+
 	public void onCreate (android.os.Bundle p0)
 	{
 		n_onCreate (p0);

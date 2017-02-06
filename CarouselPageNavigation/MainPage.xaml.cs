@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using SQLite;
 using Xamarin.Forms;
+
 
 namespace CarouselPageNavigation
 {
@@ -16,13 +18,14 @@ namespace CarouselPageNavigation
 		bool isFirstLoad = true;
 		bool isFirstAppearing = true;
 		public List<Bundle> allOrders = new List<Bundle>();
-		public bool ShowButton = false;
+		//private bool busy = true;
 
 		public int numOfOrders;
 
 		public MainPage()
 		{
 			InitializeComponent();
+
 			BackgroundColor = Color.FromHex("f0efed");
 
 
@@ -59,7 +62,7 @@ namespace CarouselPageNavigation
 					description = "un prodotto di test",
 					name = "Prod Test",
 					price = "€15,00",
-					image="Dek.png"
+					image = "Dek.png"
 				};
 				database.Insert(p1);
 
@@ -151,7 +154,7 @@ namespace CarouselPageNavigation
 
 
 
-				
+
 				// Estraggo tutti gli Bundle dal DB e li assegno in visualizzazione alla ListView
 				allOrders = database.Query<Bundle>("SELECT * FROM Bundle ORDER BY priority");
 
@@ -166,7 +169,7 @@ namespace CarouselPageNavigation
 
 
 
-		protected override  void OnAppearing()
+		protected override void OnAppearing()
 		{
 			base.OnAppearing();
 
@@ -188,19 +191,28 @@ namespace CarouselPageNavigation
 
 
 
-
 		// Evento alla pressione del Button OrderNow
 		public async void OnBuyClicked(object sender, EventArgs args)
 		{
-			//bool notify = DependencyService.Get<INotify>().CreateNotify();
+			try
+			{
+				//int id_bundle = (Int32)((Button)sender).CommandParameter;
+				//Bundle b = Utility.GetBundle(database, id_bundle);
+				//ai.IsRunning = true;
+				OnPropertyChanged();
 
-			Button button = (Button)sender;
+				Button button = (Button)sender;
 
-			await App.Sleep(3000);
+				await App.Sleep(3000);
 
-			await DisplayAlert("Clicked!",
-			                   "The button labeled '" + button.Text + "' has been clicked",
-				"OK");
+				await DisplayAlert("Clicked!",
+				                   "The button labeled '" + button.Text + "' has been clicked",
+					"OK");
+			}
+			finally
+			{
+				
+			}
 		}
 
 
@@ -214,7 +226,7 @@ namespace CarouselPageNavigation
 
 			//await Navigation.PushModalAsync(eop);
 
-			int id_bundle= (Int32)((Button)sender).CommandParameter;
+			int id_bundle = (Int32)((Button)sender).CommandParameter;
 
 			//List<Bundle>discoverBundle = database.Query<Bundle>("SELECT * FROM Bundle WHERE id=" + id_bundle);
 
@@ -271,18 +283,21 @@ namespace CarouselPageNavigation
 				if (action != null && action != "")
 				{
 					int id_bundle = (allOrders.Find(x => x.name == action)).id;
-					                
+
 					//EditOrderPage eop = new EditOrderPage(action);
 					EditOrderPage eop = new EditOrderPage(id_bundle);
 
 					await Navigation.PushModalAsync(eop);
 				}
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				return;
 			}
 		}
+
+
+
 
 	}
 }

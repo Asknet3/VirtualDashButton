@@ -7,7 +7,7 @@
 	<ContentPage.Content>
 
 		<StackLayout Padding="0,0,0,0" Orientation="Vertical" BackgroundColor="#f0efed">
-			<Entry x:Name="entOrderName" Placeholder="Type Order Name..." BackgroundColor="#f0efed" />
+			<Entry x:Name="entOrderName" Placeholder="Type Order Name..." BackgroundColor="#f0efed" TextColor="#333333" />
 
 		
 			<!--<ListView x:Name="ProductsList" Header="" ItemTapped="OnItemTapped">-->

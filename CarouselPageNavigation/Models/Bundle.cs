@@ -5,6 +5,8 @@ namespace CarouselPageNavigation
 {
 	public class Bundle
 	{
+		
+
 		[PrimaryKey, AutoIncrement]
 		public int id { get; set; }
 		public string sku { get; set; }

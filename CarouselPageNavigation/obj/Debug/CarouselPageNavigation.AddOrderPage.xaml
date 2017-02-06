@@ -7,8 +7,19 @@
 	<ContentPage.Content>
 
 		<StackLayout Padding="0,0,0,0" Orientation="Vertical" BackgroundColor="#f0efed">
-			<Entry x:Name="entOrderName" Placeholder="Type Order Name..." BackgroundColor="#f0efed" />
+			<Entry x:Name="entOrderName" Placeholder="Type Order Name..." BackgroundColor="#f0efed" TextColor="#333333" />
+			<Label 
+				Text="Select or deselect products from" 
+				FontSize="15" 
+				TextColor="#333333" >
+			</Label>
 
+			<Label 
+				x:Name="oabstract"
+				Text="list below by swiping right" 
+				FontSize="15" 
+				TextColor="#333333" >
+			</Label>
 		
 			<!--<ListView x:Name="ProductsList" Header="" ItemTapped="OnItemTapped">-->
 			<ListView x:Name="ProductsList" Header="" >
@@ -17,17 +28,7 @@
 						<Grid >
 							<StackLayout BackgroundColor="#f0efed" Padding="10,0,10,0">
 								<!-- <Label Text="{Binding Name}" FontSize="15" TextColor="#333333" /> -->
-								<Label 
-									Text="Select or deselect products from" 
-									FontSize="15" 
-									TextColor="#333333" >
-								</Label>
 
-								<Label 
-									Text="list below by swiping right" 
-									FontSize="15" 
-									TextColor="#333333" >
-								</Label>
 					
 								<ContentView Padding="0,10,0,0">
 									<Label 

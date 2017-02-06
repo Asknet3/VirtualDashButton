@@ -30,6 +30,13 @@ namespace CarouselPageNavigation
 
 
 
+			if (Device.OS == TargetPlatform.iOS)
+				oabstract.Text = "list below by swiping left";
+			else if (Device.OS == TargetPlatform.Android)
+				oabstract.Text = "list below by longpress on product";
+
+
+
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
 
