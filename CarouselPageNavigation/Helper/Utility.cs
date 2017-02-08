@@ -111,7 +111,7 @@ namespace CarouselPageNavigation
 						{
 							remoteBundle.by_admin = 1;
 
-							database.Query<Bundle>("INSERT INTO Bundle(sku, name, image, price, priority, by_admin) VALUES('" + remoteBundle.sku + "', '" + remoteBundle.name + "', '" + remoteBundle.image + "', '" + remoteBundle.price + "', " + remoteBundle.priority + ", '" + remoteBundle.by_admin  + "')");
+							database.Query<Bundle>("INSERT INTO Bundle(sku, name, description, image, price, priority, by_admin) VALUES('" + remoteBundle.sku + "', '" + remoteBundle.name + "', '" + remoteBundle.description + "', '" + remoteBundle.image + "', '" + remoteBundle.price + "', " + remoteBundle.priority + ", '" + remoteBundle.by_admin  + "')");
 
 							List<BundleProdotti> remoteBundlesProducts = Task.Run(() => Services.GetBundlesProducts(remoteBundle.sku)).Result;
 
@@ -126,7 +126,7 @@ namespace CarouselPageNavigation
 					else // Il Bundle esiste già ma è cambiato. Aggiorno quello in locale.
 					{
 						// Aggiorno il Bundle
-						database.Query<Bundle>("UPDATE Bundle SET sku=?, name=?, image=?, price=?, priority=? WHERE sku = ?", remoteBundle.sku, remoteBundle.name, remoteBundle.image, remoteBundle.price, remoteBundle.priority, remoteBundle.sku);
+						database.Query<Bundle>("UPDATE Bundle SET sku=?, name=?, description=?, image=?, price=?, priority=? WHERE sku = ?", remoteBundle.sku, remoteBundle.name, remoteBundle.description, remoteBundle.image, remoteBundle.price, remoteBundle.priority, remoteBundle.sku);
 					}
 				}
 

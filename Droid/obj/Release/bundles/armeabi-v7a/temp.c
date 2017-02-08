@@ -18,7 +18,7 @@ typedef struct _compressed_data {
 } CompressedAssembly;
 
 extern const unsigned char assembly_data_LavazzaAPP_Droid_dll [];
-static CompressedAssembly assembly_bundle_LavazzaAPP_Droid_dll = {{"LavazzaAPP.Droid.dll", assembly_data_LavazzaAPP_Droid_dll, 98816}, 32358};
+static CompressedAssembly assembly_bundle_LavazzaAPP_Droid_dll = {{"LavazzaAPP.Droid.dll", assembly_data_LavazzaAPP_Droid_dll, 98816}, 32477};
 extern const unsigned char assembly_data_Xamarin_Android_NUnitLite_dll [];
 static CompressedAssembly assembly_bundle_Xamarin_Android_NUnitLite_dll = {{"Xamarin.Android.NUnitLite.dll", assembly_data_Xamarin_Android_NUnitLite_dll, 267776}, 107414};
 extern const unsigned char assembly_data_Java_Interop_dll [];
@@ -74,7 +74,7 @@ static CompressedAssembly assembly_bundle_SQLite_net_dll = {{"SQLite-net.dll", a
 extern const unsigned char assembly_data_TestFairy_Android_dll [];
 static CompressedAssembly assembly_bundle_TestFairy_Android_dll = {{"TestFairy.Android.dll", assembly_data_TestFairy_Android_dll, 375296}, 328166};
 extern const unsigned char assembly_data_CarouselPageNavigation_dll [];
-static CompressedAssembly assembly_bundle_CarouselPageNavigation_dll = {{"CarouselPageNavigation.dll", assembly_data_CarouselPageNavigation_dll, 55808}, 17803};
+static CompressedAssembly assembly_bundle_CarouselPageNavigation_dll = {{"CarouselPageNavigation.dll", assembly_data_CarouselPageNavigation_dll, 57344}, 18275};
 extern const unsigned char assembly_data_System_Threading_dll [];
 static CompressedAssembly assembly_bundle_System_Threading_dll = {{"System.Threading.dll", assembly_data_System_Threading_dll, 5632}, 2118};
 extern const unsigned char assembly_data_System_Collections_dll [];

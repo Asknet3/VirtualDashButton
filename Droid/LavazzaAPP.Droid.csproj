@@ -22,6 +22,7 @@
     <AndroidSupportedAbis>x86;x86_64</AndroidSupportedAbis>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <JavaMaximumHeapSize></JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +36,6 @@
     <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
     <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
     <JavaMaximumHeapSize></JavaMaximumHeapSize>
-    <BundleAssemblies>true</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType></DebugType>
@@ -168,6 +168,15 @@
     <AndroidResource Include="Resources\drawable\box_small.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInPackage>true</IncludeInPackage>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\box_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\box_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\box_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

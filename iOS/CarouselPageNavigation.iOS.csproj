@@ -35,9 +35,10 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignKey>iPhone Developer: Giuseppe Cristaudo (723V4D8FV4)</CodesignKey>
     <BuildIpa>true</BuildIpa>
     <IpaPackageName>LavazzaMobileApp</IpaPackageName>
+    <CodesignProvision>LaTazzaDev</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>

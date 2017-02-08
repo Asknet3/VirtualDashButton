@@ -15,8 +15,9 @@
 
 				<Grid>
 				<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0efed">
-					<Label Text="{Binding name}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,10,0,5" />
-					<Image Source="tazzina.png" />
+					<Label Text="{Binding name}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,0,0,0" />
+					<Label Text="{Binding description}" Font="15"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" />
+						<Image Source="tazzina.png" />
 
 					<StackLayout VerticalOptions="FillAndExpand"  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
 						<Button 
@@ -80,7 +81,7 @@
 				</StackLayout>
 				
 
-				<RelativeLayout>
+				<!--<RelativeLayout>
 					<ActivityIndicator x:Name="ai"  Color="#1672c9"  
 										IsRunning="false" 
 										IsVisible="true" 
@@ -92,7 +93,7 @@
 										RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
 	                                        Property=Height,
 	                                        Factor=0.29}" />
-				</RelativeLayout>
+				</RelativeLayout>-->
 					
 				</Grid>
 				
