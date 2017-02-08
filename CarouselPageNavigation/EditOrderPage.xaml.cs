@@ -48,9 +48,9 @@ namespace CarouselPageNavigation
 			countProducts.Text = "Tot Products: " + ProductsInList.Count.ToString(); // Numero di prodotti già inseriti nell'ordine
 
 			if (Device.OS == TargetPlatform.iOS)
-				oabstract.Text = "list below by swiping left";
+				oabstract.Text = "Select or Deselect products from list below by swiping left";
 			else if (Device.OS == TargetPlatform.Android)
-				oabstract.Text = "list below by longpress on product";
+				oabstract.Text = "Select or Deselect products from  list below by longpress on product";
 
 			ProductsNOTInList = database.Query<ProductExstended>("SELECT p.*, bp.* FROM Product as p, BundleProdotti as bp, Bundle as b on bp.id_bundle = b.id WHERE b.sku IS NULL OR b.sku = '' AND b.id !='" + id_order +"'");
 
@@ -241,7 +241,6 @@ namespace CarouselPageNavigation
 			{
 				database.Query<BundleProdotti>("DELETE FROM BundleProdotti WHERE id_bundle= " + order.id + " AND id_capsule = " + op.id_capsule);
 			}
-
 
 			Navigation.PopModalAsync();
 		}

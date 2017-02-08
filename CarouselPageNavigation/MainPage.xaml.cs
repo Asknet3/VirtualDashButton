@@ -194,24 +194,23 @@ namespace CarouselPageNavigation
 		// Evento alla pressione del Button OrderNow
 		public async void OnBuyClicked(object sender, EventArgs args)
 		{
+			Button btn_Buy = sender as Button;
+
 			try
 			{
-				//int id_bundle = (Int32)((Button)sender).CommandParameter;
-				//Bundle b = Utility.GetBundle(database, id_bundle);
-				//ai.IsRunning = true;
+				btn_Buy.IsEnabled = false; // disabilito il bottone per preverine il multiple click
+
 				OnPropertyChanged();
 
-				Button button = (Button)sender;
-
-				await App.Sleep(3000);
-
+				//await App.Sleep(2000);
 				await DisplayAlert("Clicked!",
-				                   "The button labeled '" + button.Text + "' has been clicked",
+				                   "The button labeled '" + btn_Buy.Text + "' has been clicked",
 					"OK");
 			}
 			finally
 			{
-				
+				//await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
+				btn_Buy.IsEnabled = true;
 			}
 		}
 
@@ -222,18 +221,16 @@ namespace CarouselPageNavigation
 		// Evento alla pressione del Button OrderNow
 		public async void OnDiscoverClicked(object sender, EventArgs args)
 		{
-			//EditOrderPage eop = new EditOrderPage(id_bundle);
+			Button btn_Disc = sender as Button;
+			btn_Disc.IsEnabled = false; // disabilito il bottone per preverine il multiple click
 
-			//await Navigation.PushModalAsync(eop);
-
-			int id_bundle = (Int32)((Button)sender).CommandParameter;
-
-			//List<Bundle>discoverBundle = database.Query<Bundle>("SELECT * FROM Bundle WHERE id=" + id_bundle);
-
-			// *********  Da implementare:  apertura nuova pagina simile a EditOrderpage che conterrà la lista dei prodotti facenti parte del Bundle  *********
+			int id_bundle = (Int32)btn_Disc.CommandParameter;
 
 			DiscoverOrderPage dop = new DiscoverOrderPage(id_bundle);
 			await Navigation.PushModalAsync(dop);
+
+			await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
+			btn_Disc.IsEnabled = true;
 
 		}
 
@@ -241,13 +238,17 @@ namespace CarouselPageNavigation
 
 
 
-
 		// Apro la pagina che gestisce l'inserimento di un nuovo ordine
-		public void AddOrder(object sender, EventArgs args)
+		public async void AddOrder(object sender, EventArgs args)
 		{
+			Button btn_Add = sender as Button;
+			btn_Add.IsEnabled = false; // disabilito il bottone per preverine il multiple click
+
 			AddOrderPage aop = new AddOrderPage();
-			Navigation.PushModalAsync(aop);
-			//App.Current.MainPage = aop;
+			await Navigation.PushModalAsync(aop);
+
+			await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
+			btn_Add.IsEnabled = true; 
 		}
 
 
@@ -255,17 +256,23 @@ namespace CarouselPageNavigation
 
 
 		// Apro la pagina che gestisce la cancellazione degli Bundle
-		public void DeleteOrder(object sender, EventArgs args)
+		public async void DeleteOrder(object sender, EventArgs args)
 		{
+			Button btn_Del = sender as Button;
+			btn_Del.IsEnabled = false; // disabilito il bottone per preverine il multiple click
+
 			DeleteOrderPage dop = new DeleteOrderPage();
-			Navigation.PushModalAsync(dop);
+			await Navigation.PushModalAsync(dop);
+
+			await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
+			btn_Del.IsEnabled = true;
 		}
 
 
 
 
 
-		// Gestione apertura pagina dell'ordine cliccato (Button Edit)
+		// Gestione apertura pagina del Bundle cliccato (Button Edit)
 		async void OnActionSheetSimpleClicked(object sender, EventArgs e)
 		{
 			try

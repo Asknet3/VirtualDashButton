@@ -80,7 +80,7 @@
 				</StackLayout>
 				
 
-				<RelativeLayout>
+				<!--<RelativeLayout>
 					<ActivityIndicator x:Name="ai"  Color="#1672c9"  
 										IsRunning="false" 
 										IsVisible="true" 
@@ -92,7 +92,7 @@
 										RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
 	                                        Property=Height,
 	                                        Factor=0.29}" />
-				</RelativeLayout>
+				</RelativeLayout>-->
 					
 				</Grid>
 				
