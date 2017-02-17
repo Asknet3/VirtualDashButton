@@ -55,6 +55,10 @@
 	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/TestFairy.Xamarin.2.1.1/lib/Xamarin.iOS/TestFairy.iOS.dll \
 	-r \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.CarouselView.2.3.0-pre2/lib/Xamarin.iOS10/Xamarin.Forms.CarouselView.dll \
+	-r \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/NPushover.1.2.1/lib/net45-client/NPushOver.dll \
+	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
@@ -342,6 +346,10 @@
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/sqlite-net-pcl.1.3.1/lib/netstandard1.1/SQLite-net.dll \
 	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/TestFairy.Xamarin.2.1.1/lib/Xamarin.iOS/TestFairy.iOS.dll \
+	-r \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/Xamarin.Forms.CarouselView.2.3.0-pre2/lib/Xamarin.iOS10/Xamarin.Forms.CarouselView.dll \
+	-r \
+	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/packages/NPushover.1.2.1/lib/net45-client/NPushOver.dll \
 	-r \
 	/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/bin/Release/CarouselPageNavigation.dll \
 	--target-framework \

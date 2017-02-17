@@ -1,104 +1,252 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CarouselPage 
+<MasterDetailPage
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		xmlns:controls="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-		x:Class="CarouselPageNavigation.MainPage" >
+		x:Class="CarouselPageNavigation.MainPage" 
+		xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" 
+		xmlns:cvprod="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" >
 
-	<CarouselPage.ItemTemplate>
-		
-		<DataTemplate>
-			<ContentPage>
-				<ContentPage.Padding>
-					<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
-				</ContentPage.Padding>
 
-				<Grid>
-				<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0efed">
-					<Label Text="{Binding name}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,0,0,0" />
-					<Label Text="{Binding description}" Font="15"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" />
-						<Image Source="tazzina.png" />
 
-					<StackLayout VerticalOptions="FillAndExpand"  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
-						<Button 
-							BackgroundColor="#478cba"
-							TextColor="#f0efed"	 
-							Text="Order Now" 
-							WidthRequest="130" 
-							HeightRequest="40" 
-							HorizontalOptions="Center" 
-							VerticalOptions="CenterAndExpand"
-							CommandParameter="{Binding id}"
-							Clicked="OnBuyClicked"/>
+	
+		 <MasterDetailPage.Master>
+          <ContentPage Title="Menu" Icon="Menu.png" BackgroundColor="#2d2d2d">
+            <StackLayout Orientation="Vertical" VerticalOptions="Start" Padding="5,30,5,10" >
 
-						<Button 
-							BackgroundColor="#478cba"
-							TextColor="#f0efed"	 
-							Text="Discover" 
-							WidthRequest="130" 
-							HeightRequest="40" 
-							HorizontalOptions="Center" 
-							VerticalOptions="CenterAndExpand"
-							Clicked="OnDiscoverClicked"
-							CommandParameter="{Binding id}"
-							IsVisible="{Binding by_admin}" />
-					</StackLayout>
-					
-					<!--<Label Text="{Binding Description}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
-					<Label Text="{Binding Price}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  />-->
+				<StackLayout HeightRequest="200" BackgroundColor="#444444" >
+					<Label Text="User's Bundle:"  TextColor="#ffffff" />
+	            	<ListView x:Name="BundleUserList" BackgroundColor="#666666" ItemSelected="OpenEditBundle" >
+						  <ListView.ItemTemplate>
+						    <DataTemplate>
+						      <ViewCell Height="30"  >
+						         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="10,0,10,0">
+					         		<Label Text="{Binding id}" IsVisible="false" />
+									<Label Text="{Binding name}" TextColor="#ffffff">
+										<!--<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OpenEditBundle"/>
+										</Label.GestureRecognizers>-->
+									</Label>
+						         </StackLayout>
+						      </ViewCell>
+						    </DataTemplate>
+						  </ListView.ItemTemplate>
+						</ListView>
+				</StackLayout>
 
-					<StackLayout BackgroundColor="#333333" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
-						<Button 
-							TextColor="#f0efed"
-							BackgroundColor="#333333"	
-							x:Name="btnAdd"	
-							Text="Add" 
-							WidthRequest="100" 
-							HeightRequest="50" 
-							HorizontalOptions="FillAndExpand"
-							VerticalOptions="CenterAndExpand"
-							Clicked="AddOrder"/>
-						
-						<Button 
-							TextColor="#f0efed"	
-							BackgroundColor="#333333"	
-							Text="Edit" 
-							WidthRequest="100" 
-							HeightRequest="50" 
-							HorizontalOptions="FillAndExpand"
-							VerticalOptions="CenterAndExpand"
-							Clicked="OnActionSheetSimpleClicked"/>
-						<Button 
-							TextColor="#f0efed"	
-							BackgroundColor="#333333"
-							Text="Delete" 
-							WidthRequest="100" 
-							HeightRequest="50" 
-							HorizontalOptions="FillAndExpand"
-							VerticalOptions="CenterAndExpand"
-							Clicked="DeleteOrder"/>
-					</StackLayout>
+
+
+				<StackLayout HeightRequest="150" BackgroundColor="#444444">
+					<Label Text="Lavazza's Bundle:" TextColor="#ffffff" />
+		        	<ListView x:Name="BundleBrandList" BackgroundColor="#666666" ItemSelected="OpenDiscoverBrandBundle">
+						  <ListView.ItemTemplate>
+						    <DataTemplate>
+						      <ViewCell Height="30"  >
+						         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="10,0,10,0">
+					         		<Label Text="{Binding id}" IsVisible="false" />
+									<Label Text="{Binding name}" TextColor="#ffffff" />
+						         </StackLayout>
+						      </ViewCell>
+						    </DataTemplate>
+						  </ListView.ItemTemplate>
+					</ListView>
+				</StackLayout>
+
+
+				
+				<StackLayout HeightRequest="200" BackgroundColor="#444444">
+					<Label Text="Ordini in corso:" TextColor="#ffffff"/>
+		        	<ListView x:Name="UserOrderList" BackgroundColor="#666666">
+						  <ListView.ItemTemplate>
+						    <DataTemplate>
+						      <ViewCell Height="30"  >
+						         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="10,0,10,0">
+										<Label Text="{Binding bundle_name}" TextColor="#ffffff" />
+										<StackLayout Orientation="Horizontal"  HorizontalOptions="Start" >
+											<Label Text="Data di consegna: " FontSize="13" TextColor="#ffffff"  HorizontalOptions="CenterAndExpand" />
+											<Label Text="{Binding data_consegna}" FontSize="13" TextColor="#ffffff" HorizontalOptions="CenterAndExpand"/>
+										</StackLayout>
+						         </StackLayout>
+						      </ViewCell>
+						    </DataTemplate>
+						  </ListView.ItemTemplate>
+					</ListView>
 				</StackLayout>
 				
+              <!--<Button 
+				TextColor="#f0efed"
+				BackgroundColor="#333333"	
+				x:Name="btnAdd"	
+				Text="Add" 
+				WidthRequest="100" 
+				HeightRequest="50" 
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="CenterAndExpand"
+				Clicked="AddOrder"/>
+			
+			<Button 
+				TextColor="#f0efed"	
+				BackgroundColor="#333333"	
+				Text="Edit" 
+				WidthRequest="100" 
+				HeightRequest="50" 
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="CenterAndExpand"
+				Clicked="OnActionSheetSimpleClicked"/>
+			<Button 
+				TextColor="#f0efed"	
+				BackgroundColor="#333333"
+				Text="Delete" 
+				WidthRequest="100" 
+				HeightRequest="50" 
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="CenterAndExpand"
+				Clicked="DeleteOrder"/>-->
+            </StackLayout>
 
-				<!--<RelativeLayout>
-					<ActivityIndicator x:Name="ai"  Color="#1672c9"  
-										IsRunning="false" 
-										IsVisible="true" 
-										VerticalOptions="Center" 
-										HorizontalOptions="Center"
-										RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-		                                    Property=Height,
-		                                    Factor=0.28}"
-										RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-	                                        Property=Height,
-	                                        Factor=0.29}" />
-				</RelativeLayout>-->
-					
-				</Grid>
+
+			
+          </ContentPage>
+        </MasterDetailPage.Master>
+
+
+
+
+
+
+	
+	
+		<MasterDetailPage.Padding>
+			<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
+		</MasterDetailPage.Padding>
+
+
+		<MasterDetailPage.Detail>
+
+	      <NavigationPage BarBackgroundColor="#0E547C" BarTextColor="White" Padding="0" >
+	        <x:Arguments>
 				
-			</ContentPage>
-		</DataTemplate>
-	</CarouselPage.ItemTemplate>
-</CarouselPage>
+	          	<ContentPage Title="Lavazza Selection">
+					
+					<ContentPage.ToolbarItems>
+					    <ToolbarItem Name="Add" Order="Primary" Icon="Add_circle_white.png" Clicked="AddOrder" />
+						<!--<ToolbarItem Name="List" Order="Primary" Icon="List_bulleted_white.png" Clicked="DeleteOrder" />-->
+					    <!--<ToolbarItem Name="Edit" Order="Secondary" Icon="Menu.png"  Activated="OnActionSheetSimpleClicked"/>
+						<ToolbarItem Name="Delete" Order="Secondary" Activated="DeleteOrder"/>-->
+					</ContentPage.ToolbarItems>
+					
+					<Grid RowSpacing="0">
+					<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" >
+								
+							<cv:CarouselView ItemsSource="{Binding allOrders}" x:Name="CarouselBundle">
+							    <cv:CarouselView.ItemTemplate> 
+									
+									
+							      <DataTemplate>
+									<!--<ContentPage>
+										<ContentPage.Padding>
+											<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0" />
+										</ContentPage.Padding>-->
+
+										<Grid>
+										<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f0efed">
+											<Label Text="{Binding name}" Font="30" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" Margin="0,0,0,0" />
+											<Label Text="{Binding description}" Font="15"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#333333" />
+											<!--<Image Source="tazzina_ombra.png" WidthRequest="200" VerticalOptions="CenterAndExpand"/>-->
+											<Image Source="{Binding image, Mode=TwoWay}" WidthRequest="200" VerticalOptions="CenterAndExpand"/>
+
+											<StackLayout VerticalOptions="EndAndExpand"  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,0,0,40">
+												<Button 
+													BackgroundColor="#478cba"
+													TextColor="#f0efed"	 
+													Text="Order Now" 
+													WidthRequest="130" 
+													HeightRequest="40" 
+													HorizontalOptions="Center" 
+													VerticalOptions="CenterAndExpand"
+													CommandParameter="{Binding id}"
+													Clicked="OnBuyClicked"/>
+
+												<Button 
+													BackgroundColor="#478cba"
+													TextColor="#f0efed"	 
+													Text="Discover" 
+													WidthRequest="130" 
+													HeightRequest="40" 
+													HorizontalOptions="Center" 
+													VerticalOptions="CenterAndExpand"
+													Clicked="OnDiscoverClicked"
+													CommandParameter="{Binding id}"
+													IsVisible="{Binding by_admin}" />
+											</StackLayout>
+											
+											<!--<Label Text="{Binding Description}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
+											<Label Text="{Binding Price}" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  />-->
+
+											<!--<StackLayout BackgroundColor="#333333" Orientation="Horizontal" Grid.Row="1" HorizontalOptions="FillAndExpand" >
+												<Button 
+													TextColor="#f0efed"
+													BackgroundColor="#333333"	
+													x:Name="btnAdd"	
+													Text="Add" 
+													WidthRequest="100" 
+													HeightRequest="50" 
+													HorizontalOptions="FillAndExpand"
+													VerticalOptions="CenterAndExpand"
+													Clicked="AddOrder"/>
+												
+												<Button 
+													TextColor="#f0efed"	
+													BackgroundColor="#333333"	
+													Text="Edit" 
+													WidthRequest="100" 
+													HeightRequest="50" 
+													HorizontalOptions="FillAndExpand"
+													VerticalOptions="CenterAndExpand"
+													Clicked="OnActionSheetSimpleClicked"/>
+												<Button 
+													TextColor="#f0efed"	
+													BackgroundColor="#333333"
+													Text="Delete" 
+													WidthRequest="100" 
+													HeightRequest="50" 
+													HorizontalOptions="FillAndExpand"
+													VerticalOptions="CenterAndExpand"
+													Clicked="DeleteOrder"/>
+											</StackLayout>-->
+										</StackLayout>
+										
+
+										<!--<RelativeLayout>
+											<ActivityIndicator x:Name="ai"  Color="#1672c9"  
+																IsRunning="false" 
+																IsVisible="true" 
+																VerticalOptions="Center" 
+																HorizontalOptions="Center"
+																RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+								                                    Property=Height,
+								                                    Factor=0.28}"
+																RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+							                                        Property=Height,
+							                                        Factor=0.29}" />
+										</RelativeLayout>-->
+											
+										</Grid>
+										
+										
+									<!--</ContentPage>-->
+								</DataTemplate>
+
+
+							    </cv:CarouselView.ItemTemplate>
+							  </cv:CarouselView>
+							</StackLayout>
+					</Grid>
+
+				</ContentPage>
+	        </x:Arguments>
+	      </NavigationPage>
+
+		</MasterDetailPage.Detail>
+</MasterDetailPage>
 

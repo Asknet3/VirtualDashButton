@@ -128,6 +128,9 @@
     <Reference Include="TestFairy.Android">
       <HintPath>..\packages\TestFairy.Xamarin.2.1.1\lib\MonoAndroid\TestFairy.Android.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\MonoAndroid10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarouselPageNavigation\CarouselPageNavigation.csproj">
@@ -162,7 +165,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\Espresso_magia.png" />
-    <AndroidResource Include="Resources\drawable\tazzina.png">
+    <AndroidResource Include="Resources\drawable\tazzina_ombra.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\box_small.png">
@@ -176,6 +179,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable-xxhdpi\box_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\Add_circle_white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\List_bulleted_white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\tazzina.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
   </ItemGroup>

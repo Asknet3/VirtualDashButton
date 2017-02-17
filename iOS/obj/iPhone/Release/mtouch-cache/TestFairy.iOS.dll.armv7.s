@@ -1244,7 +1244,7 @@ _mono_aot_file_info:
 	.long 64,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 222,56,189,146,3,40,213,33,34,141,166,192,236,137,213,197
+	.byte 239,245,206,2,245,133,97,185,105,188,155,146,33,88,7,126
 	.globl _mono_aot_module_TestFairy_iOS_info
 	.align 2
 _mono_aot_module_TestFairy_iOS_info:

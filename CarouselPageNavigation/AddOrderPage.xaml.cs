@@ -158,7 +158,7 @@ namespace CarouselPageNavigation
 				string sku = newOrder.sku == null ? "": newOrder.sku;
 				string name = newOrder.name == null ? "" : newOrder.name;
 				string description = newOrder.description == null ? "" : newOrder.description;
-				string image = newOrder.image == null ? "" : newOrder.image;
+				string image = newOrder.image == null ? "tazzina_ombra.png" : newOrder.image;
 				string price = newOrder.price == null ? "" : newOrder.price;
 				int priority = newOrder.priority == 0 ? 50 : newOrder.priority;
 

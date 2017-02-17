@@ -1,28 +1,23 @@
-﻿<Properties StartupConfiguration="{CF93242C-C182-47EF-866F-60CC374D1A5E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarouselPageNavigation/EditOrderPage.xaml.cs">
+﻿<Properties StartupConfiguration="{1F498E45-B00D-477C-9645-B223BA83AB35}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
     <Files>
-      <File FileName="CarouselPageNavigation/Helper/Services.cs" Line="78" Column="95" />
-      <File FileName="CarouselPageNavigation/App.cs" Line="16" Column="1" />
-      <File FileName="CarouselPageNavigation/Models/ViewModelBase.cs" Line="1" Column="1" />
-      <File FileName="CarouselPageNavigation/EditOrderPage.xaml.cs" Line="51" Column="23" />
-      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="129" Column="5" />
-      <File FileName="CarouselPageNavigation/MainPage.xaml.cs" Line="145" Column="23" />
-      <File FileName="CarouselPageNavigation/MainPage.xaml" Line="30" Column="41" />
-      <File FileName="iOS/AppDelegate.cs" Line="16" Column="4" />
-      <File FileName="Droid/MainActivity.cs" Line="4" Column="1" />
-      <File FileName="CarouselPageNavigation/Helper/Utility.cs" Line="129" Column="186" />
-      <File FileName="CarouselPageNavigation/EditOrderPage.xaml" Line="1" Column="1" />
+      <File FileName="CarouselPageNavigation/MainPage.xaml.cs" Line="10" Column="7" />
+      <File FileName="CarouselPageNavigation/MainPage.xaml" Line="143" Column="10" />
+      <File FileName="CarouselPageNavigation/EditOrderPage.xaml" Line="53" Column="98" />
+      <File FileName="CarouselPageNavigation/EditOrderPage.xaml.cs" Line="159" Column="70" />
+      <File FileName="CarouselPageNavigation/DeleteOrderPage.xaml.cs" Line="54" Column="36" />
+      <File FileName="CarouselPageNavigation/AddOrderPage.xaml.cs" Line="161" Column="63" />
+      <File FileName="CarouselPageNavigation/obj/Debug/CarouselPageNavigation.MainPage.xaml.g.cs" Line="1" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="51" Column="1" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.LavazzaAPP.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/Helper/Utility.cs" relfile="CarouselPageNavigation/Helper/Utility.cs" line="154" column="1" />
-      <Breakpoint file="/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/CarouselPageNavigation/Helper/Utility.cs" relfile="CarouselPageNavigation/Helper/Utility.cs" line="114" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.fc86942488421af4816ddca87e45cf7b98cce8b7" />
+  <MonoDevelop.Ide.ItemProperties.CarouselPageNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.20682607-5F37-4887-BF75-D6E18E018FCF" />
   <MultiItemStartupConfigurations />
 </Properties>

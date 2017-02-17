@@ -181,8 +181,33 @@ namespace CarouselPageNavigation
 			{
 				DisplayAlert("ATTENZIONE!", "Devi prima selezionare un prodotto!", "OK");
 			}
+
 		}
 
+
+
+
+
+		// Rimuove il Bundle
+		public async void DeleteBundle(object sender, EventArgs e)
+		{
+
+			bool action = await DisplayAlert("ATTENZIONE!", "Sei sicuro di voler eliminare il Bundle '" + order.name + "'?", "Yes","No");
+			if (action==true)
+			{
+				int deleteOrder = database.Execute("DELETE FROM Bundle WHERE id=" + order.id); // Cancella l'ordine
+				int deleteBundleProdotti = database.Execute("DELETE FROM BundleProdotti WHERE id_bundle = ?", order.id); // Cancella tutti i prodotti che si riferiscono a quest'ordine
+
+				if (deleteOrder > 0 && deleteBundleProdotti > 0)
+				{
+					await DisplayAlert("Bundle rimosso!", "Il Bundle è stato eliminato.", "OK");
+
+					orders.Remove(order);
+
+					Navigation.PopModalAsync();
+				}
+			}
+		}
 
 
 		//private void OnBindingContextChanged(object sender, EventArgs e)

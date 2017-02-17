@@ -32,6 +32,7 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/SQLitePCLRaw.batteries_v2.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/SQLite-net.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/TestFairy.Android.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/Xamarin.Forms.CarouselView.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/CarouselPageNavigation.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/mscorlib.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/System.Runtime.Serialization.dll
@@ -63,4 +64,5 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/Microsoft.CSharp.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/Mono.CSharp.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/System.Resources.ResourceManager.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/NPushOver.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/android/assets/System.Diagnostics.Tools.dll

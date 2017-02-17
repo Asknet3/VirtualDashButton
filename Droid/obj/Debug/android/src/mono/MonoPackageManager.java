@@ -126,6 +126,7 @@ class MonoPackageManager_Resources {
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLite-net.dll",
 		"TestFairy.Android.dll",
+		"Xamarin.Forms.CarouselView.dll",
 		"CarouselPageNavigation.dll",
 		"System.Threading.dll",
 		"System.Collections.dll",
@@ -150,6 +151,7 @@ class MonoPackageManager_Resources {
 		"System.Text.Encoding.dll",
 		"System.Text.Encoding.Extensions.dll",
 		"System.Resources.ResourceManager.dll",
+		"NPushOver.dll",
 		"System.Diagnostics.Tools.dll",
 		"Xamarin.Android.NUnitLite.dll",
 	};

@@ -42,3 +42,13 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-hdpi/box_small.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-xhdpi/box_small.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-xxhdpi/box_small.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/Xamarin.Forms.CarouselView.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-hdpi/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-xhdpi/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-xxhdpi/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-hdpi/ic_add_circle_white_24dp.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable/tazzina_ombra.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-hdpi/add_circle_white.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Release/res/drawable-hdpi/list_bulleted_white.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Release/NPushOver.dll

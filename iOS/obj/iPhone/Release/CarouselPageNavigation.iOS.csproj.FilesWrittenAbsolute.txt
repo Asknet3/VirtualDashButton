@@ -24,3 +24,9 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/SQLite-net.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/TestFairy.iOS.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/CarouselPageNavigation.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhone/Release/optimized/tazzina_ombra.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhone/Release/optimized/Menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhone/Release/optimized/Add_circle_white.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/obj/iPhone/Release/optimized/List_bulleted_white.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/Xamarin.Forms.CarouselView.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/bin/iPhone/Release/NPushOver.dll
