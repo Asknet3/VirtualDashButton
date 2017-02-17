@@ -1643,7 +1643,7 @@ _mono_aot_file_info:
 	.long 64,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 45,251,53,125,36,127,103,240,99,112,202,246,37,19,98,244
+	.byte 141,185,104,121,158,35,189,59,221,190,166,234,48,40,52,60
 	.globl _mono_aot_module_TestFairy_iOS_info
 	.align 3
 _mono_aot_module_TestFairy_iOS_info:

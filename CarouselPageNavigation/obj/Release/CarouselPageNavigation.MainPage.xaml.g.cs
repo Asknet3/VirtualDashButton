@@ -14,11 +14,27 @@ namespace CarouselPageNavigation {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class MainPage : global::Xamarin.Forms.CarouselPage {
+    public partial class MainPage : global::Xamarin.Forms.MasterDetailPage {
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView BundleUserList;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView BundleBrandList;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView UserOrderList;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.CarouselView CarouselBundle;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(MainPage));
+            BundleUserList = this.FindByName <global::Xamarin.Forms.ListView>("BundleUserList");
+            BundleBrandList = this.FindByName <global::Xamarin.Forms.ListView>("BundleBrandList");
+            UserOrderList = this.FindByName <global::Xamarin.Forms.ListView>("UserOrderList");
+            CarouselBundle = this.FindByName <global::Xamarin.Forms.CarouselView>("CarouselBundle");
         }
     }
 }

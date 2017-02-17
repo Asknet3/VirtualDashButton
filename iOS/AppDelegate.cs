@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
 using TestFairyLib;
+
 
 namespace CarouselPageNavigation.iOS
 {
@@ -19,8 +16,10 @@ namespace CarouselPageNavigation.iOS
 
 			LoadApplication (new App ());
 
+
 			return base.FinishedLaunching (app, options);
 		}
+
 	}
 }
 

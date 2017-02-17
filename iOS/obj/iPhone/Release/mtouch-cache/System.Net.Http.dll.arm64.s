@@ -2328,7 +2328,7 @@ bl _p_60
 .word 0xf9401721
 .word 0xaa1803e0
 .word 0xf9400302
-.word 0xf9407c50
+.word 0xf9408c50
 .word 0xd63f0200
 .loc 4 243 0
 .word 0xf940035e
@@ -2338,7 +2338,7 @@ bl _p_60
 .word 0xf9400801
 .word 0xaa1803e0
 .word 0xf9400302
-.word 0xf9408450
+.word 0xf9409450
 .word 0xd63f0200
 .loc 4 244 0
 .word 0xaa1803f7
@@ -2451,7 +2451,7 @@ bl _p_69
 .word 0x39412321
 .word 0xaa1803e0
 .word 0xf9400302
-.word 0xf9405450
+.word 0xf9405850
 .word 0xd63f0200
 .loc 4 262 0
 .word 0x39412720
@@ -2470,14 +2470,14 @@ bl _p_71
 .word 0xaa1803e0
 .word 0xd2800021
 .word 0xf9400302
-.word 0xf9406050
+.word 0xf9406450
 .word 0xd63f0200
 .word 0x14000006
 .loc 4 270 0
 .word 0xf9400f21
 .word 0xaa1803e0
 .word 0xf9400302
-.word 0xf9406850
+.word 0xf9406c50
 .word 0xd63f0200
 .loc 4 273 0
 .word 0x39412f20
@@ -2486,14 +2486,14 @@ bl _p_71
 .word 0xf9401321
 .word 0xaa1803e0
 .word 0xf9400302
-.word 0xf9405850
+.word 0xf9405c50
 .word 0xd63f0200
 .word 0x14000006
 .loc 4 277 0
 .word 0xaa1803e0
 .word 0xd2800001
 .word 0xf9400302
-.word 0xf9405850
+.word 0xf9405c50
 .word 0xd63f0200
 .loc 4 280 0
 .word 0xaa1803e0
@@ -2533,7 +2533,7 @@ ldr x0, [x16, #432]
 .loc 4 283 0
 .word 0xaa1803e0
 .word 0xf9400301
-.word 0xf9407830
+.word 0xf9408830
 .word 0xd63f0200
 .word 0xaa0003f9
 .loc 4 284 0
@@ -2807,14 +2807,14 @@ bl _p_5
 .word 0xaa1703e0
 .word 0xaa1603e1
 .word 0xf94002e2
-.word 0xf9405850
+.word 0xf9405c50
 .word 0xd63f0200
 .word 0xaa0003f5
 .loc 4 320 0
 .word 0xaa1703e0
 .word 0xaa1603e1
 .word 0xf94002e2
-.word 0xf9405c50
+.word 0xf9406050
 .word 0xd63f0200
 .word 0xaa0003f4
 .loc 4 323 0
@@ -3214,7 +3214,7 @@ bl _p_5
 .word 0xf9400401
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9407830
+.word 0xf9408830
 .word 0xd63f0200
 .word 0xaa0003e1
 .word 0xf9415fa0
@@ -3414,7 +3414,7 @@ bl _p_90
 .word 0xf94153a2
 .word 0xaa0203e0
 .word 0xf9400042
-.word 0xf9407050
+.word 0xf9407c50
 .word 0xd63f0200
 .word 0x1400007e
 .loc 4 364 0
@@ -3544,7 +3544,7 @@ bl _p_90
 .word 0xf94153a2
 .word 0xaa0203e0
 .word 0xf9400042
-.word 0xf9407050
+.word 0xf9407c50
 .word 0xd63f0200
 .loc 4 368 0
 .word 0xf94013a0
@@ -3865,7 +3865,7 @@ bl System_Net_Http_HttpMethod_Equals_System_Net_Http_HttpMethod
 .word 0xaa0203e0
 .word 0xd2800001
 .word 0xf9400042
-.word 0xf9407050
+.word 0xf9407c50
 .word 0xd63f0200
 .loc 4 379 0
 .word 0xf94013a0
@@ -79600,7 +79600,7 @@ _mono_aot_file_info:
 	.long 1528,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 176,221,69,115,208,106,112,255,102,110,17,141,138,53,66,2
+	.byte 43,114,28,214,103,143,208,57,181,61,90,254,11,167,96,41
 	.globl _mono_aot_module_System_Net_Http_info
 	.align 3
 _mono_aot_module_System_Net_Http_info:

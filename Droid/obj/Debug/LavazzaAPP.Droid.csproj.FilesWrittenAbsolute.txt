@@ -9,11 +9,18 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-xxhdpi/icon.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable/dek.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable/espresso_magia.png
-/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable/tazzina.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable/tazzina_ombra.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable/box_small.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-hdpi/box_small.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-xhdpi/box_small.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-xxhdpi/box_small.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-hdpi/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-xhdpi/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-xxhdpi/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable/menu.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-hdpi/add_circle_white.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable-hdpi/list_bulleted_white.png
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/res/drawable/tazzina.png
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/R.cs.flag
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Debug/com.companyname.LavazzaAPP-Signed.apk
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/obj/Debug/uploadflags.txt
@@ -43,5 +50,6 @@
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Debug/SQLitePCLRaw.batteries_v2.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Debug/SQLite-net.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Debug/TestFairy.Android.dll
+/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Debug/Xamarin.Forms.CarouselView.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Debug/CarouselPageNavigation.dll
 /Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/Droid/bin/Debug/CarouselPageNavigation.dll.mdb

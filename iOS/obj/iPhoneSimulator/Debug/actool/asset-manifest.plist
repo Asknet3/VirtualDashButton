@@ -80,24 +80,24 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./AppIcon.appiconset/[][ipad][29x29][][][1x]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Assets.xcassets</string>
-			<key>message</key>
-			<string>The file "Icon-Small.png" for the image set "AppIcon" does not exist.</string>
-			<key>type</key>
-			<string>Missing Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./AppIcon.appiconset/[][ipad][29x29][][][2x]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Assets.xcassets</string>
 			<key>message</key>
 			<string>The file "Icon-Small@2x.png" for the image set "AppIcon" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][29x29][][][1x]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gcristau8/Desktop/WorkDesk/Internal/Xamarin/CarouselPageTemplate/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>The file "Icon-Small.png" for the image set "AppIcon" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
 		</dict>

@@ -18,7 +18,7 @@ typedef struct _compressed_data {
 } CompressedAssembly;
 
 extern const unsigned char assembly_data_LavazzaAPP_Droid_dll [];
-static CompressedAssembly assembly_bundle_LavazzaAPP_Droid_dll = {{"LavazzaAPP.Droid.dll", assembly_data_LavazzaAPP_Droid_dll, 98816}, 32477};
+static CompressedAssembly assembly_bundle_LavazzaAPP_Droid_dll = {{"LavazzaAPP.Droid.dll", assembly_data_LavazzaAPP_Droid_dll, 99328}, 32611};
 extern const unsigned char assembly_data_Xamarin_Android_NUnitLite_dll [];
 static CompressedAssembly assembly_bundle_Xamarin_Android_NUnitLite_dll = {{"Xamarin.Android.NUnitLite.dll", assembly_data_Xamarin_Android_NUnitLite_dll, 267776}, 107414};
 extern const unsigned char assembly_data_Java_Interop_dll [];
@@ -73,8 +73,10 @@ extern const unsigned char assembly_data_SQLite_net_dll [];
 static CompressedAssembly assembly_bundle_SQLite_net_dll = {{"SQLite-net.dll", assembly_data_SQLite_net_dll, 70144}, 30830};
 extern const unsigned char assembly_data_TestFairy_Android_dll [];
 static CompressedAssembly assembly_bundle_TestFairy_Android_dll = {{"TestFairy.Android.dll", assembly_data_TestFairy_Android_dll, 375296}, 328166};
+extern const unsigned char assembly_data_Xamarin_Forms_CarouselView_dll [];
+static CompressedAssembly assembly_bundle_Xamarin_Forms_CarouselView_dll = {{"Xamarin.Forms.CarouselView.dll", assembly_data_Xamarin_Forms_CarouselView_dll, 39424}, 18055};
 extern const unsigned char assembly_data_CarouselPageNavigation_dll [];
-static CompressedAssembly assembly_bundle_CarouselPageNavigation_dll = {{"CarouselPageNavigation.dll", assembly_data_CarouselPageNavigation_dll, 57344}, 18275};
+static CompressedAssembly assembly_bundle_CarouselPageNavigation_dll = {{"CarouselPageNavigation.dll", assembly_data_CarouselPageNavigation_dll, 69120}, 21418};
 extern const unsigned char assembly_data_System_Threading_dll [];
 static CompressedAssembly assembly_bundle_System_Threading_dll = {{"System.Threading.dll", assembly_data_System_Threading_dll, 5632}, 2118};
 extern const unsigned char assembly_data_System_Collections_dll [];
@@ -121,6 +123,8 @@ extern const unsigned char assembly_data_System_Text_Encoding_Extensions_dll [];
 static CompressedAssembly assembly_bundle_System_Text_Encoding_Extensions_dll = {{"System.Text.Encoding.Extensions.dll", assembly_data_System_Text_Encoding_Extensions_dll, 4608}, 1803};
 extern const unsigned char assembly_data_System_Resources_ResourceManager_dll [];
 static CompressedAssembly assembly_bundle_System_Resources_ResourceManager_dll = {{"System.Resources.ResourceManager.dll", assembly_data_System_Resources_ResourceManager_dll, 4608}, 1793};
+extern const unsigned char assembly_data_NPushOver_dll [];
+static CompressedAssembly assembly_bundle_NPushOver_dll = {{"NPushOver.dll", assembly_data_NPushOver_dll, 53760}, 22366};
 extern const unsigned char assembly_data_System_Diagnostics_Tools_dll [];
 static CompressedAssembly assembly_bundle_System_Diagnostics_Tools_dll = {{"System.Diagnostics.Tools.dll", assembly_data_System_Diagnostics_Tools_dll, 4608}, 1755};
 extern const unsigned char assembly_data_System_dll [];
@@ -179,6 +183,7 @@ static const CompressedAssembly *compressed [] = {
 	&assembly_bundle_SQLitePCLRaw_batteries_v2_dll,
 	&assembly_bundle_SQLite_net_dll,
 	&assembly_bundle_TestFairy_Android_dll,
+	&assembly_bundle_Xamarin_Forms_CarouselView_dll,
 	&assembly_bundle_CarouselPageNavigation_dll,
 	&assembly_bundle_System_Threading_dll,
 	&assembly_bundle_System_Collections_dll,
@@ -203,6 +208,7 @@ static const CompressedAssembly *compressed [] = {
 	&assembly_bundle_System_Text_Encoding_dll,
 	&assembly_bundle_System_Text_Encoding_Extensions_dll,
 	&assembly_bundle_System_Resources_ResourceManager_dll,
+	&assembly_bundle_NPushOver_dll,
 	&assembly_bundle_System_Diagnostics_Tools_dll,
 	&assembly_bundle_System_dll,
 	&assembly_bundle_System_Xml_dll,

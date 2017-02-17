@@ -21,6 +21,7 @@
 @class __MonoMac_NSActionDispatcher;
 @class __Xamarin_NSTimerActionDispatcher;
 @class __MonoMac_NSAsyncActionDispatcher;
+@protocol UICollectionViewSource;
 @protocol UIPickerViewModel;
 @class Xamarin_Forms_Platform_iOS_FormsApplicationDelegate;
 @class AppDelegate;
@@ -118,4 +119,8 @@
 @class Xamarin_Forms_Platform_iOS_ToolbarItemExtensions_SecondaryToolbarItem;
 @class Xamarin_Forms_Platform_iOS_NavigationMenuRenderer_DataSource;
 @class Xamarin_Forms_Platform_iOS_NavigationRenderer_SecondaryToolbar;
+@class Xamarin_Forms_Platform_CarouselViewRenderer;
+@class Xamarin_Forms_Platform_CarouselViewController_Layout;
+@class Xamarin_Forms_Platform_CarouselViewController_Cell;
+@class Xamarin_Forms_Platform_CarouselViewController;
 

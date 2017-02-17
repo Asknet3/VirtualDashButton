@@ -17,6 +17,9 @@ namespace CarouselPageNavigation {
     public partial class EditOrderPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label bDel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label oName;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -37,6 +40,7 @@ namespace CarouselPageNavigation {
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(EditOrderPage));
+            bDel = this.FindByName <global::Xamarin.Forms.Label>("bDel");
             oName = this.FindByName <global::Xamarin.Forms.Label>("oName");
             countProducts = this.FindByName <global::Xamarin.Forms.Label>("countProducts");
             oabstract = this.FindByName <global::Xamarin.Forms.Label>("oabstract");

@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using SQLite;
 using Xamarin.Forms;
+using NPushover;
 
 
 namespace CarouselPageNavigation
 {
-	public partial class MainPage : CarouselPage
+	public partial class MainPage : MasterDetailPage
 	{
 		SQLiteConnection database;
 		bool isFirstLoad = true;
 		bool isFirstAppearing = true;
 		public List<Bundle> allOrders = new List<Bundle>();
+		ObservableCollection<Bundle> BundleUser = new ObservableCollection<Bundle>();
+		ObservableCollection<Bundle> BundleBrand = new ObservableCollection<Bundle>();
+		ObservableCollection<Orders> UserOrder = new ObservableCollection<Orders>();
+
 		//private bool busy = true;
 
 		public int numOfOrders;
@@ -26,11 +27,29 @@ namespace CarouselPageNavigation
 		{
 			InitializeComponent();
 
-			BackgroundColor = Color.FromHex("f0efed");
 
+
+			var po = new Pushover("ag26mhngxiea9skp9mrvstzec3s59w");  // Application API Token
+
+
+
+			// Quick message:
+			//var msg = Message.Create("Ciao, questa è una notifica");
+			//var sendtask = po.SendMessageAsync(msg, "gk21hzcygg2aimdtbjxfdaa192xivb"); // Group Key
+
+
+			//po.GetReceiptAsync("gk21hzcygg2aimdtbjxfdaa192xivb");
+			//po.GetReceiptAsync("ag26mhngxiea9skp9mrvstzec3s59w");
+
+
+			// Catturo l'elemento selezionato e ne elimino la selezione
+			UserOrderList.ItemSelected += (sender, e) => { ((ListView)sender).SelectedItem = null; };
+
+			BackgroundColor = Color.FromHex("f0efed");
 
 			// Creo la connessione al Database
 			database = DependencyService.Get<ISQLite>().GetConnection();
+
 
 
 			#region Bundle
@@ -43,7 +62,8 @@ namespace CarouselPageNavigation
 				Bundle ordine1 = new Bundle
 				{
 					name = "House",
-					priority = 50
+					priority = 50,
+					image = "tazzina_ombra.png"
 				};
 
 				database.Insert(ordine1);
@@ -59,28 +79,46 @@ namespace CarouselPageNavigation
 				// Aggiungo 3 prodotti di esempio alla tabella
 				Product p1 = new Product
 				{
-					description = "un prodotto di test",
-					name = "Prod Test",
-					price = "€15,00",
-					image = "Dek.png"
+					description = "Intenso, corposo, rotondo.",
+					name = "Intenso",
+					price = "€5,99",
+					image = "Intenso.jpeg"
 				};
 				database.Insert(p1);
 
 				Product p2 = new Product
 				{
-					description = "secondo prodotto di test",
-					name = "Prod2 Test",
-					price = "€13,00",
-					image = "Espresso_magia.png"
+					description = "Fruttato con note floreali.",
+					name = "Selva Alta",
+					price = "€4,99",
+					image = "Selvaalta.jpeg"
 				};
 				database.Insert(p2);
 
 				Product p3 = new Product
 				{
-					description = "terzo prodotto di test",
-					name = "Prod3 Test",
-					price = "€8,00",
-					image = "Dek.png"
+					description = "Armonioso, pieno, dolce",
+					name = "Passionale",
+					price = "€5,99",
+					image = "Passionale.jpeg"
+				};
+				database.Insert(p3);
+
+				Product p4 = new Product
+				{
+					description = "Soave, con corpo leggero\ne note floreali. ",
+					name = "Soave",
+					price = "€5,99",
+					image = "Soave.jpeg"
+				};
+				database.Insert(p4);
+
+				Product p5 = new Product
+				{
+					description = "Vellutato, con gusto raffinato e cioccolatato.",
+					name = "Divino",
+					price = "€4,99",
+					image = "Divino.jpeg"
 				};
 				database.Insert(p3);
 			}
@@ -159,10 +197,31 @@ namespace CarouselPageNavigation
 				allOrders = database.Query<Bundle>("SELECT * FROM Bundle ORDER BY priority");
 
 				numOfOrders = allOrders.Count;
-				ItemsSource = allOrders;
+				//ItemsSource = allOrders;
+				CarouselBundle.ItemsSource = allOrders;
+
+				// Bundle creati dall' utente
+				BundleUser = new ObservableCollection<Bundle>(database.Query<Bundle>("SELECT * FROM Bundle WHERE sku IS NULL OR sku = ''"));
+				BundleUserList.ItemsSource = BundleUser;
+				BundleUserList.HasUnevenRows = false;
+
+				// Bundle inviati da Lavazza
+				BundleBrand = new ObservableCollection<Bundle>(database.Query<Bundle>("SELECT * FROM Bundle WHERE sku IS NOT NULL AND sku != \"\""));
+				BundleBrandList.ItemsSource = BundleBrand;
+				BundleBrandList.HasUnevenRows = false;
+
+				// Ordini in corso
+				UserOrder = new ObservableCollection<Orders>();
+				UserOrder.Add(new Orders { id_bundle = 1, data_consegna = "15/02/2017" }); // aggiungo un ordine di esempio
+
+				Bundle bundle_in_ordine = Utility.GetBundle(database, UserOrder[0].id_bundle);
+				String bundle_name = bundle_in_ordine.name;
+
+				UserOrderList.ItemsSource = UserOrder;
+				UserOrderList.HasUnevenRows = false;
+
 				isFirstLoad = false;
 			}
-
 		}
 
 
@@ -179,9 +238,14 @@ namespace CarouselPageNavigation
 
 			if (allOrders.Count != numOfOrders)  // Solo nel caso in cui il numero di Bundle è cambiato rispetto a quello iniziale, aggiorno la lista.
 			{
-				ItemsSource = allOrders;
-
+				//ItemsSource = allOrders;
+				CarouselBundle.ItemsSource = allOrders;
 				numOfOrders = allOrders.Count;
+
+
+				// Bundle creati dall' utente
+				BundleUser = new ObservableCollection<Bundle>(database.Query<Bundle>("SELECT * FROM Bundle WHERE sku IS NULL OR sku = ''"));
+				BundleUserList.ItemsSource = BundleUser;
 			}
 
 			isFirstAppearing = false;
@@ -198,13 +262,16 @@ namespace CarouselPageNavigation
 
 			try
 			{
+				int id_bundle = (Int32)btn_Buy.CommandParameter;
+				Bundle bundle = Utility.GetBundle(database, id_bundle);
+
 				btn_Buy.IsEnabled = false; // disabilito il bottone per preverine il multiple click
 
 				OnPropertyChanged();
 
 				//await App.Sleep(2000);
-				await DisplayAlert("Clicked!",
-				                   "The button labeled '" + btn_Buy.Text + "' has been clicked",
+				await DisplayAlert("Grazie!",
+								   "Il tuo ordine '" + bundle.name + "' è stato inviato.",
 					"OK");
 			}
 			finally
@@ -241,14 +308,14 @@ namespace CarouselPageNavigation
 		// Apro la pagina che gestisce l'inserimento di un nuovo ordine
 		public async void AddOrder(object sender, EventArgs args)
 		{
-			Button btn_Add = sender as Button;
-			btn_Add.IsEnabled = false; // disabilito il bottone per preverine il multiple click
+			//Button btn_Add = sender as Button;
+			//btn_Add.IsEnabled = false; // disabilito il bottone per preverine il multiple click
 
 			AddOrderPage aop = new AddOrderPage();
 			await Navigation.PushModalAsync(aop);
 
-			await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
-			btn_Add.IsEnabled = true; 
+			//await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
+			//btn_Add.IsEnabled = true; 
 		}
 
 
@@ -258,14 +325,14 @@ namespace CarouselPageNavigation
 		// Apro la pagina che gestisce la cancellazione degli Bundle
 		public async void DeleteOrder(object sender, EventArgs args)
 		{
-			Button btn_Del = sender as Button;
-			btn_Del.IsEnabled = false; // disabilito il bottone per preverine il multiple click
+			//Button btn_Del = sender as Button;
+			//btn_Del.IsEnabled = false; // disabilito il bottone per preverine il multiple click
 
 			DeleteOrderPage dop = new DeleteOrderPage();
 			await Navigation.PushModalAsync(dop);
 
-			await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
-			btn_Del.IsEnabled = true;
+			//await Task.Delay(1000); // riabilito il bottone dopo 1 secondo
+			//btn_Del.IsEnabled = true;
 		}
 
 
@@ -305,6 +372,78 @@ namespace CarouselPageNavigation
 
 
 
+
+
+
+		bool lockOpenEditBundle = false;
+		// Apre la pagina di Edit del Bundle cliccato
+		public async void OpenEditBundle(object sender, SelectedItemChangedEventArgs e)
+		{
+			try
+			{
+				if (e.SelectedItem == null || lockOpenEditBundle) return;
+
+				lockOpenEditBundle = true; // Blocco possibili aperture multiple
+
+				var b = e.SelectedItem as Bundle;
+
+
+
+
+				EditOrderPage eop = new EditOrderPage(b.id);
+				await Navigation.PushModalAsync(eop);
+				IsPresented = false;
+			}
+			finally
+			{
+				// Catturo l'elemento selezionato e ne elimino la selezione
+				((ListView)sender).SelectedItem = null;
+				//await Task.Delay(300);
+				await Task.Run(() => lockOpenEditBundle = false); //Sblocco la possibilità di cliccare sull'item
+			}
+		}
+
+
+
+		bool lockOpenDiscoverBrandBundle = false;
+		// Apre la pagina di Discover del Bundle cliccato
+		public async void OpenDiscoverBrandBundle(object sender, SelectedItemChangedEventArgs e)
+		{
+			try
+			{
+				if (e.SelectedItem == null || sender == null || lockOpenDiscoverBrandBundle) return;
+
+				var b = e.SelectedItem as Bundle;
+
+				//// Catturo l'elemento selezionato e ne elimino la selezione
+				//((ListView)sender).SelectedItem = null; 
+				((ListView)sender).SelectedItem = null;
+
+				DiscoverOrderPage dop = new DiscoverOrderPage(b.id);
+				await Navigation.PushModalAsync(dop);
+				IsPresented = false;
+			}
+
+			finally
+			{
+				// Catturo l'elemento selezionato e ne elimino la selezione
+				((ListView)sender).SelectedItem = null;
+				await Task.Delay(500);
+				lockOpenDiscoverBrandBundle = false; //Sblocco la possibilità di cliccare sull'item
+			}
+		}
+
+
+
+
+
+		ImageSource _imageSource = "tazzina_ombra.png";
+		public ImageSource GetBundleImage
+		{
+			get { return _imageSource; }
+
+			set { _imageSource = "tazzina_ombra.png"; }
+		}
 
 	}
 }
