@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<a href="#" id="apple" onclick="openLink('http://www.apple.com')">Link to Apple</a> <br/><br/><br/>
+<a href="#" id="microsoft" onclick="openLink('http://www.microsoft.com')">Link to Microsoft</a>
+
+<script>
+var reference;
+var blank=true;
+function openLink(url) {
+	if(reference==null && blank)
+		reference = window.open(url, '_blank');
+	else
+		reference.location.href=url;
+
+}
+</script>
+
+</body>
+</html>
